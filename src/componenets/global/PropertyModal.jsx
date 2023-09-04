@@ -5,7 +5,7 @@ import Unlist from "../../assets/unlist.svg";
 import PropertyModalCard from "./PropertyModalCard";
 
 export const PropertyModal = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [handleButton, setHandleButton] = useState("Delete");
   return (
     <>
