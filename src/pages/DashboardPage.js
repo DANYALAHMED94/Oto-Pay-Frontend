@@ -5,7 +5,6 @@ import menu from "../assets/menuIcon.svg";
 import logout from "../assets/logoutIcon.svg";
 import profile from "../assets/profilePic.svg";
 import Logo2 from "../assets/OTO.svg";
-import Logo from "../assets/logo.svg"
 import {
   HomeIcon,
   PropertyIcon,
@@ -51,8 +50,6 @@ export default function DashboardPage() {
           >
             <SideBar setShow={setShow} show={show} />
           </div>
-
-         
         </div>
         <div className=" w-full h-full    xl:gap-6  lg:gap-4  justify-center bg-white  lg:py-12 py-2  items-between xl:block lg:block hidden   ">
           <div className="xl:py-4  lg:py-0 -full xl:w-[323px] sxl:w-[300px] lg:w-[290px] lg:flex  flex-col  items-center justify-center bg-white   ">

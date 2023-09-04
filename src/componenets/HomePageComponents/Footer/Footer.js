@@ -8,15 +8,15 @@ import {
   FooterIcon3,
 } from "../../../iconComponent/FooterImages";
 function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
   return (
     <div>
-      <footer className=" py-[120px]  bg-[#2E0664]  3xl:px-[70px] 2xl:px-[50px] xl:px-[80px] lg:px-[40px] md:px-[40px] px-6 w-full xl:h-[550px]   relative z-0 overflow-hidden ">
-        <div className="w-full h-auto relative z-20  ">
-          <div className=" flex   grid 2xl:grid-cols-4 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-2 sm:grid-col-1 2xl:gap-8 xl:gap-[4px] lg:gap-32 md:gap-16 gap-y-12">
-            <div className="col-span-2 w-[385px]">
+      <footer className="py-10 bg-[#2E0664] 3xl:px-[70px] 2xl:px-[50px] xl:px-[80px] lg:px-[40px] md:px-[40px] px-6 w-full xl:h-[550px] relative z-0 overflow-hidden ">
+        <div className="w-full h-auto relative z-20">
+          <div className="grid 2xl:grid-cols-4 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-col-1 2xl:gap-8 xl:gap-[4px] md:gap-0 md:gap-y-12 gap-y-5">
+            <div className="xl:col-span-2 lg:col-span-1 col-span-full lg:block flex flex-col justify-center items-center">
               <div className=" h-[90px] w-[94px]  ">
                 <Link to="/" className="flex items-center">
                   <img
@@ -26,17 +26,17 @@ function Footer() {
                   />
                 </Link>
               </div>
-              <div className=" w-[270px]  text-[#959CB1]  text-base font-medium leading-[26px] ">
-                <p>
+              <div className=" lg:w-[270px] w-full text-[#959CB1]  text-base font-medium leading-[26px] ">
+                <p className="lg:text-left text-center">
                   Elevate your well-being with the power of inspiration!
                   Discover daily to keep you on track. Click now to get started
                   on your ,
                 </p>
               </div>
-              <div className="flex mt-4 sm:justify-start space-x-4  ">
+              <div className="flex mt-4 sm:justify-start space-x-4">
                 <Link
                   to="/"
-                  className="text-gray-500 hover:text-gray-900 hover:text-white"
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                 >
                   <FooterIcon1 />
                 </Link>
@@ -55,11 +55,11 @@ function Footer() {
               </div>
             </div>
 
-            <div className=" xl:w-56 py-[88px] lg:w-60  ">
-              <h2 className="mb-6  text-base  font-semibold leading-[28px]  text-white">
+            <div className="xl:block flex flex-col justify-center -ml-5 md:-ml-0 items-center lg:py-20 md:py-14 py-5 ">
+              <h2 className="mb-6 -ml-5 md:-ml-0 text-base font-semibold leading-[28px] text-white">
                 Services
               </h2>
-              <ul className=" text-base font-medium leading-[28px] text-[#959CB1]  space-y-4">
+              <ul className=" text-base font-medium leading-[28px] text-[#959CB1] space-y-4">
                 <li className="">
                   <Link to="/" className="hover:underline">
                     Service
@@ -83,8 +83,9 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="auto py-[88px]">
-              <h2 className="mb-6 text-base font-semibold leading-[28px]   text-white">
+
+            <div className="xl:block flex flex-col justify-center items-center lg:py-20 md:py-14 py-5">
+              <h2 className="mb-6 -ml-10 lg:-ml-10 xl:-ml-0 text-base xl:text-left font-semibold leading-[28px] text-white">
                 Contact
               </h2>
               <ul className="text-[#959CB1]  text-base font-medium leading-[24px] space-y-7">
@@ -115,11 +116,11 @@ function Footer() {
               </ul>
             </div>
 
-            <div className=" w-auto py-[88px] ">
-              <h2 className="mb-6 text-base font-semibold leading-[28px]   text-white">
+            <div className="xl:block flex flex-col justify-center items-center -ml-5 md:-ml-0 lg:py-20 md:py-14 py-5 ">
+              <h2 className="mb-6 text-base font-semibold leading-[28px] text-white">
                 Resources
               </h2>
-              <ul className="text-[#959CB1]  text-base font-medium leading-[24px] space-y-7 ">
+              <ul className="text-[#959CB1] text-base font-medium leading-[24px] space-y-7 ">
                 <li>
                   <Link
                     to="https://discord.gg/4eeurUVvTy"
@@ -148,7 +149,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className=" w-auto h-[268px]  flex justify-center items-center">
+            {/* <div className=" w-auto h-[268px]  flex justify-center items-center">
               <div
                 onClick={scrollToTop}
                 className="w-[80px] h-[80px] bg-gray-100 flex justify-center rounded-xl items-center"
@@ -170,7 +171,7 @@ function Footer() {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
             {/* <div className="flex justify-end  w-24   place-self-end  ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

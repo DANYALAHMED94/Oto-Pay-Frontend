@@ -4,102 +4,115 @@ import { useNavigate } from "react-router-dom";
 function Search() {
   const navigate = useNavigate();
   return (
-    <div className="bg-[#D9CFE3]  w-full xl:h-[259px] font-inter relative md:h-[400px] h-[300px] overflow-hidden ">
-      <section className="w-full h-full body-font  px-[120px] py-[40px]  ">
-        <div className="w-[1200px]  h-[179px]  ">
-          <div className="w-[1200px] grid grid-cols-5 gap-[16px]">
-            <div className="col-span-1 p-[16px] w-[210px] h-[81px] space-y-2 rounded-md bg-gray-100 ">
-              <label className="block text-sm font-medium text-black  ml-0.5">
-                City
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-                <option value="">Washington</option>
-                <option value="for-rent">Washington1</option>
-                <option value="for-sale">Washington2</option>
-              </select>
+    <div className="bg-[#D9CFE3] w-full xl:h-[300px] font-inter relative md:h-[300px] h-auto overflow-hidden ">
+      <section className="w-full h-full body-font md:px-[120px] md:py-[40px] px-10">
+        <div className="md:h-full h-[80%] xl:w-auto lg:w-auto w-full py-[40px] md:px-[32px] rounded-xl xl:gap-2 lg:gap-6 md:gap-2 gap-4 flex flex-col items-center justify-center">
+          <div className="xl:mt-6 lg:mt-6 mt-0 w-full xl:flex flex-col justify-center items-center">
+            <div className="flex md:flex-row flex-col gap-4 mt-4">
+              <div className="col-span-1 px-4 flex flex-col py-2 md:py-0 justify-center xl:w-[198px] xl:h-20 lg:w-[170px] lg:h-[70px] md:w-[170px] md:h-[50px] w-full xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white ">
+                <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5 ">
+                  City
+                </label>
+                <select className="w-full rounded-md text-[#312245] font-medium lg:text-sm text-xs focus:outline-none">
+                  <option value="">Washington</option>
+                  <option value="for-rent">Washington1</option>
+                  <option value="for-sale">Washington2</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col justify-center px-4 py-2 md:py-3 xl:w-[543px] xl:h-20 lg:w-[440px] lg:h-[70px] md:w-[360px] md:h-[50px] xl:space-y-2  lg:space-y-2 space-y-0 rounded-md bg-white">
+                <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5">
+                  Street
+                </label>
+                <select className=" w-full rounded-md bg-white text-[#312245] font-medium focus:outline-none lg:text-sm text-xs">
+                  <option value="">Washington, street xyz</option>
+                  <option value="fully-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="partially-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="not-furnished">Washington, street xyz</option>
+                </select>
+              </div>
+
+              <div className="col-span-1 md:py-3 xl:w-[178px] xl:h-20 bg-[#17062F] lg:w-[160px] lg:h-[70px] md:w-[130px] md:h-[50px] flex items-center justify-center rounded-md">
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                  className=" text-Black h-full py-3 md:py-0 text-white w-full hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base md:text-base lg:text-sm text-xs  leading-6 justify-center text-center inline-flex items-center dark:focus:ring-gray-500  "
+                >
+                  Find
+                </button>
+              </div>
             </div>
 
-            <div className="col-span-3 p-[16px]  w-[700px] h-[81px] space-y-2 rounded-md bg-gray-100">
-              <label className="block text-sm font-medium text-gray-700">
-                Street
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:bg-white  text-sm">
-                <option value="">Washington, street xyz</option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
-            </div>
+            <div className="flex md:flex-row flex-col gap-4 mt-4 ">
+              <div className=" flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[159px] xl:h-20 lg:w-[140px] lg:h-[70px] md:w-[130px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white">
+                <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5">
+                  Property Type
+                </label>
+                <select className=" w-full rounded-md text-[#312245] font-medium lg:text-sm text-xs bg-white focus:outline-none">
+                  <option value="">All</option>
+                  <option value="fully-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="partially-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="not-furnished">Washington, street xyz</option>
+                </select>
+              </div>
 
-            <div className="col-span-1 px-4 py-3 w-[200px] h-[81px] space-y-2 rounded-md bg-[#17062F] ">
-              <button
-                type="button"
-                onClick={() => {
-                  navigate("/");
-                }}
-                className=" text-white     lg:w-[140px] lg:h-[52px] md:w-[123px] md:h-[42px] w-[100px] h-[36px]    hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm  leading-6  py-[16px] justify-center text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2 "
-              >
-                Find
-              </button>
-            </div>
-          </div>
-          <div className="flex grid grid-cols-6  gap-2 mt-4">
-            <div className="col-span-1 px-4 py-3 w-[170px] h-[81px] space-y-2 rounded-md bg-gray-100">
-              <label className="block text-sm font-medium text-gray-700">
-                Property Type
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-                <option value="">All</option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
-            </div>
+              <div className="flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[292px] xl:h-20 lg:w-[239px] lg:h-[70px] md:w-[160px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white">
+                <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5">
+                  Price(USD)
+                </label>
+                <select className=" w-full rounded-md text-[#312245] font-medium  lg:text-sm text-xs bg-white focus:outline-none">
+                  <option value="">23854 to 52487</option>
+                  <option value="fully-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="partially-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="not-furnished">Washington, street xyz</option>
+                </select>
+              </div>
 
-            <div className="col-span-2 px-4 py-3 w-[370px] h-[81px] space-y-2 rounded-md bg-gray-100">
-              <label className="block text-sm font-medium text-gray-700">
-                Price(USD)
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-                <option value="">Washington, street xyz</option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
-            </div>
+              <div className="flex flex-col justify-center px-4 md:py-3 py-2 w-full xl:w-[292px] xl:h-20 lg:w-[239px] lg:h-[70px] md:w-[160px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white">
+                <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5">
+                  Area (sq. yd.)
+                </label>
+                <select className=" w-full rounded-md text-[#312245] font-medium  lg:text-sm text-xs bg-white focus:outline-none">
+                  <option value="">0 to any</option>
+                  <option value="fully-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="partially-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="not-furnished">Washington, street xyz</option>
+                </select>
+              </div>
 
-            <div className="col-span-2 px-4 py-3 w-[370px] h-[81px] space-y-2 rounded-md bg-gray-100">
-              <label className="block text-sm font-medium text-gray-700">
-                Area (sq. yd.)
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-                <option value="">Washington, street xyz</option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
-            </div>
-
-            <div className="col-span-1 px-4 py-3 w-[165px] h-[81px] space-y-2 rounded-md bg-gray-100">
-              <label className="block text-sm font-medium text-gray-700">
-                Beds
-              </label>
-              <select className=" w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm">
-                <option value="">Washington, street xyz</option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
+              <div className="col-span-1 flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[159px] xl:h-20 lg:w-[140px] lg:h-[70px] md:w-[100px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white">
+                <label className="block lg:text-sm text-xs font-medium uppercase text-[#866FA3] ml-0.5">
+                  Beds
+                </label>
+                <select className=" w-full rounded-md text-[#312245] font-medium lg:text-sm text-xs bg-white focus:outline-none">
+                  <option value="">6</option>
+                  <option value="fully-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="partially-furnished">
+                    Washington, street xyz
+                  </option>
+                  <option value="not-furnished">Washington, street xyz</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>

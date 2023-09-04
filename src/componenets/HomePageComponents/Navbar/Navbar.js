@@ -54,7 +54,7 @@ const NavBar = () => {
 
               <Link
                 to="/about"
-                className="xl:text-base md:text-sm font-normal font-inter  text-white hover:text-white"
+                className="xl:text-base md:text-sm font-normal font-inter font-medium text-white hover:text-white"
               >
                 Plots
               </Link>
