@@ -30,10 +30,10 @@ const FooterIcon1 = () => {
           y2="0.318862"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E09B3D" />
-          <stop offset="0.3" stop-color="#C74C4D" />
-          <stop offset="0.6" stop-color="#C21975" />
-          <stop offset="1" stop-color="#7024C4" />
+          <stop stopColor="#E09B3D" />
+          <stop offset="0.3" stopColor="#C74C4D" />
+          <stop offset="0.6" stopColor="#C21975" />
+          <stop offset="1" stopColor="#7024C4" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_824_5443"
@@ -43,10 +43,10 @@ const FooterIcon1 = () => {
           y2="0.319811"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E09B3D" />
-          <stop offset="0.3" stop-color="#C74C4D" />
-          <stop offset="0.6" stop-color="#C21975" />
-          <stop offset="1" stop-color="#7024C4" />
+          <stop stopColor="#E09B3D" />
+          <stop offset="0.3" stopColor="#C74C4D" />
+          <stop offset="0.6" stopColor="#C21975" />
+          <stop offset="1" stopColor="#7024C4" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_824_5443"
@@ -56,10 +56,10 @@ const FooterIcon1 = () => {
           y2="0.31898"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E09B3D" />
-          <stop offset="0.3" stop-color="#C74C4D" />
-          <stop offset="0.6" stop-color="#C21975" />
-          <stop offset="1" stop-color="#7024C4" />
+          <stop stopColor="#E09B3D" />
+          <stop offset="0.3" stopColor="#C74C4D" />
+          <stop offset="0.6" stopColor="#C21975" />
+          <stop offset="1" stopColor="#7024C4" />
         </linearGradient>
         <clipPath id="clip0_824_5443">
           <rect
@@ -143,8 +143,8 @@ const FooterIcon3 = () => {
           y2="0.625368"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#20B038" />
-          <stop offset="1" stop-color="#60D66A" />
+          <stop stopColor="#20B038" />
+          <stop offset="1" stopColor="#60D66A" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_824_5451"
@@ -154,8 +154,8 @@ const FooterIcon3 = () => {
           y2="0.0670319"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F9F9F9" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#F9F9F9" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <clipPath id="clip0_824_5451">
           <rect

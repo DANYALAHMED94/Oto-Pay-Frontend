@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 * {
-  /* border: 1px solid black; */
+  /* border: 1px solid #000; */
 }
+.hide-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px !important; /* For Chrome, Safari, and Opera */
+}
+  /* border: 1px solid black; */
+
 
 
   /* For Tailwind 2.2 and above */

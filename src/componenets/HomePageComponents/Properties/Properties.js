@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import { Link } from "react-router-dom";
 import leftArrowIcon from "../../../assets/leftArrowIcon.svg";
 import rightArrowIcon from "../../../assets/rightArrowIcon.svg";
 import House1 from "../../../assets/House1.svg";
@@ -9,8 +9,10 @@ import bed from "../../../assets/bed.svg";
 import bath from "../../../assets/bath.svg";
 import area from "../../../assets/area.svg";
 
+// import Dots from "react-multi-carousel/lib/Dots";
 
 const Properties = ({ house }) => {
+  // const navigate = useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const [carousel, setCarousel] = useState(null);
@@ -61,14 +63,14 @@ const Properties = ({ house }) => {
         </button>
       </div>
 
-      <div className=" choose container py-20 space-y-2   ">
-        <div className="flex flex-wrap w-full  gap-[16px] xl:flex-row ">
+      <div className="choose container py-20 space-y-2">
+        <div className="flex flex-wrap items-center w-full  gap-[16px] xl:flex-row ">
           <h1 className=" px-6 xl:text-[32px] lg:text-4xl md:text-3xl text-[21px] leading-[56px] font-bold title-font mb-2 text-[#312245] ">
             Properties
           </h1>
 
-          <a
-            to="/trending"
+          <Link
+            to="/"
             className=" w-[125px] h-[42px] inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-[#A90C0C] hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <svg
@@ -99,7 +101,7 @@ const Properties = ({ house }) => {
             <span className="text-[14px] leading-[18px] font-medium text-[#FFFFFF]">
               Trending
             </span>
-          </a>
+          </Link>
         </div>
 
         <Carousel
@@ -117,8 +119,8 @@ const Properties = ({ house }) => {
           containerclassName="main_card1   relative   pb-10 "
           removeArrowOnDeviceType={["desktop", "tablet"]}
         >
-          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-[310px] h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white  shadow-lg  xl:h-[485px] lg:h-[485px] md:h-72 lg:ml-6   bg-[#FFFFFF]  space-y-[16px] ">
-            <div className="  flex justify-center items-center   ">
+          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
+            <div className="flex justify-center items-center">
               <div className="w-[336px] h-[236px]  ">
                 <img
                   alt="gallery"
@@ -144,38 +146,38 @@ const Properties = ({ house }) => {
               </h2>
             </div>
 
-            <div className="flex gap-6">
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bed}
                   />
                 </div>
-                <p className="text-[#866FA3]">6</p>
+                <p className="text-[#866FA3]">6bed</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bath}
                   />
                 </div>
-                <p className="text-[#866FA3]">3</p>
+                <p className="text-[#866FA3]">3ba</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className="flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={area}
                   />
                 </div>
-                <p className="text-[#866FA3]">1155 sqft to 2684 sqft</p>
+                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
               </div>
             </div>
             <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
@@ -188,8 +190,8 @@ const Properties = ({ house }) => {
             </div>
           </div>
 
-          <div className="2xl:w-[384px] xl:w-[384px]  lg:w-[420px]  md:w-[330px]  w-[310px] h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white  shadow-lg  xl:h-[485px] lg:h-[485px] md:h-72  xl:ml-4 lg:ml-6 bg-[#FFFFFF]  space-y-[16px] ">
-            <div className="  flex justify-center items-center   ">
+          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
+            <div className="flex justify-center items-center">
               <div className="w-[336px] h-[236px]  ">
                 <img
                   alt="gallery"
@@ -215,38 +217,38 @@ const Properties = ({ house }) => {
               </h2>
             </div>
 
-            <div className="flex gap-6">
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bed}
                   />
                 </div>
-                <p className="text-[#866FA3]">6</p>
+                <p className="text-[#866FA3]">6bed</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bath}
                   />
                 </div>
-                <p className="text-[#866FA3]">3</p>
+                <p className="text-[#866FA3]">3ba</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className="flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={area}
                   />
                 </div>
-                <p className="text-[#866FA3]">1155 sqft to 2684 sqft</p>
+                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
               </div>
             </div>
             <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
@@ -259,8 +261,8 @@ const Properties = ({ house }) => {
             </div>
           </div>
 
-          <div className="2xl:w-[384px] xl:w-[384px]  lg:w-[420px]  md:w-[330px]  w-[310px] h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white  shadow-lg  xl:h-[485px] lg:h-[485px] md:h-72   xl:ml-4  lg:ml-6 bg-[#FFFFFF]   space-y-[16px] ">
-            <div className="  flex justify-center items-center   ">
+          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
+            <div className="flex justify-center items-center">
               <div className="w-[336px] h-[236px]  ">
                 <img
                   alt="gallery"
@@ -286,38 +288,38 @@ const Properties = ({ house }) => {
               </h2>
             </div>
 
-            <div className="flex gap-6">
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bed}
                   />
                 </div>
-                <p className="text-[#866FA3]">6</p>
+                <p className="text-[#866FA3]">6bed</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className=" flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={bath}
                   />
                 </div>
-                <p className="text-[#866FA3]">3</p>
+                <p className="text-[#866FA3]">3ba</p>
               </div>
 
-              <div className=" flex  items-center gap-2 ">
-                <div className=" w-4 h-4     ">
+              <div className="flex items-center justify-center">
+                <div className="mt-1">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={area}
                   />
                 </div>
-                <p className="text-[#866FA3]">1155 sqft to 2684 sqft</p>
+                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
               </div>
             </div>
             <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">

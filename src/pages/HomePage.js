@@ -11,14 +11,14 @@ import Banner from "../componenets/HomePageComponents/banner/Banner";
 const HomePage = () => {
   return (
     <>
-    <Banner/>
-    <Properties />
+      <Banner />
+      <Properties />
       <Projects />
       <PropertyTypes />
-    <Reviews />
-<Contact />
-<Newsletter />
-<Locations />
+      <Reviews />
+      <Contact />
+      <Newsletter />
+      <Locations />
     </>
   );
 };

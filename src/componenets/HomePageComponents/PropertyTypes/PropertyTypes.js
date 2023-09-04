@@ -1,5 +1,5 @@
 import React from "react";
-
+// import { useNavigate } from "react-router-dom";
 import PropertyIcon1 from "../../../assets/PropertyIcon1.svg";
 import PropertyIcon2 from "../../../assets/PropertyIcon2.svg";
 import PropertyIcon3 from "../../../assets/PropertyIcon3.svg";
@@ -8,6 +8,7 @@ import PropertyIcon5 from "../../../assets/PropertyIcon5.svg";
 import PropertyIcon6 from "../../../assets/PropertyIcon6.svg";
 
 const PropertyTypes = () => {
+  // const navigate = useNavigate();
 
   return (
     <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6  text-black-600 body-font flex justify-center items-center overflow-hidden ">
@@ -18,7 +19,7 @@ const PropertyTypes = () => {
           </h1>
         </div>
 
-        <div className=" flex-wrap   justify-center justify-items-center   grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-32 lg:gap-y-20 md:gap-x-6 sm:gap-y-8  ">
+        <div className="justify-center justify-items-center   grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-10 lg:gap-y-20 md:gap-x-6 sm:gap-y-8  ">
           <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">

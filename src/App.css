@@ -1,9 +1,7 @@
 .App {
   text-align: center;
 }
-* {
-  /* border-top: 1px solid black; */
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,4 +35,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+.swiper-slide {
+  height: 120px !important;
+  width: 120px !important;
+}
+.swiper-wrapper {
+  padding: 0px 20px;
+  width: 900px;
+}
+.swiper-button-next.swiper-button-disabled {
+  background: rgb(177, 176, 176) !important;
+  display: none;
+}
+.swiper-button-prev.swiper-button-disabled {
+  background: rgb(177, 176, 176) !important;
+  display: none;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background: black; /* Remove the default arrow background */
+  width: 80px !important;
+  height: 120px !important;
+  color: white; /* Color of your button's text or icon */
+  margin-top: -60px !important;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  line-height: 120px; /* Vertically center content inside the button */
+}
+
+.swiper-button-prev {
+  margin-left: -10px;
+}
+
+.swiper-button-next {
+  margin-right: -10px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 10px !important;
+  color: white !important;
+  font-weight: 600;
 }
