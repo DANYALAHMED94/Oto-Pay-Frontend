@@ -1,12 +1,10 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
 import project1 from "../../../assets/project1.svg"
 import project2 from "../../../assets/project2.svg"
 import project3 from "../../../assets/project3.svg"
 import project4 from "../../../assets/project4.svg"
 const Projects = () => {
-  const navigate = useNavigate();
 
   return (
     <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6 text-black-600 body-font flex justify-center items-center  relative z-0 ">

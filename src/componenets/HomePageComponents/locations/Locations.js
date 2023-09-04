@@ -1,9 +1,7 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
 import arrow1 from '../../../assets/arrow1.svg'
 const Locations = () => {
-  const navigate = useNavigate();
 
   return (
     <section className=" 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6 bg-[#F6F6F6] text-black-600 body-font flex justify-center items-center overflow-hidden ">
@@ -17,7 +15,7 @@ const Locations = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap   justify-center justify-items-center   grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-32 lg:gap-y-20 md:gap-x-6 sm:gap-y-8  ">
+        <div className="  flex-wrap   justify-center justify-items-center   grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-32 lg:gap-y-20 md:gap-x-6 sm:gap-y-8  ">
           <div className="2xl:w-[320px] xl:w-[280px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-4 mt-8 rounded-lg bg-white-900 text-white  shadow-lg   bg-[#F5FEFF]  dark:bg-[#04505B] ">
          
             <div className="w-full ">

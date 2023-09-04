@@ -32,7 +32,7 @@ export default function DashboardPage() {
   };
   return (
     <div className="lg:flex block relative h-screen bg-white z-10">
-      <div className=" sidebar xl:w-[323px] sxl:w-[300px] lg:w-[290px]  bg-gray-100    lg:h-full md:h-[48px] h-[56px] xl:overflow-y-auto lg:overflow-y-auto overflow-y-hidden overflow-x-hidden lg:absolute  flex lg:flex-row flex-col items-center justify-center  ">
+      <div className=" sidebar xl:w-[323px] sxl:w-[300px] lg:w-[290px]  bg-gray-100    lg:h-full md:h-[48px] h-[56px] xl:overflow-y-auto sxl:overflow-y-auto lg:overflow-y-auto overflow-y-hidden overflow-x-hidden lg:absolute  flex lg:flex-row flex-col items-center justify-center  ">
         <div className="  self-start  relative z-10  h-10 w-10 ">
           <img
             src={menu}
@@ -54,7 +54,7 @@ export default function DashboardPage() {
 
          
         </div>
-        <div className=" w-full h-full    xl:gap-6  lg:gap-4  justify-center bg-white  xl:py-6 lg:py-0 py-2  items-between xl:block lg:block hidden   ">
+        <div className=" w-full h-full    xl:gap-6  lg:gap-4  justify-center bg-white  lg:py-12 py-2  items-between xl:block lg:block hidden   ">
           <div className="xl:py-4  lg:py-0 -full xl:w-[323px] sxl:w-[300px] lg:w-[290px] lg:flex  flex-col  items-center justify-center bg-white   ">
             <div className="  w-[282px] gap-4 xl:text-[24px] lg:text-xl font-semi-bold  leading-[31px]  text-center flex items-center justify-center  xl:px-[24px] lg:px-[20px]">
               <img

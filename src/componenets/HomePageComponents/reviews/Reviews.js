@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useNavigate } from "react-router-dom";
 import user1 from "../../../assets/user1.svg"
 import stars from "../../../assets/stars.svg"
 import leftArrowIcon from "../../../assets/leftArrowIcon.svg"
@@ -9,7 +8,6 @@ import rightArrowIcon from "../../../assets/rightArrowIcon.svg"
 
 
 const Reviews= () => {
-  const navigate = useNavigate();
   const [carouselRef, setCarouselRef] = useState(null);
   const responsive = {
     desktop: {

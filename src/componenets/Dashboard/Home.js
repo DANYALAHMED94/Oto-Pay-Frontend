@@ -1,7 +1,5 @@
 import React from "react";
-import { SearchOutlined } from "@ant-design/icons";
-import { Button, Input, Select, Space } from "antd";
-import Logo2 from "../../assets/OTO.svg";
+
 import profile from "../../assets/profilePic.svg";
 import Calendar from "./Calendar";
 import Cards from "./Cards";
