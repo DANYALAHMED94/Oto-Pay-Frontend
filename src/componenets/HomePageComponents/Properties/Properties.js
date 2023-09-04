@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useNavigate } from "react-router-dom";
 
 import leftArrowIcon from "../../../assets/leftArrowIcon.svg";
 import rightArrowIcon from "../../../assets/rightArrowIcon.svg";
@@ -10,10 +9,8 @@ import bed from "../../../assets/bed.svg";
 import bath from "../../../assets/bath.svg";
 import area from "../../../assets/area.svg";
 
-import Dots from "react-multi-carousel/lib/Dots";
 
 const Properties = ({ house }) => {
-  const navigate = useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const [carousel, setCarousel] = useState(null);
@@ -71,7 +68,7 @@ const Properties = ({ house }) => {
           </h1>
 
           <a
-            href="#"
+            to="/trending"
             className=" w-[125px] h-[42px] inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-[#A90C0C] hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <svg

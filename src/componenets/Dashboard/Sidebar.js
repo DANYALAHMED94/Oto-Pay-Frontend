@@ -5,7 +5,6 @@ import logout from "../../assets/logoutIcon.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   HomeIcon,
-  SettingIcon,
   CancelIcon,
   PropertyIcon,
   TenantsIcon,
