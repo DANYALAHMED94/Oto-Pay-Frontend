@@ -16,7 +16,7 @@ const Locations = () => {
           </p>
         </div>
 
-        <div className="w-full grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-32 lg:gap-y-20 md:gap-x-6 sm:gap-y-8">
+        <div className="w-full grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-10 lg:gap-y-20 md:gap-x-6 sm:gap-y-8">
           <div className="w-full h-auto p-4 mt-8 rounded-lg bg-white-900 text-white  shadow-lg   bg-[#F5FEFF]  dark:bg-[#04505B] ">
             <div className="w-full ">
               <h2 className=" 3xl:text-[20px] text-[18px] font-semibold leading-[20px] text-black  rounded-lg  title-font mb-6  ">

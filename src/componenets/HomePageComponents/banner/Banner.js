@@ -5,7 +5,7 @@ import banner from "../../../assets/banner.svg";
 function Banner() {
   const navigate = useNavigate();
   return (
-    <div className="bg-[#F5F5F5] dark:bg-[#07343A] w-full lg:h-[790px] font-inter relative md:h-[400px] xsm:h-[150vh] xxsm:h-[140vh] h-[140vh] overflow-hidden z-0">
+    <div className="bg-[#F5F5F5] dark:bg-[#07343A] w-full lg:h-[790px] font-inter relative md:h-[400px] h-[1000px]  overflow-hidden z-0">
       <section className="w-full h-full body-font relative">
         <div className="w-full flex justify-center items-center h-full relative">
           <div className="w-full h-full absolute flex items-center justify-center ">

@@ -5,7 +5,6 @@ import logout from "../../assets/logoutIcon.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   HomeIcon,
-  SettingIcon,
   CancelIcon,
   PropertyIcon,
   TenantsIcon,
@@ -31,7 +30,7 @@ export default function SideBar({ show, setShow }) {
         <div className="shadow-lg h-full max-w-[318px] xl:w-[318px] bg-white lg:hidden  ">
           <div className=" w-full flex items-center justify-between mt-4 px-4">
             <p className=" font-normal text-[14px] text-gray-500 ml-5">
-              jon Project
+             
             </p>
             <CancelIcon
               color={"red"}

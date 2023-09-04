@@ -4,7 +4,7 @@ import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
 import rating from "../../assets/rating.svg";
-import update from "../../assets/update.svg";
+// import update from "../../assets/update.svg";
 
 function PropertyCard() {
   return (

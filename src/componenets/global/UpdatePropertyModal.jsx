@@ -9,33 +9,33 @@ import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 
 export default function UpdatePropertyModal() {
-  const [file, setFile] = useState();
+  // const [file, setFile] = useState();
   const [showModal, setShowModal] = useState(true);
 
-  const handlefile = (event) => {
-    setFile(event.target.files[0]);
-  };
-  const handleFormData = (values) => {
-    var formData = new FormData();
-    formData.append("name", values?.name);
-    if (!!file) formData.append("agreement", file);
-    formData.append("email", values?.email);
-    formData.append("DOB", values?.DOB);
-    formData.append("phoneNumber", values?.phoneNumber);
-    formData.append("jobTitle", values?.jobTitle);
-    formData.append("joiningDate", values?.joiningDate);
-    formData.append("totalYearExperince", values?.totalYearExperince);
-    formData.append("guddgeEmailPlan", values?.guddgeEmailPlan);
-    formData.append("agreementEndDate", values?.agreementEndDate);
-    formData.append("shore", values?.shore);
-    formData.append("contractorRate", values?.contractorRate);
-    formData.append("companyName", values?.companyName);
-    formData.append("identificationNumber", values?.identificationNumber);
-    formData.append("socialSecurityNumber", values?.socialSecurityNumber);
-    formData.append("mailingAddress", values?.mailingAddress);
-    formData.append("alternativeEmailAdress", values?.alternativeEmailAdress);
-    return formData;
-  };
+  // const handlefile = (event) => {
+  //   setFile(event.target.files[0]);
+  // };
+  // const handleFormData = (values) => {
+  //   var formData = new FormData();
+  //   formData.append("name", values?.name);
+  //   if (!!file) formData.append("agreement", file);
+  //   formData.append("email", values?.email);
+  //   formData.append("DOB", values?.DOB);
+  //   formData.append("phoneNumber", values?.phoneNumber);
+  //   formData.append("jobTitle", values?.jobTitle);
+  //   formData.append("joiningDate", values?.joiningDate);
+  //   formData.append("totalYearExperince", values?.totalYearExperince);
+  //   formData.append("guddgeEmailPlan", values?.guddgeEmailPlan);
+  //   formData.append("agreementEndDate", values?.agreementEndDate);
+  //   formData.append("shore", values?.shore);
+  //   formData.append("contractorRate", values?.contractorRate);
+  //   formData.append("companyName", values?.companyName);
+  //   formData.append("identificationNumber", values?.identificationNumber);
+  //   formData.append("socialSecurityNumber", values?.socialSecurityNumber);
+  //   formData.append("mailingAddress", values?.mailingAddress);
+  //   formData.append("alternativeEmailAdress", values?.alternativeEmailAdress);
+  //   return formData;
+  // };
   return (
     <>
       {showModal ? (

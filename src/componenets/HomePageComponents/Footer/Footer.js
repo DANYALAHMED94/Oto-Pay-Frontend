@@ -8,9 +8,9 @@ import {
   FooterIcon3,
 } from "../../../iconComponent/FooterImages";
 function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
   return (
     <div>
       <footer className="py-10 bg-[#2E0664] 3xl:px-[70px] 2xl:px-[50px] xl:px-[80px] lg:px-[40px] md:px-[40px] px-6 w-full xl:h-[550px] relative z-0 overflow-hidden ">

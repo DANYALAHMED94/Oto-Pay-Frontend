@@ -15,14 +15,13 @@ const Projects = () => {
             Our Projects
           </h1>
         </div>
-        <div className=" grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 gap-y-5 lg:gap-x-32 lg:gap-y-20 md:gap-x-6 sm:gap-y-8">
+        <div className=" grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 gap-y-5 lg:gap-x-16 lg:gap-y-20 md:gap-x-6 sm:gap-y-8">
           <div className="3xl:w-[420px] 2xl:w-[350px] xl:w-[282px] lg:w-[430px] md:w-[320px] sm:w-[310px] xs:w-[330px] p-6  bg-[#FAFCFF] rounded-2xl  shadow-lg space-y-4">
             <div className=" w-full card_title_flex  space-y-4">
               <img src={project1} className="w-full " alt="" />
               <div className="chooose_title text-base leading-[32px] font-bold text-black dark:text-white text-center">
                 <h1> Tenant screening </h1>
                 <p className="choose_content text-xs font-medium leading-[20px] text-[#717171] dark:text-[#959CB1] ">
-                  {" "}
                   We find and verify the best tenants for your properties,
                   saving you time and hassle
                 </p>
@@ -35,7 +34,6 @@ const Projects = () => {
               <div className="chooose_title text-base leading-[32px] font-bold text-black dark:text-white text-center">
                 <h1> Tenant screening </h1>
                 <p className="choose_content text-xs font-medium leading-[20px] text-[#717171] dark:text-[#959CB1] ">
-                  {" "}
                   We find and verify the best tenants for your properties,
                   saving you time and hassle
                 </p>
@@ -49,7 +47,6 @@ const Projects = () => {
               <div className="chooose_title text-base leading-[32px] font-bold text-black dark:text-white text-center">
                 <h1> Tenant screening </h1>
                 <p className="choose_content text-xs font-medium leading-[20px] text-[#717171] dark:text-[#959CB1] ">
-                  {" "}
                   We find and verify the best tenants for your properties,
                   saving you time and hassle
                 </p>
@@ -63,7 +60,6 @@ const Projects = () => {
               <div className="chooose_title text-base leading-[32px] font-bold text-black dark:text-white text-center">
                 <h1> Tenant screening </h1>
                 <p className="choose_content text-xs font-medium leading-[20px] text-[#717171] dark:text-[#959CB1] ">
-                  {" "}
                   We find and verify the best tenants for your properties,
                   saving you time and hassle
                 </p>

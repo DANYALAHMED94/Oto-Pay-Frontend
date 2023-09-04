@@ -1,53 +1,95 @@
 import React from "react";
-import { SearchOutlined } from "@ant-design/icons";
-import { Button, Input, Select, Space } from "antd";
 
+import profile from "../../assets/profilePic.svg";
+import Calendar from "./Calendar";
+import Cards from "./Cards";
 const Home = () => {
-  const { Search } = Input;
-
-  const options = [
-    {
-      value: "zhejiang",
-      label: "Zhejiang",
-    },
-    {
-      value: "jiangsu",
-      label: "Jiangsu",
-    },
-  ];
   return (
-    <div className="lg:w-full md:w-[700px] md:px-5">
-      <div className="flex items-center pb-6 border-b lg:justify-between gap-2 lg:flex-row md:justify-between md:flex-row  flex-col justify-center my-2">
-        <div className="w-[1061px] px-4">
-          <p>Hi, Mark Smith ! Welcome To OTO~PAY 👋</p>
+    <div className="w-full bg-gray-100 px-[16px] lg:py-[24px] md:py-[18px] py-[8px] ">
+      <div className="flex w-full  items-center  lg:justify-between gap-4  flex-col justify-center ">
+        <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg">
+          <p className="text-white font-bold xl:text-[28px] lg:text-xl md:text-xl text-sm leading-[36px] ">
+            Hi, Mark Smith ! Welcome To OTO~PAY 👋
+          </p>
 
-          <div className=" w-[602px] mt-6 flex  gap-x-4  flex items-center">
-            <div className=" flex gap-4">
+          <div className=" w-full mt-6 flex  gap-x-4  flex justify-between items-center">
+            <div className=" border border-white flex gap-3 p-2 xl:w-[490px] lg:w-[370px] md:w-[370px] w-full h-auto bg-[#F6F6F6] rounded-md   flex justify-between items-center">
               <svg
-                className="xl:w-[22px] xl:h-[23px] md:w-[16px] md:h-[16px]"
-                viewBox="0 0 22 23"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M21 21.5L19 19.5M10.5 20.5C11.7476 20.5 12.9829 20.2543 14.1355 19.7769C15.2881 19.2994 16.3354 18.5997 17.2175 17.7175C18.0997 16.8354 18.7994 15.7881 19.2769 14.6355C19.7543 13.4829 20 12.2476 20 11C20 9.75244 19.7543 8.5171 19.2769 7.36451C18.7994 6.21191 18.0997 5.16464 17.2175 4.28249C16.3354 3.40033 15.2881 2.70056 14.1355 2.22314C12.9829 1.74572 11.7476 1.5 10.5 1.5C7.98044 1.5 5.56408 2.50089 3.78249 4.28249C2.00089 6.06408 1 8.48044 1 11C1 13.5196 2.00089 15.9359 3.78249 17.7175C5.56408 19.4991 7.98044 20.5 10.5 20.5Z"
-                  stroke="white"
-                  strokeWidth="1.5"
+                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                  stroke="#5A4278"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M21.0004 20.9984L16.6504 16.6484"
+                  stroke="#5A4278"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
+
               <input
-                id="email-address"
+                id="search"
                 name="search"
-                type="search"
-                autoComplete="email"
+                type="text"
                 required
-                className="w-[390px] h-[53px] flex-auto rounded-md border-0 bg-white px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                placeholder="example@email.com"
+                className="w-full  xl:h-[48px] lg:h-[40px] md:h-[40px] h-[32px] flex-auto  px-2 py-2 text-black  focus:outline-none bg-[#F6F6F6]  sm:text-sm sm:leading-6"
+                placeholder="Search"
               />
             </div>
+
+            <div className="flex  justify-between gap-4 items-center xl:flex lg:flex md:flex hidden">
+              <div className="xl:h-16 xl:w-16 lg:w-[60px] lg:[60px] md:w-[60px] md:h-[60px] p-4 bg-gray-100  rounded-lg shadow-lg rounded-lg flex justify-center items-center ">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 8C6 6.4087 6.63214 4.88258 7.75736 3.75736C8.88258 2.63214 10.4087 2 12 2C13.5913 2 15.1174 2.63214 16.2426 3.75736C17.3679 4.88258 18 6.4087 18 8C18 15 21 17 21 17H3C3 17 6 15 6 8Z"
+                    stroke="#312245"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M10.3 21C10.4674 21.3044 10.7134 21.5583 11.0125 21.7352C11.3115 21.912 11.6526 22.0053 12 22.0053C12.3474 22.0053 12.6885 21.912 12.9875 21.7352C13.2865 21.5583 13.5326 21.3044 13.7 21"
+                    stroke="#312245"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <div className="text-[24px] font-semi-bold  leading-[31px]  text-center flex items-center justify-center gap-[10px]  ">
+                <img
+                  className="xl:h-[70px] xl:w-[70px]  rounded-full lg:h-[60px] lg:w-[60px]  md:h-14 md:w-16 h-16 w-16 flex items-center justify-center   "
+                  src={profile}
+                  alt="property-logo"
+                />
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div className="w-full">
+          <Calendar />
+        </div>
+
+        <div className="w-full">
+          <Cards />
         </div>
       </div>
     </div>

@@ -4,8 +4,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xsm: "420px",
+        xsm: "425px",
         xxsm: "375px",
+        xl: "1440px",
+        sxl: "1366px",
+        xlg: "1280px",
+        lg: "1024px",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

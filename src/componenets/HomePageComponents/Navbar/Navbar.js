@@ -4,9 +4,7 @@ import Logo from "../../../assets/logo.svg";
 
 const NavBar = () => {
   const [open, setOpen] = React.useState(false);
-  const [flyer, setFlyer] = React.useState(false);
-  const [flyerTwo, setFlyerTwo] = React.useState(false);
-  console.log(flyerTwo);
+
   return (
     <>
       <div className=" bg-[#2E0664] sticky top-0 w-[100%]  2xl:h-[90px] xl:h-[87px] lg:h-[80px] md:h-[60px] h-[62px] 3xl:px-[90px]  2xl:px-[70px] xl:px-[120px] lg:px-[60px] md:px-[45px] px-5 z-50 ">

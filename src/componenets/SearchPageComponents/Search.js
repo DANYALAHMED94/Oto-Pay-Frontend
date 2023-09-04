@@ -6,9 +6,9 @@ function Search() {
   return (
     <div className="bg-[#D9CFE3] w-full xl:h-[300px] font-inter relative md:h-[300px] h-auto overflow-hidden ">
       <section className="w-full h-full body-font md:px-[120px] md:py-[40px] px-10">
-        <div className="md:h-full h-[80%] xl:w-[1016px] lg:w-[870px] md:w-[650px] w-full py-[40px] md:px-[32px] rounded-xl xl:gap-2 lg:gap-6 md:gap-2 gap-4 flex flex-col items-center justify-center">
-          <div className="xl:mt-6 lg:mt-6 mt-0 w-full">
-            <div className="w-full flex md:flex-row flex-col gap-4 mt-4">
+        <div className="md:h-full h-[80%] xl:w-auto lg:w-auto w-full py-[40px] md:px-[32px] rounded-xl xl:gap-2 lg:gap-6 md:gap-2 gap-4 flex flex-col items-center justify-center">
+          <div className="xl:mt-6 lg:mt-6 mt-0 w-full xl:flex flex-col justify-center items-center">
+            <div className="flex md:flex-row flex-col gap-4 mt-4">
               <div className="col-span-1 px-4 flex flex-col py-2 md:py-0 justify-center xl:w-[198px] xl:h-20 lg:w-[170px] lg:h-[70px] md:w-[170px] md:h-[50px] w-full xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-white ">
                 <label className="block lg:text-sm text-xs uppercase font-medium text-[#866FA3] ml-0.5 ">
                   City
