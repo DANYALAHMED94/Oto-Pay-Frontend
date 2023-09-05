@@ -2,9 +2,12 @@ import React, { useRef, useState } from "react";
 import Image from "../../assets/image-plus.svg";
 import FormSlider from "./FormSlider";
 
-function FileInput() {
+function FileInput({ info }) {
   const [isDragOver, setIsDragOver] = useState(false);
   const [files, setFiles] = useState([]);
+  // const [previewImage, setPreviewImage] = useState(null);
+  const [state, setState] = useState("tenant");
+
   const fileInputRef = useRef(null);
 
   const onDragOver = (e) => {
@@ -47,51 +50,98 @@ function FileInput() {
   };
 
   return (
-    <div className="w-full mt-5">
-      <div className="space-y-1">
-        <p className="text-[#312245] text-base font-bold leading-5">
-          Upload Property Pictures
-        </p>
-        <p className="text-[#5A4278] text-sm font-medium leading-4">
-          Up to 30 Images
-        </p>
-      </div>
-      <div
-        className={`flex w-full flex-col mt-3 items-center lg:py-32 md:py-20 py-14 px-8 ${
-          isDragOver ? "bg-gray-300" : "bg-transparent"
-        } border-2 border-dashed border-[#866FA3] rounded`}
-        onDragOver={onDragOver}
-        onDragLeave={onDragLeave}
-        onDrop={onDrop}
-      >
-        <label htmlFor="file-upload" className="cursor-pointer">
-          <img src={Image} alt="drag&drop" />
-        </label>
-        <label
-          className="block text-[#312245] cursor-pointer text-center text-2xl font-normal leading-8 mb-2"
-          htmlFor="file-upload"
-        >
-          Drag & Drop <br /> or
-          <span className="font-semibold"> &nbsp;Browse</span>
-        </label>
-        <input
-          className="hidden"
-          type="file"
-          id="file-upload"
-          ref={fileInputRef}
-          onChange={onFileInputChange}
-          accept=".png,.jpeg,.jpg,.mp4"
-          multiple
-        />
-        <button
-          className="text-xs font-medium leading-4"
-          onClick={onBrowseClick}
-        >
-          Supports : JPEG,JPG,PNG Video
-        </button>
-      </div>
-      {files?.length > 0 ? <FormSlider files={files} /> : null}
-    </div>
+    <>
+      {state === "update" ? (
+        <div className="w-full mt-5">
+          <div className="space-y-1">
+            <p className="text-[#312245] text-base font-bold leading-5">
+              Upload Property Pictures
+            </p>
+            <p className="text-[#5A4278] text-sm font-medium leading-4">
+              Up to 30 Images
+            </p>
+          </div>
+          <div
+            className={`flex w-full flex-col mt-3 items-center lg:py-32 md:py-20 py-14 px-8 ${
+              isDragOver ? "bg-gray-300" : "bg-transparent"
+            } border-2 border-dashed border-[#866FA3] rounded`}
+            onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
+            onDrop={onDrop}
+            onClick={() => setState("")}
+          >
+            <label htmlFor="file-upload" className="cursor-pointer">
+              <img src={Image} alt="drag&drop" />
+            </label>
+            <label
+              className="block text-[#312245] cursor-pointer text-center text-2xl font-normal leading-8 mb-2"
+              htmlFor="file-upload"
+            >
+              Drag & Drop <br /> or
+              <span className="font-semibold"> &nbsp;Browse</span>
+            </label>
+            <input
+              className="hidden"
+              type="file"
+              id="file-upload"
+              ref={fileInputRef}
+              onChange={onFileInputChange}
+              accept=".png,.jpeg,.jpg,.mp4"
+              multiple
+            />
+            <button
+              className="text-xs font-medium leading-4"
+              onClick={onBrowseClick}
+            >
+              Supports : JPEG,JPG,PNG Video
+            </button>
+          </div>
+          {files?.length > 0 ? <FormSlider files={files} /> : null}
+        </div>
+      ) : (
+        <div className="w-full mt-5">
+          <div className="space-y-1">
+            <p className="text-[#312245] w-full text-center text-base font-bold leading-5">
+              {` Upload ${info} Picture`}
+            </p>
+          </div>
+          <div
+            className={`flex w-full flex-col mt-3 items-center lg:py-20 md:py-20 py-14 px-8 ${
+              isDragOver ? "bg-gray-300" : "bg-transparent"
+            } border-2 border-dashed border-[#866FA3] rounded`}
+            onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
+            onDrop={onDrop}
+          >
+            <label htmlFor="file-upload" className="cursor-pointer">
+              <img src={Image} alt="drag&drop" />
+            </label>
+            <label
+              className="block text-[#312245] cursor-pointer text-center text-2xl font-normal leading-8 mb-2"
+              htmlFor="file-upload"
+            >
+              Drag & Drop <br /> or
+              <span className="font-semibold"> &nbsp;Browse</span>
+            </label>
+            <input
+              className="hidden"
+              type="file"
+              id="file-upload"
+              ref={fileInputRef}
+              // onChange={(e) => setPreviewImage(e.target.value)}
+              accept=".png,.jpeg,.jpg,.mp4"
+              multiple
+            />
+            <button
+              className="text-xs font-medium leading-4"
+              onClick={onBrowseClick}
+            >
+              Supports : JPEG,JPG,PNG
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

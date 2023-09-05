@@ -37,11 +37,11 @@ export const PropertyModal = () => {
                 <div className="px-3">
                   <div className="relative h-[533px] space-y-5 py-5 overflow-y-auto bg-[#E4DFEB] rounded-2xl">
                     <div className="flex w-full gap-x-3 md:px-0 px-5 items-start justify-center">
-                      <PropertyModalCard />
+                      <PropertyModalCard width={"[900px]"} />
                       <input type="checkbox" />
                     </div>
                     <div className="flex w-full gap-x-3 md:px-0 px-5 items-start justify-center">
-                      <PropertyModalCard />
+                      <PropertyModalCard width={"[900px]"} />
                       <input type="checkbox" />
                     </div>
                   </div>

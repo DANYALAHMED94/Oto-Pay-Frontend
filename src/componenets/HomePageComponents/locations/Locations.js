@@ -6,17 +6,17 @@ const Locations = () => {
 
   return (
     <section className=" 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6 bg-[#F6F6F6] text-black-600 body-font flex justify-center items-center overflow-hidden">
-      <div className="choose container py-4 space-y-16">
-        <div className="flex flex-wrap w-full flex-col items-center">
-          <h1 className="3xl:text-[50px] xl:text-[45px] lg:text-4xl md:text-3xl text-[24px] font-lg font-bold title-font mb-2 text-[#312245] ">
+      <div className="choose container pb-8">
+        <div className="flex w-full flex-col items-center">
+          <h1 className="3xl:text-[50px] xl:text-[45px] lg:text-4xl md:text-3xl text-[24px] font-lg font-bold title-font md:mb-2 text-[#312245] ">
             Browse Property Locations
           </h1>
-          <p className="lg:w-[530px] md:[520px] xl:text-lg lg:text-lg md:text-lg text-base font-normal leading-[29px] text-[#312245] mt-4 text-center ">
+          <p className="lg:w-[530px] md:[520px] xl:text-lg lg:text-lg md:text-lg text-base font-normal md:leading-7 text-[#312245] md:mt-4 text-center ">
             Most Popular Locations for Plots
           </p>
         </div>
 
-        <div className="w-full grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-10 lg:gap-y-20 md:gap-x-6 sm:gap-y-8">
+        <div className="w-full grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-10 lg:gap-y-3 md:gap-x-6 md:gap-y-0 sm:gap-y-8">
           <div className="w-full h-auto p-4 mt-8 rounded-lg bg-white-900 text-white  shadow-lg   bg-[#F5FEFF]  dark:bg-[#04505B] ">
             <div className="w-full ">
               <h2 className=" 3xl:text-[20px] text-[18px] font-semibold leading-[20px] text-black  rounded-lg  title-font mb-6  ">

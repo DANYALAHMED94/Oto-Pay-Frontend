@@ -7,19 +7,23 @@ import rating from "../../assets/rating.svg";
 
 const PropertyModalCard = () => {
   return (
-    <div className="lg:w-[900px] md:w-[650px] w-full h-auto xsm:p-6 p-3 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] flex lg:flex-row flex-col gap-8 ">
-      <div className="lg:w-[534px] w-full h-auto">
-        <img
-          alt="gallery"
-          className="w-full object-cover h-full rounded-lg object-center block"
-          src={House1}
-        />
+    <div
+      className={`lg:w-[900px] md:w-[650px] w-full h-auto xsm:p-6 p-3 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] flex lg:flex-row flex-col gap-x-8`}
+    >
+      <div className="container">
+        <div className="w-full">
+          <img
+            alt="gallery"
+            className="w-full object-cover h-full rounded-lg object-center block"
+            src={House1}
+          />
+        </div>
       </div>
 
       <div className="lg:w-[320px] w-full h-auto space-y-[20px]">
         <div className="md:w-[586px] lg:w-full w-full space-y-[11px]">
           <h2
-            className=" 3xl:text-[18px] text-[28px] font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
+            className=" 3xl:text-[18px] lg:mt-0 mt-3 text-[28px] font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
   "
           >
             $8,827648
@@ -41,7 +45,7 @@ const PropertyModalCard = () => {
               src={rating}
             />
           </div>
-          <p className="text-[#5A4278] w-full md:text-base text-sm leading-[18.2px] font-medium">
+          <p className="text-[#5A4278] w-full text-xs leading-[18.2px] font-medium">
             As you approach the property, a picturesque driveway winds through
             lush gardens and old-growth trees, creating an immediate sense of
             seclusion and privacy. The exterior boasts a classic architectural
@@ -80,7 +84,7 @@ const PropertyModalCard = () => {
                   src={area}
                 />
               </div>
-              <p className="text-[#866FA3] md:text-sm text-[11px]">
+              <p className="text-[#866FA3] md:text-sm text-xs whitespace-nowrap">
                 1155sqft to 2684sqft
               </p>
             </div>
