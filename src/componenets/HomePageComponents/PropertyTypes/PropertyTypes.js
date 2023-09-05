@@ -11,16 +11,16 @@ const PropertyTypes = () => {
   // const navigate = useNavigate();
 
   return (
-    <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6  text-black-600 body-font flex justify-center items-center overflow-hidden ">
-      <div className="choose container py-24  space-y-16 ">
-        <div className="flex flex-wrap w-full  mb-8 flex-col items-center">
-          <h1 className="text-[#312245] 3xl:text-[50px] xl:text-[45px] lg:text-4xl md:text-3xl text-[24px] font-lg font-bold title-font mb-2  ">
+    <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6 text-black-600 body-font flex justify-center items-center overflow-hidden ">
+      <div className="choose container md:py-16 pt-4 pb-8">
+        <div className="flex flex-wrap w-full lg:py-5 flex-col items-center">
+          <h1 className="text-[#312245] 3xl:text-[50px] xl:text-[45px] lg:text-4xl md:text-3xl text-[24px] font-lg font-bold title-font mb-2">
             Browse Property Types
           </h1>
         </div>
 
-        <div className="justify-center justify-items-center   grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-x-10 lg:gap-y-20 md:gap-x-6 sm:gap-y-8  ">
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-col-1 3xl:gap-40 2xl:gap-x-16 xl:gap-x-7 xl:gap-y-12 lg:gap-10 md:gap-x-6 md:gap-y-0 sm:gap-y-8">
+          <div className=" w-full h-auto p-6 md:mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72 bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img
@@ -48,7 +48,7 @@ const PropertyTypes = () => {
             </div>
           </div>
 
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+          <div className=" w-full h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img
@@ -76,7 +76,7 @@ const PropertyTypes = () => {
             </div>
           </div>
 
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+          <div className="w-full h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img
@@ -104,7 +104,7 @@ const PropertyTypes = () => {
             </div>
           </div>
 
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+          <div className="w-full h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img
@@ -132,7 +132,7 @@ const PropertyTypes = () => {
             </div>
           </div>
 
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+          <div className="w-full h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img
@@ -160,7 +160,7 @@ const PropertyTypes = () => {
             </div>
           </div>
 
-          <div className="2xl:w-[380px] xl:w-[340px]  lg:w-[400px]  md:w-[330px]  w-[310px] h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
+          <div className="w-full h-auto p-6 mt-8 rounded-lg bg-white-900 text-white  space-y-6 shadow-lg  xl:h-72 md:h-72  bg-[#FAFCFF]">
             <div className=" rounded-lg flex justify-center items-center   ">
               <div className="h-20 w-20 p-4  rounded-lg shadow-lg ">
                 <img

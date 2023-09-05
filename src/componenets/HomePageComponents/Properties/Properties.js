@@ -53,19 +53,19 @@ const Properties = ({ house }) => {
   };
 
   return (
-    <section className=" bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6  text-black-600 body-font flex justify-center items-center gap-4 relative z-0 ">
+    <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6  text-black-600 body-font flex justify-center items-center gap-4 relative z-0 ">
       <div
         onClick={handlePrevClick}
-        className=" w-[56px] h-[48px] bg-[#F6F6F6] rounded-lg flex justify-center shadow-lg"
+        className=" w-[56px] h-[48px] bg-[#F6F6F6] border rounded-lg flex justify-center shadow-lg"
       >
         <button className="text-black">
           <img src={leftArrowIcon} alt="Left Arrow" />
         </button>
       </div>
 
-      <div className="choose container py-20 space-y-2">
+      <div className="choose container md:py-20 py-8 space-y-2">
         <div className="flex flex-wrap items-center w-full  gap-[16px] xl:flex-row ">
-          <h1 className=" px-6 xl:text-[32px] lg:text-4xl md:text-3xl text-[21px] leading-[56px] font-bold title-font mb-2 text-[#312245] ">
+          <h1 className=" px-6 xl:text-[32px] lg:text-4xl md:text-3xl text-[21px] md:leading-[56px] font-bold title-font md:mb-2 text-[#312245] ">
             Properties
           </h1>
 
@@ -116,224 +116,236 @@ const Properties = ({ house }) => {
           autoPlaySpeed={8328823}
           draggable={true}
           transitionDuration={300}
-          containerclassName="main_card1   relative   pb-10 "
+          containerclassName="main_card1 relative pb-10 "
           removeArrowOnDeviceType={["desktop", "tablet"]}
         >
-          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
-            <div className="flex justify-center items-center">
-              <div className="w-[336px] h-[236px]  ">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover  h-full object-center block"
-                  src={House1}
-                />
+          <div className="w-full flex justify-center items-center">
+            <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
+              <div className="flex justify-center items-center">
+                <div className="w-[336px] h-[236px]">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded h-full object-center block"
+                    src={House1}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="w-full">
-              <h2
-                className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
                 "
-              >
-                $8,827648 <br></br>
-                <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
-                  Company Name
-                </span>
-              </h2>
+                >
+                  $8,827648 <br></br>
+                  <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
+                    Company Name
+                  </span>
+                </h2>
 
-              <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
-                Washington ,street xyz
-              </h2>
-            </div>
-
-            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bed}
-                  />
-                </div>
-                <p className="text-[#866FA3]">6bed</p>
+                <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
+                  Washington ,street xyz
+                </h2>
               </div>
 
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bath}
-                  />
+              <div className="flex lg:gap-3 xsm:gap-x-3 gap-x-1">
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bed}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">6bed</p>
                 </div>
-                <p className="text-[#866FA3]">3ba</p>
-              </div>
 
-              <div className="flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={area}
-                  />
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bath}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">3ba</p>
                 </div>
-                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
+
+                <div className="flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="h-full object-center"
+                      src={area}
+                    />
+                  </div>
+                  <p className="text-[#866FA3] md:text-xs lg:text-base">
+                    1155sqft to 2684sqft
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
-              <button
-                type="submit"
-                className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
-              >
-                Lease
-              </button>
+              <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
+                <button
+                  type="submit"
+                  className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
+                >
+                  Lease
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
-            <div className="flex justify-center items-center">
-              <div className="w-[336px] h-[236px]  ">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover  h-full object-center block"
-                  src={House1}
-                />
+          <div className="w-full flex justify-center items-center">
+            <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
+              <div className="flex justify-center items-center">
+                <div className="w-[336px] h-[236px]  ">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded h-full object-center block"
+                    src={House1}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="w-full">
-              <h2
-                className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
                 "
-              >
-                $8,827648 <br></br>
-                <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
-                  Company Name
-                </span>
-              </h2>
+                >
+                  $8,827648 <br></br>
+                  <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
+                    Company Name
+                  </span>
+                </h2>
 
-              <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
-                Washington ,street xyz
-              </h2>
-            </div>
-
-            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bed}
-                  />
-                </div>
-                <p className="text-[#866FA3]">6bed</p>
+                <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
+                  Washington ,street xyz
+                </h2>
               </div>
 
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bath}
-                  />
+              <div className="flex lg:gap-3 xsm:gap-x-3 gap-x-1">
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bed}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">6bed</p>
                 </div>
-                <p className="text-[#866FA3]">3ba</p>
-              </div>
 
-              <div className="flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={area}
-                  />
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bath}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">3ba</p>
                 </div>
-                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
+
+                <div className="flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={area}
+                    />
+                  </div>
+                  <p className="text-[#866FA3] md:text-xs lg:text-base">
+                    1155sqft to 2684sqft
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
-              <button
-                type="submit"
-                className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
-              >
-                Lease
-              </button>
+              <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
+                <button
+                  type="submit"
+                  className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
+                >
+                  Lease
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="2xl:w-[284px] xl:w-[384px]  lg:w-[420px]  md:w-[330px] xl:ml-4  w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg  xl:h-[485px] lg:h-[485px] md:h-auto lg:ml-6 bg-[#FFFFFF] space-y-[16px] ">
-            <div className="flex justify-center items-center">
-              <div className="w-[336px] h-[236px]  ">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover  h-full object-center block"
-                  src={House1}
-                />
+          <div className="w-full flex justify-center items-center">
+            <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
+              <div className="flex justify-center items-center">
+                <div className="w-[336px] h-[236px]  ">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded h-full object-center block"
+                    src={House1}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="w-full">
-              <h2
-                className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className=" 3xl:text-[18px] text-[28px]  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
                 "
-              >
-                $8,827648 <br></br>
-                <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
-                  Company Name
-                </span>
-              </h2>
+                >
+                  $8,827648 <br></br>
+                  <span className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
+                    Company Name
+                  </span>
+                </h2>
 
-              <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
-                Washington ,street xyz
-              </h2>
-            </div>
-
-            <div className="flex lg:gap-6 xsm:gap-x-3 gap-x-1">
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bed}
-                  />
-                </div>
-                <p className="text-[#866FA3]">6bed</p>
+                <h2 className=" 3xl:text-[20px] text-[14px]  font-medium leading-[18px] text-[#5A4278]  rounded-lg  title-font mb-2 ">
+                  Washington ,street xyz
+                </h2>
               </div>
 
-              <div className=" flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={bath}
-                  />
+              <div className="flex lg:gap-3 xsm:gap-x-3 gap-x-1">
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bed}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">6bed</p>
                 </div>
-                <p className="text-[#866FA3]">3ba</p>
-              </div>
 
-              <div className="flex items-center justify-center">
-                <div className="mt-1">
-                  <img
-                    alt="gallery"
-                    className="w-full object-cover h-full object-center block"
-                    src={area}
-                  />
+                <div className=" flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={bath}
+                    />
+                  </div>
+                  <p className="text-[#866FA3]">3ba</p>
                 </div>
-                <p className="text-[#866FA3]">1155sqft to 2684sqft</p>
+
+                <div className="flex items-center justify-center">
+                  <div className="mt-1">
+                    <img
+                      alt="gallery"
+                      className="w-full object-cover h-full object-center block"
+                      src={area}
+                    />
+                  </div>
+                  <p className="text-[#866FA3] md:text-xs lg:text-base">
+                    1155sqft to 2684sqft
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
-              <button
-                type="submit"
-                className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
-              >
-                Lease
-              </button>
+              <div className=" w-full h-[48px] flex lg:justify-start md:justify-start justify-center  ">
+                <button
+                  type="submit"
+                  className=" text-[#17062F] e w-full h-full bg-[#F5FEFF] leading-[20px]  border border-[#17062F] hover:text-white hover:bg-gradient-to-b from-[#3799CC] to-[#374BCC]  rounded-md text-[16px] font-bold px-5 py-2.5 text-center  items-center dark:focus:ring-gray-500  mb-2 "
+                >
+                  Lease
+                </button>
+              </div>
             </div>
           </div>
         </Carousel>
 
-        <div className="flex justify-center gap-2 absolute bottom-0 left-0 right-0 pb-6">
+        <div className="flex justify-center gap-2 absolute bottom-0 left-0 right-0 md:pb-6">
           <button
             className={`w-3 h-3 rounded-full ${
               activeSlide === 0 ? "bg-blue-500" : "bg-gray-400"
@@ -358,7 +370,7 @@ const Properties = ({ house }) => {
       </div>
       <div
         onClick={handleNextClick}
-        className="w-[56px] h-[48px]  bg-[#F6F6F6] rounded-lg flex justify-center shadow-lg"
+        className="w-[56px] h-[48px] bg-[#F6F6F6] rounded-lg flex justify-center shadow-lg"
       >
         <button>
           <img src={rightArrowIcon} alt="Right Arrow" />

@@ -48,12 +48,12 @@ const Reviews = () => {
 
   return (
     <section className="bg-[#D9CFE3] 3xl:px-[70px] mt-0 2xl:px-[50px] xl:px-[40px] lg:px-[40px] md:px-[40px] px-6 text-black-600 body-font flex justify-center items-center relative z-0 ">
-      <div className="choose container lg:py-20 py-10  space-y-16 ">
+      <div className="choose container lg:py-20 pt-5 md:space-y-5 space-y-4 ">
         <div className="flex flex-wrap w-full mb-0 md:mb-8 flex-col items-center">
-          <h1 className=" xl:text-[45px] lg:text-4xl md:text-3xl text-[21px] leading-[56px] font-bold title-font text-[#312245] ">
+          <h1 className=" xl:text-[45px] lg:text-4xl md:text-3xl text-[21px] md:leading-14 leading-7 font-bold title-font text-[#312245] ">
             What our happy clients say
           </h1>
-          <p className="lg:w-[940px] md:w-[520px] w-full xl:text-lg lg:text-lg md:text-lg text-base font-normal leading-[29px] text-[#5A4278] mt-4 text-center ">
+          <p className="lg:w-[940px] md:w-[520px] w-full xl:text-lg lg:text-lg md:text-lg text-base font-normal md:leading-7 text-[#5A4278] md:mt-4 text-center ">
             Elevate your well-being with the power of inspiration! Discover
             daily health tips and motivational quotes to keep you on track.
             Click now to get started on your journey to a healthier and happier
@@ -73,117 +73,123 @@ const Reviews = () => {
           containerclassName="main_card1 relative"
           removeArrowOnDeviceType={["desktop", "laptop", "tablet", "mobile"]}
         >
-          <div className="2xl:w-[384px] xl:w-[384px] lg:w-[400px]  md:w-[330px] w-full h-auto py-[24px] px-[16px] mt-8 rounded-lg bg-white-900 xl:ml-3 text-white  shadow-lg  xl:h-[310px] md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
-            <div className=" rounded-lg flex justify-center items-center   ">
-              <div className="h-20 w-20 ">
+          <div className="w-full flex justify-center items-center">
+            <div className="w-[90%] h-auto py-4 px-[16px] md:mt-8 rounded-lg bg-white-900 xl:ml-3 text-white shadow-lg md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
+              <div className=" rounded-lg flex justify-center items-center">
+                <div className="h-20 w-20 ">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded-full h-full object-center block"
+                    src={user1}
+                  />
+                </div>
+              </div>
+              <div className="rounded-lg flex mt-4 justify-center items-center">
                 <img
                   alt="gallery"
-                  className="w-full object-cover rounded-full h-full object-center block"
-                  src={user1}
+                  className="w-28 object-cover h-full object-center block"
+                  src={stars}
                 />
               </div>
-            </div>
-            <div className="rounded-lg flex ml-6 mt-4 justify-center items-center   ">
-              <img
-                alt="gallery"
-                className="w-28 object-cover h-full object-center block"
-                src={stars}
-              />
-            </div>
-            <div className="w-full">
-              <h2
-                className=" 3xl:text-[20px] text-[18px] font-semibold leading-[20px] text-black dark:text-white rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className="3xl:text-[20px] pt-1 text-[18px] font-semibold leading-[20px] text-black dark:text-white rounded-lg  title-font mb-2
                text-center "
-              >
-                Loverr Smith
-                <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
-                  &nbsp;&nbsp;Tenant
-                </span>
-              </h2>
+                >
+                  Loverr Smith
+                  <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
+                    &nbsp;&nbsp;Tenant
+                  </span>
+                </h2>
 
-              <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
-                I am absolutely thrilled with the exceptional service I received
-                from DreamHome Realty! As a first-time homebuyer, I was
-                navigating the complex world of real estate with a mix of
-                excitement and apprehension. From the moment I connected with
-                DreamHome Realty, they put all my worries to rest.
-              </p>
+                <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
+                  I am absolutely thrilled with the exceptional service I
+                  received from DreamHome Realty! As a first-time homebuyer, I
+                  was navigating the complex world of real estate with a mix of
+                  excitement and apprehension. From the moment I connected with
+                  DreamHome Realty, they put all my worries to rest.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="2xl:w-[384px] xl:w-[384px]  lg:w-[400px]  md:w-[330px]  w-full h-auto py-[24px] px-[16px] mt-8 rounded-lg bg-white-900 text-white  shadow-lg  xl:h-[310px] md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
-            <div className=" rounded-lg flex justify-center items-center   ">
-              <div className="h-20 w-20 ">
+          <div className="w-full flex justify-center items-center">
+            <div className="w-[90%] h-auto py-4 px-[16px] md:mt-8 rounded-lg bg-white-900 xl:ml-3 text-white shadow-lg md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
+              <div className=" rounded-lg flex justify-center items-center">
+                <div className="h-20 w-20 ">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded-full h-full object-center block"
+                    src={user1}
+                  />
+                </div>
+              </div>
+              <div className="rounded-lg flex mt-4 justify-center items-center">
                 <img
                   alt="gallery"
-                  className="w-full object-cover rounded-full h-full object-center block"
-                  src={user1}
+                  className="w-28 object-cover h-full object-center block"
+                  src={stars}
                 />
               </div>
-            </div>
-            <div className="rounded-lg flex ml-6 mt-4 justify-center items-center   ">
-              <img
-                alt="gallery"
-                className="w-28 object-cover h-full object-center block"
-                src={stars}
-              />
-            </div>
-            <div className="w-full ">
-              <h2
-                className=" 3xl:text-[20px] text-[18px] font-semibold leading-[20px] text-black dark:text-white  rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className="3xl:text-[20px] pt-1 text-[18px] font-semibold leading-[20px] text-black dark:text-white rounded-lg  title-font mb-2
                text-center "
-              >
-                Loverr Smith
-                <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
-                  &nbsp;&nbsp;Tenant
-                </span>
-              </h2>
+                >
+                  Loverr Smith
+                  <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
+                    &nbsp;&nbsp;Tenant
+                  </span>
+                </h2>
 
-              <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
-                I am absolutely thrilled with the exceptional service I received
-                from DreamHome Realty! As a first-time homebuyer, I was
-                navigating the complex world of real estate with a mix of
-                excitement and apprehension. From the moment I connected with
-                DreamHome Realty, they put all my worries to rest.
-              </p>
+                <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
+                  I am absolutely thrilled with the exceptional service I
+                  received from DreamHome Realty! As a first-time homebuyer, I
+                  was navigating the complex world of real estate with a mix of
+                  excitement and apprehension. From the moment I connected with
+                  DreamHome Realty, they put all my worries to rest.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="2xl:w-[384px] xl:w-[384px]  lg:w-[400px]  md:w-[330px]  w-full h-auto py-[24px] px-[16px] mt-8 rounded-lg bg-white-900 text-white  shadow-lg  xl:h-[310px] md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
-            <div className=" rounded-lg flex justify-center items-center   ">
-              <div className="h-20 w-20 ">
+          <div className="w-full flex justify-center items-center">
+            <div className="w-[90%] h-auto py-4 px-[16px] md:mt-8 rounded-lg bg-white-900 xl:ml-3 text-white shadow-lg md:h-auto bg-[#F5FEFF]  dark:bg-[#04505B] ">
+              <div className=" rounded-lg flex justify-center items-center">
+                <div className="h-20 w-20 ">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover rounded-full h-full object-center block"
+                    src={user1}
+                  />
+                </div>
+              </div>
+              <div className="rounded-lg flex mt-4 justify-center items-center">
                 <img
                   alt="gallery"
-                  className="w-full object-cover rounded-full h-full object-center block"
-                  src={user1}
+                  className="w-28 object-cover h-full object-center block"
+                  src={stars}
                 />
               </div>
-            </div>
-            <div className="rounded-lg flex ml-6 mt-4 justify-center items-center   ">
-              <img
-                alt="gallery"
-                className="w-28 object-cover h-full object-center block"
-                src={stars}
-              />
-            </div>
-            <div className="w-full ">
-              <h2
-                className=" 3xl:text-[20px] text-[18px] font-semibold leading-[20px] text-black dark:text-white  rounded-lg  title-font mb-2
+              <div className="w-full">
+                <h2
+                  className="3xl:text-[20px] pt-1 text-[18px] font-semibold leading-[20px] text-black dark:text-white rounded-lg  title-font mb-2
                text-center "
-              >
-                Loverr Smith
-                <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
-                  &nbsp;&nbsp;Tenant
-                </span>
-              </h2>
+                >
+                  Loverr Smith
+                  <span className="text-[#444444] dark:text-[#5F8388] text-xs font-normal leading-[16px]">
+                    &nbsp;&nbsp;Tenant
+                  </span>
+                </h2>
 
-              <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
-                I am absolutely thrilled with the exceptional service I received
-                from DreamHome Realty! As a first-time homebuyer, I was
-                navigating the complex world of real estate with a mix of
-                excitement and apprehension. From the moment I connected with
-                DreamHome Realty, they put all my worries to rest.
-              </p>
+                <p className=" text-black dark:text-[#959CB1] text-[14px] font-normal leading-[18px] mb-6 text-center ">
+                  I am absolutely thrilled with the exceptional service I
+                  received from DreamHome Realty! As a first-time homebuyer, I
+                  was navigating the complex world of real estate with a mix of
+                  excitement and apprehension. From the moment I connected with
+                  DreamHome Realty, they put all my worries to rest.
+                </p>
+              </div>
             </div>
           </div>
         </Carousel>
@@ -191,7 +197,7 @@ const Reviews = () => {
         <div className="w-full flex justify-center gap-4 mt-4">
           <div
             onClick={handlePrevClick}
-            className="w-[56px] h-[48px] bg-[#F6F6F6] rounded-lg flex justify-center shadow-lg"
+            className="w-14 h-12 bg-[#F6F6F6] rounded-lg flex justify-center shadow-lg"
           >
             <button className="">
               <img src={leftArrowIcon} alt="Left Arrow" />

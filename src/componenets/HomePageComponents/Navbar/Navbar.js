@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className=" bg-[#2E0664] sticky top-0 w-[100%]  2xl:h-[90px] xl:h-[87px] lg:h-[80px] md:h-[60px] h-[62px] 3xl:px-[90px]  2xl:px-[70px] xl:px-[120px] lg:px-[60px] md:px-[45px] px-5 z-50 ">
+      <div className=" bg-[#2E0664] sticky top-0 w-[100%] 2xl:h-[90px] xl:h-[87px] lg:h-[80px] md:h-[60px] h-[62px] 3xl:px-[90px]  2xl:px-[70px] xl:px-[120px] lg:px-[60px] md:px-[45px] px-5 z-50 ">
         <div className=" mx-auto h-full ">
           <div className="flex h-full justify-between items-center  ">
             <Link to="/">
@@ -45,7 +45,7 @@ const NavBar = () => {
               </button>
             </div>
 
-            <nav className="hidden lg:flex xl:flex xl:gap-12 lg:gap-10 md:gap-6 h-full xl:w-[482px] xl:h-[87px]   lg:w-[70%] md:w-[50%]  flex justify-center items-center ">
+            <nav className="lg:flex xl:flex hidden xl:gap-12 lg:gap-10 md:gap-6 h-full xl:w-[482px] xl:h-[87px]   lg:w-[70%] md:w-[50%] justify-center items-center ">
               <Link
                 to="/"
                 className="xl:text-base md:text-sm font-normal font-inter   text-white "
@@ -56,6 +56,7 @@ const NavBar = () => {
               <Link
                 to="/plots"
                 className="xl:text-base md:text-sm font-normal font-inter font-medium text-white hover:text-white"
+
               >
                 Plots
               </Link>
@@ -80,9 +81,12 @@ const NavBar = () => {
                 Agents
               </Link>
 
-            </nav>
-            <div className="xl:flex  lg:flex   xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4  justify-between items-center     hidden">
-            <Link   to="/admin-dashboard" > 
+            </nav>      
+              
+
+            <div className="xl:flex lg:flex xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4  justify-between items-center hidden">
+
+    <Link   to="/admin-dashboard" > 
             <button
                 type="submit"
                 className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
@@ -91,14 +95,17 @@ const NavBar = () => {
                 
               </button>
            </Link>
-              
               <button
                 type="submit"
-                className=" flex xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px] px-5  py-2.5 text-center  items-center dark:focus:ring-gray-500   "
+                className=" flex xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  py-2.5 text-center  items-center dark:focus:ring-gray-500   "
               >
-                Property ID{" "}
+                <input
+                  type="text"
+                  placeholder="Property ID"
+                  className="w-full placeholder:text-white bg-transparent pl-2 border-none outline-none"
+                />
                 <svg
-                  className="xl:w-[22px] xl:h-[23px] md:w-[16px] md:h-[16px]"
+                  className="xl:w-[22px] xl:h-[23px] md:w-[16px] md:h-[16px] mr-2"
                   viewBox="0 0 22 23"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +122,7 @@ const NavBar = () => {
 
               <button
                 type="submit"
-                className="flex xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px]  xl:h-[56px] md:h-[40px] bg-[#17062F] border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px] xl:px-5 md:px-4 py-2.5   items-center dark:focus:ring-gray-500   "
+                className="flex xl:gap-[8px] whitespace-nowrap md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px]  xl:h-[56px] md:h-[40px] bg-[#17062F] border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px] xl:px-5 md:px-4 py-2.5   items-center dark:focus:ring-gray-500   "
               >
                 <svg
                   className="xl:w-[18px] xl:h-[18px] md:w-[12px] md:h-[12px]"
@@ -278,11 +285,10 @@ const NavBar = () => {
                       viewBox="0 0 16 16"
                       id="IconChangeColor"
                     >
-                      {" "}
                       <path
                         d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
                         id="mainIconPathAttribute"
-                      ></path>{" "}
+                      ></path>
                     </svg>
 
                     <span className="ml-3 text-base font-medium text-gray-900  dark:text-gray-200">

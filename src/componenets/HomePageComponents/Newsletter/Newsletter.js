@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
   return (
-    <div className="relative p-4 rounded-lg overflow-hidden bg-[#F6F6F6] py-12 md:py-20">
+    <div className="relative p-4 rounded-lg overflow-hidden bg-[#F6F6F6] py-12 lg:py-20">
       <div className="mx-auto max-w-7xl xl:h-56 md:h-64 h-auto md:py-0 py-5 border px-6 lg:px-8 bg-[#653E92] rounded-xl md:flex justify-between items-center">
         <div className="mx-auto max-w-2xl lg:max-w-none flex xl:flex-row flex-col items-center gap-4">
           <div className=" md:w-[510px] w-full xl:block flex flex-col justify-center items-center">

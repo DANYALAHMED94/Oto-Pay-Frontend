@@ -5,11 +5,13 @@ import PropertyCard from "../global/PropertyCard";
 
 const SearchResult = () => {
   return (
-    <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] pt-10 xl:px-[80px] xl:py-[120px] lg:px-[40px] md:px-[40px] px-6 space-y-4 text-black-600 body-font flex flex-col justify-center items-center gap-4 relative z-0 ">
-      <h1 className="text-black xl:self-start xl:ml-11  font-bold text-[32px] leading-[41px]">
-        Search Results
-      </h1>
-      <div className="xl:w-[1199px] lg:w-[950px] w-full p-4 h-auto lg:h-[179px] bg-[#2E0664] space-y-[16px] rounded-lg  ">
+    <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] pt-10 xl:px-[80px] xl:py-[120px] lg:px-[40px] md:px-[40px] px-6 space-y-4 text-black-600 body-font flex flex-col justify-center items-center gap-4 relative z-0">
+      <div className="xl:w-[1199px] lg:w-[950px]">
+        <h1 className="text-black xl:self-start font-bold text-[32px] leading-[41px]">
+          Search Results
+        </h1>
+      </div>
+      <div className="xl:w-[1199px] lg:w-[950px] w-full p-4 h-auto lg:h-[179px] bg-[#2E0664] space-y-4 rounded-lg  ">
         <h1 className="text-white"> “Properties for Rent in NewYork”</h1>
 
         <h1 className="text-white"> Filtered</h1>
@@ -90,8 +92,8 @@ const SearchResult = () => {
         </div>
       </div>
 
-      <div className="xl:w-[1200px] lg:w-[950px] h-auto lg:flex gap-[56px]">
-        <div className="3xl:gap-40  xl:gap-[24px] lg:gap-y-20 sm:gap-y-8">
+      <div className="xl:w-[1200px] lg:pb-10 pb-5 lg:w-[950px] h-auto lg:flex gap-[56px]">
+        <div className="3xl:gap-40 xl:gap-[24px] lg:gap-y-20 sm:gap-y-8">
           <PropertyCard />
           <PropertyCard />
           <PropertyCard />
