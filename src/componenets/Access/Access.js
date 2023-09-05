@@ -1,6 +1,6 @@
 import React from 'react'
 import staff1 from "../../assets/staff1.svg"
-import prop from "../../assets/prop.svg";
+import prop from "../../assets/prop.png";
 import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";

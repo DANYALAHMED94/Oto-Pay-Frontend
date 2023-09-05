@@ -17,17 +17,7 @@
 
 
 
-  /* For Tailwind 2.2 and above */
-  @layer utilities {
-    .snap-x-mandatory {
-      scroll-snap-type: x mandatory;
-    }
-  }
-  
-  /* For Tailwind 2.0 */
-  .snap-x-mandatory {
-    scroll-snap-type: x mandatory;
-  }
+
 
 
 

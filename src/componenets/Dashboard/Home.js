@@ -5,7 +5,7 @@ import Calendar from "./Calendar";
 import Cards from "./Cards";
 const Home = () => {
   return (
-    <div className="w-full bg-gray-100 px-[16px] lg:py-[24px] md:py-[18px] py-[8px] ">
+    <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] ">
       <div className="flex w-full  items-center  lg:justify-between gap-4  flex-col justify-center ">
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg">
           <p className="text-white font-bold xl:text-[28px] lg:text-xl md:text-xl text-sm leading-[36px] ">

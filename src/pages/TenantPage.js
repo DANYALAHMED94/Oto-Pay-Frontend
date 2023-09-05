@@ -1,12 +1,12 @@
 import React from "react";
-import AllTenants from "../componenets/Tenants/AllTenants";
+import TenantsButtons from "../componenets/Tenants/TenantsButton";
 
 
 
 const TenantPage = () => {
   return (
     <>
-<AllTenants />
+<TenantsButtons/>
     </>
   );
 };

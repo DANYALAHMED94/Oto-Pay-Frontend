@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/logo.svg";
+import Logo2 from "../../../assets/OTO.svg";
 
 const NavBar = () => {
   const [open, setOpen] = React.useState(false);
@@ -53,33 +54,44 @@ const NavBar = () => {
               </Link>
 
               <Link
-                to="/about"
+                to="/plots"
                 className="xl:text-base md:text-sm font-normal font-inter font-medium text-white hover:text-white"
               >
                 Plots
               </Link>
 
               <Link
-                to="/services"
+                to="/commercial"
                 className="xl:text-base md:text-sm font-normal font-inter text-white hover:text-white"
               >
                 Commercial
               </Link>
               <Link
-                to="/client"
+                to="/rent"
                 className="xl:text-base md:text-sm font-normal font-inter text-white hover:text-white"
               >
                 Rent
               </Link>
 
               <Link
-                to="/contact"
+                to="/agents"
                 className="xl:text-base md:text-sm font-normal font-inter text-white hover:text-white"
               >
                 Agents
               </Link>
+
             </nav>
             <div className="xl:flex  lg:flex   xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4  justify-between items-center     hidden">
+            <Link   to="/admin-dashboard" > 
+            <button
+                type="submit"
+                className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
+              >
+              SignIn
+                
+              </button>
+           </Link>
+              
               <button
                 type="submit"
                 className=" flex xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px] px-5  py-2.5 text-center  items-center dark:focus:ring-gray-500   "
@@ -142,13 +154,15 @@ const NavBar = () => {
               : "opacity-0 scale-95 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden hidden"
           }
         >
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-[#078CA0] divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5 ">
-              <div className=" flex items-center justify-between ">
-                <div className=" ">
-                  <img className="h-10 w-10  " src={Logo} alt="Workflow" />
+          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+            <div className="w-full ">
+              <div className="w-full bg-[#F0EEF2] flex rounded-md items-center justify-between p-2 ">
+                <div className="flex justify-center items-center gap-4 text-center text-xl font-semibold text-[#2E0664]  ">
+                  <img className="h-10 w-10  " src={Logo2} alt="Workflow" />
+
+                  OTO~PAY
                 </div>
-                <div className="-mr-2 ">
+                <div className="">
                   <button
                     type="button"
                     className="bg-white dark:bg-[#003036] rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100  "
@@ -174,7 +188,7 @@ const NavBar = () => {
                   </button>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="p-5">
                 <nav className="grid gap-y-8 ">
                   <Link
                     onClick={() => setOpen(!open)}
@@ -300,8 +314,6 @@ const NavBar = () => {
                       Agents
                     </span>
                   </Link>
-
-                  <div className="py-6 px-5 space-y-6"></div>
                 </nav>
               </div>
             </div>

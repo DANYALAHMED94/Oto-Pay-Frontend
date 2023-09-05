@@ -8,9 +8,9 @@ import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 
-export default function UpdatePropertyModal() {
+export default function UpdatePropertyModal({showModal, setShowModal}) {
   // const [file, setFile] = useState();
-  const [showModal, setShowModal] = useState(true);
+
 
   // const handlefile = (event) => {
   //   setFile(event.target.files[0]);
