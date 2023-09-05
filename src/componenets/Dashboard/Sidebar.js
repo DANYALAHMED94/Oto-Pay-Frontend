@@ -8,6 +8,10 @@ import {
   CancelIcon,
   PropertyIcon,
   TenantsIcon,
+  AccessIcon,
+  Payment,
+  SidebarService,
+  ArrowIcon,
 } from "../../iconComponent/Icons";
 
 export default function SideBar({ show, setShow }) {
@@ -22,12 +26,12 @@ export default function SideBar({ show, setShow }) {
     <div
       className={
         show
-          ? "opacity-100 scale-100 ease-out z-40 w-[300px] shadow-lg bg-white duration-200 absolute top-0 inset-x-0 transition transform origin-top-right "
+          ? "opacity-100 scale-100 ease-out z-40 w-[300px] shadow-lg bg-white duration-200 absolute top-0 inset-x-0 transition transform origin-top-right  "
           : "opacity-0 scale-95 absolute top-0 z-40 w-[300px] bg-white inset-x-0 transition transform origin-top-right "
       }
     >
-      <div className="bg-white w-full -ml-[1px] h-screen relative z-auto">
-        <div className="shadow-lg h-full max-w-[318px] xl:w-[318px] bg-white lg:hidden  ">
+      <div className="bg-white w-full -ml-[1px] h-screen relative z-auto ">
+        <div className="shadow-lg h-full max-w-[318px] xl:w-[318px] bg-white lg:hidden overflow-y-auto ">
           <div className=" w-full flex items-center justify-between mt-4 px-4">
             <p className=" font-normal text-[14px] text-gray-500 ml-5">
              
@@ -50,7 +54,7 @@ export default function SideBar({ show, setShow }) {
           </div>
 
           <>
-            <NavLink to="/home">
+            <NavLink to="/admin-dashboard">
               {({ isActive }) => (
                 <li
                   className={`flex items-center ${
@@ -67,7 +71,7 @@ export default function SideBar({ show, setShow }) {
               )}
             </NavLink>
 
-            <NavLink to="/projects">
+            <NavLink to="properties">
               {({ isActive }) => (
                 <li
                   className={`flex items-center ${
@@ -77,14 +81,20 @@ export default function SideBar({ show, setShow }) {
                   }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
-                    <PropertyIcon />
-                    <p className="font-normal text-[14px] ml-5 ">Projects</p>
+                  <PropertyIcon />
+                      <div className="font-normal text-[16px] ml-5 ">
+                        Properties
+                      </div>
+                      <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
+                        13
+                      </div>
                   </div>
                 </li>
               )}
             </NavLink>
 
-            <NavLink to="/profile-setting">
+
+            <NavLink to="tenants">
               {({ isActive }) => (
                 <li
                   className={`flex items-center ${
@@ -94,14 +104,131 @@ export default function SideBar({ show, setShow }) {
                   }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
-                    <TenantsIcon />
-                    <p className="font-normal text-[14px] ml-5 ">
-                      Profile Setting
-                    </p>
+                  <TenantsIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Tenants</p>
                   </div>
                 </li>
               )}
             </NavLink>
+
+
+            <NavLink to="access">
+              {({ isActive }) => (
+                <li
+                  className={`flex items-center ${
+                    isActive
+                      ? "bg-[#34A2B2] text-white"
+                      : "bg-white text-[#64748B]"
+                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                >
+                  <div className="w-[282px] h-[52px] flex items-center">
+                  <AccessIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Access</p>
+                  </div>
+                </li>
+              )}
+            </NavLink>
+
+            <NavLink to="payments">
+              {({ isActive }) => (
+                <li
+                  className={`flex items-center ${
+                    isActive
+                      ? "bg-[#34A2B2] text-white"
+                      : "bg-white text-[#64748B]"
+                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                >
+                  <div className="w-[282px] h-[52px] flex items-center">
+                  <Payment />
+                      <p className="font-normal text-[16px] ml-5 ">Payments</p>
+                  </div>
+                </li>
+              )}
+            </NavLink>
+
+            <div className="w-full px-4 -mt-2  ">
+                <div className="    relative w-full h-auto overflow-hidden ">
+                  <input
+                    type="checkbox"
+                    className=" peer absolute top-0 insert-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
+                  />
+                  <div className="  h-12 w-full  flex items-center text-[#64748B]  peer-checked:text-white peer-checked:bg-[#34A2B2]">
+                    <SidebarService />
+                    <p className="font-normal text-[16px] ml-5">Services</p>
+                  </div>
+
+                  <div className="absolute top-[18px]  mr-5 right-3 text-[#64748B] peer-checked:text-white transition-transform duration-500 rotate-0 peer-checked:rotate-180 ">
+                    <ArrowIcon className="transition-transform -rotate-90" />
+                  </div>
+
+                  <div className=" bg-white transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-64 pl-10 ">
+                    <div className="px-2 pt-2">
+                      <NavLink to="services">
+                        {({ isActive }) => (
+                          <button
+                            className={`w-full ${
+                              isActive ? "bg-[#F0FAFC]" : ""
+                            } flex items-center  py-3 rounded-md`}
+                          >
+                            <div>
+                              <svg
+                                width="12"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
+                                  fill="#B3A1C9"
+                                />
+                              </svg>
+                            </div>
+
+                            <div className="ml-3 font-normal text-[16px] text-[#5A4278]">
+                              Service Requests
+                            </div>
+                            <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
+                              13
+                            </div>
+                          </button>
+                        )}
+                      </NavLink>
+                    </div>
+
+                    <div className="px-2">
+                      <NavLink to="servicesProviders">
+                        {({ isActive }) => (
+                          <button
+                            className={`w-full ${
+                              isActive ? "bg-[#F0FAFC]" : ""
+                            } flex items-center  py-3 rounded-md`}
+                          >
+                            <div>
+                              <svg
+                                width="12"
+                                height="13"
+                                viewBox="0 0 12 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
+                                  fill="#B3A1C9"
+                                />
+                              </svg>
+                            </div>
+
+                            <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                              Service Providers
+                            </div>
+                          </button>
+                        )}
+                      </NavLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </>
 
           <div

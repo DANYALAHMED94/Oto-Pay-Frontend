@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Cancel from "../../assets/cancel.svg";
-import Delete from "../../assets/trash-delete.svg";
+import Delete from "../../assets/trash.svg";
 import Unlist from "../../assets/unlist.svg";
 import PropertyModalCard from "./PropertyModalCard";
 
-export const PropertyModal = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [handleButton, setHandleButton] = useState("Delete");
+export const PropertyModal = ({showModal, setShowModal,handleButton, setHandleButton}) => {
   return (
     <>
       {showModal ? (
@@ -47,7 +45,7 @@ export const PropertyModal = () => {
                   </div>
                 </div>
                 <div className="h-auto md:p-5 p-3 flex justify-end items-center space-x-3">
-                  <button className="py-3 px-4 rounded-lg border w-40 border-[#312245]">
+                  <button onClick={()=>setShowModal(false)} className="py-3 px-4 rounded-lg border w-40 border-[#312245]">
                     Cancel
                   </button>
                   {handleButton === "Delete" ? (

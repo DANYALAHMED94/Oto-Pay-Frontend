@@ -43,7 +43,4 @@ h6 {
   }
 }
 
-/* For Tailwind 2.0 */
-.snap-x-mandatory {
-  scroll-snap-type: x mandatory;
-}
+

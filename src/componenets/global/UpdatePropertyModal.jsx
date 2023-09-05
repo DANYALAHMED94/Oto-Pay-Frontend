@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Cancel from "../../assets/cancel.svg";
 // import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -9,9 +9,9 @@ import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 import Map from "../../assets/map.png";
 
-export default function UpdatePropertyModal() {
+export default function UpdatePropertyModal({showModal, setShowModal}) {
   // const [file, setFile] = useState();
-  const [showModal, setShowModal] = useState(false);
+
 
   // const handlefile = (event) => {
   //   setFile(event.target.files[0]);
