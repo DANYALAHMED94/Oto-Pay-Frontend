@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Cancel from "../../assets/cancel.svg";
 import Delete from "../../assets/trash.svg";
 import Unlist from "../../assets/unlist.svg";

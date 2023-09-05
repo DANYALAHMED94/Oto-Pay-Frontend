@@ -61,7 +61,6 @@
 //     );
 //   };
 
-
 //   const responsive = {
 //     desktop: {
 //       breakpoint: { max: 3000, min: 1024 },
@@ -97,7 +96,6 @@
 //         </div>
 //       </div>
 
-
 //       <div className="dates grid grid-cols-1 md:grid-cols-8 grid-row-1 gap-4 ">
 //         {/* Display only one date on small screens */}
 //         <div className=" lg:hidden md:hidden w-full  text-center py-2 rounded-xl flex flex-col xl:gap-6 lg:gap-4 md:gap-3 bg-[#2E0664] text-[#F6EFFF] cursor-pointer">
@@ -132,7 +130,6 @@
 //         </div>
 //         {/* Display 8 dates on larger screens */}
 
-        
 //         {window.innerWidth >= 768 &&
 //           displayedDates?.map((date, index) => (
 //             <div
@@ -182,12 +179,11 @@
 // export default Calendar;
 
 
-import React, { useState , useEffect} from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 
 // Initialize SwiperCore modules
-
 
 const months = [
   "January",
@@ -207,12 +203,12 @@ const months = [
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [displayedDates, setDisplayedDates] = useState([]);
-  const [swiper, setSwiper] = useState(null);
+  const [swiper] = useState(null);
 
   // Generate dates based on the selected date
   const generateDates = (baseDate) => {
     return Array.from(
-      { length: 8},
+      { length: 8 },
       (_, index) => new Date(baseDate.getTime() + index * 24 * 60 * 60 * 1000)
     );
   };
@@ -266,13 +262,14 @@ const Calendar = () => {
       <Swiper
         spaceBetween={20} // Adjust the space between slides as needed
         slidesPerView={1} // Number of slides displayed per view
-        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"
-       }}
-
-       simulateTouch={true}
-       touch={true}
-       resistance={true}
-       resistanceRatio={0.85}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        simulateTouch={true}
+        touch={true}
+        resistance={true}
+        resistanceRatio={0.85}
       >
         {displayedDates.map((date, index) => (
           <SwiperSlide key={index}>
@@ -284,9 +281,7 @@ const Calendar = () => {
               } cursor-pointer`}
               onClick={() => setSelectedDate(date)}
             >
-              <div className="font-bold text-xl">
-                {date.getDate()}
-              </div>
+              <div className="font-bold text-xl">{date.getDate()}</div>
               <div className="text-base">
                 {date.toLocaleDateString("en-US", { weekday: "long" })}
               </div>

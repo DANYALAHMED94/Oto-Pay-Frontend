@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import smh from "../../assets/image 2.png";
-import PropertyCard from "../global/PropertyCard";
-import list from "../../assets/unlist.svg";
-import trash from "../../assets/trash-2.svg";
 import tenants from "../../assets/image 6.png";
 import analytics from "../../assets/image 7.png";
 import block from "../../assets/image 8.png";
 const TenantsButtons = () => {
   const [properties, setProperties] = useState("");
-  const [showModal, setShowModal] = useState(false);
-  const [handleButton, setHandleButton] = useState("");
+
 
   return (
     <>
