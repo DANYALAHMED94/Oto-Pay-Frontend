@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import banner from "../../../assets/banner.svg";
+import SearchPeoperties from "../../global/SearchPeoperties";
 
 function Banner() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function Banner() {
                     onClick={() => {
                       navigate("/");
                     }}
-                    className=" text-[#FFFFFF] border border-[#FFFFFF] xl:w-[468px] xl:h-20 lg:w-[390px] lg:h-[70px] md:w-[285px] md:h-[42px] w-full h-[36px] hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm  leading-6  py-[16px] justify-center text-center inline-flex items-center dark:focus:ring-gray-500  mb-2 "
+                    className=" text-[#FFFFFF] border-2 border-[#FFFFFF] xl:w-[468px] xl:h-20 lg:w-[390px] lg:h-[70px] md:w-[285px] md:h-[42px] w-full h-[36px] hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm  leading-6  py-[16px] justify-center text-center inline-flex items-center dark:focus:ring-gray-500  mb-2 "
                   >
                     Rent
                   </button>
@@ -42,132 +43,16 @@ function Banner() {
                     onClick={() => {
                       navigate("/services");
                     }}
-                    className=" text-[#FFFFFF] border border-[#FFFFFF]  xl:w-[468px] xl:h-20 lg:w-[390px] lg:h-[70px] md:w-[285px] md:h-[42px] w-full h-[36px]  hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm leading-6  py-[16px]  text-center inline-flex justify-center items-center dark:focus:ring-gray-500  mb-2 "
+                    className=" text-[#FFFFFF] border-2 border-[#FFFFFF]  xl:w-[468px] xl:h-20 lg:w-[390px] lg:h-[70px] md:w-[285px] md:h-[42px] w-full h-[36px]  hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm leading-6  py-[16px]  text-center inline-flex justify-center items-center dark:focus:ring-gray-500  mb-2 "
                   >
                     Custom property Request
                   </button>
                 </div>
-                <div className="xl:mt-6 lg:mt-6 mt-0  w-full">
+                <div>
                   <h1 className=" xl:text-[24px] lg:text-[24px] md:text-[16px] text- leading-[31px] font-inter font-bold  text-[#F6EFFF] text-center mb-4">
                     Search properties for sale in USA
                   </h1>
-
-                  <div className="w-full flex md:flex-row flex-col gap-4  mt-4 ">
-                    <div className="col-span-1 px-4 flex flex-col py-2 md:py-0 justify-center xl:w-[198px] xl:h-20 lg:w-[170px] lg:h-[70px] md:w-[170px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-gray-100 ">
-                      <label className="block text-sm font-medium text-black ml-0.5 ">
-                        City
-                      </label>
-                      <select className=" w-full rounded-md text-sm bg-gray-100 focus:outline-none">
-                        <option value="">Washington</option>
-                        <option value="for-rent">Washington1</option>
-                        <option value="for-sale">Washington2</option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col justify-center px-4 py-2 md:py-3 xl:w-[543px] xl:h-20 lg:w-[440px] lg:h-[70px] md:w-[360px] md:h-[50px] xl:space-y-2  lg:space-y-2 space-y-0 rounded-md bg-gray-100">
-                      <label className="block text-sm font-medium text-gray-700 ml-0.5">
-                        Street
-                      </label>
-                      <select className=" w-full rounded-md bg-gray-100 focus:outline-none text-sm">
-                        <option value="">Washington, street xyz</option>
-                        <option value="fully-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="partially-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="not-furnished">
-                          Washington, street xyz
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="col-span-1 px-4 py-2 md:py-3 xl:w-[178px] xl:h-20  lg:w-[160px] lg:h-[70px] md:w-[130px] md:h-[50px] flex items-center justify-center rounded-md bg-gray-100">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          navigate("/");
-                        }}
-                        className=" text-Black lg:w-[140px] lg:h-[52px] md:w-[123px] md:h-[42px] w-[100px] h-9  hover:text-black hover:bg-white focus:ring-4 focus:outline-none focus:ring-gray-100 font-semibold rounded-lg xl:text-base lg:text-base md:text-base text-sm  leading-6  py-[16px] justify-center text-center inline-flex items-center dark:focus:ring-gray-500  "
-                      >
-                        Find
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="flex md:flex-row flex-col gap-4 mt-4 ">
-                    <div className=" flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[159px] xl:h-20 lg:w-[140px] lg:h-[70px] md:w-[130px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-gray-100">
-                      <label className="block text-sm font-medium text-gray-700 ml-0.5">
-                        Property Type
-                      </label>
-                      <select className=" w-full rounded-md  text-sm bg-gray-100 focus:outline-none">
-                        <option value="">All</option>
-                        <option value="fully-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="partially-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="not-furnished">
-                          Washington, street xyz
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[292px] xl:h-20 lg:w-[239px] lg:h-[70px] md:w-[160px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-gray-100">
-                      <label className="block text-sm font-medium text-gray-700 ml-0.5">
-                        Price(USD)
-                      </label>
-                      <select className=" w-full rounded-md  text-sm bg-gray-100 focus:outline-none">
-                        <option value="">23854 to 52487</option>
-                        <option value="fully-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="partially-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="not-furnished">
-                          Washington, street xyz
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[292px] xl:h-20 lg:w-[239px] lg:h-[70px] md:w-[160px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-gray-100">
-                      <label className="block text-sm font-medium text-gray-700 ml-0.5">
-                        Area (sq. yd.)
-                      </label>
-                      <select className=" w-full rounded-md  text-sm bg-gray-100 focus:outline-none">
-                        <option value="">0 to any</option>
-                        <option value="fully-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="partially-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="not-furnished">
-                          Washington, street xyz
-                        </option>
-                      </select>
-                    </div>
-
-                    <div className="col-span-1 flex flex-col justify-center px-4 md:py-3 py-2 xl:w-[159px] xl:h-20 lg:w-[140px] lg:h-[70px] md:w-[100px] md:h-[50px] xl:space-y-2 lg:space-y-2 space-y-0 rounded-md bg-gray-100">
-                      <label className="block text-sm font-medium text-gray-700 ml-0.5">
-                        Beds
-                      </label>
-                      <select className=" w-full rounded-md  text-sm bg-gray-100 focus:outline-none">
-                        <option value="">6</option>
-                        <option value="fully-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="partially-furnished">
-                          Washington, street xyz
-                        </option>
-                        <option value="not-furnished">
-                          Washington, street xyz
-                        </option>
-                      </select>
-                    </div>
-                  </div>
+                  <SearchPeoperties width="w-full" />
                 </div>
               </div>
             </div>

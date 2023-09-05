@@ -10,6 +10,7 @@ module.exports = {
         sxl: "1366px",
         xlg: "1280px",
         lg: "1024px",
+        xxl: "1920px",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
