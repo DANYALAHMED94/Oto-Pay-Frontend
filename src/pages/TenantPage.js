@@ -1,10 +1,8 @@
 import React from "react";
 
-;
+import TenantsButton from "../componenets/Tenants/TenantsButton"
 
 
-
-import AllTenants from "../componenets/Tenants/AllTenants";
 import TenantRegistrationForm from "../componenets/global/TenantRegistrationForm";
 
 
@@ -12,7 +10,7 @@ const TenantPage = () => {
   return (
     <>
 
-<TenantsButtons/>
+<TenantsButton />
 
       <TenantRegistrationForm />
   
