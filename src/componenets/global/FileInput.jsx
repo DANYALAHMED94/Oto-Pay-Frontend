@@ -2,11 +2,10 @@ import React, { useRef, useState } from "react";
 import Image from "../../assets/image-plus.svg";
 import FormSlider from "./FormSlider";
 
-function FileInput({ info }) {
+function FileInput({ info, state }) {
   const [isDragOver, setIsDragOver] = useState(false);
   const [files, setFiles] = useState([]);
   // const [previewImage, setPreviewImage] = useState(null);
-  const [state, setState] = useState("tenant");
 
   const fileInputRef = useRef(null);
 
@@ -51,7 +50,7 @@ function FileInput({ info }) {
 
   return (
     <>
-      {state === "update" ? (
+      {state === "Update" ? (
         <div className="w-full mt-5">
           <div className="space-y-1">
             <p className="text-[#312245] text-base font-bold leading-5">
@@ -68,7 +67,6 @@ function FileInput({ info }) {
             onDragOver={onDragOver}
             onDragLeave={onDragLeave}
             onDrop={onDrop}
-            onClick={() => setState("")}
           >
             <label htmlFor="file-upload" className="cursor-pointer">
               <img src={Image} alt="drag&drop" />
