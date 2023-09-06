@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  /* border: 1px solid #000; */
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway"),
+    url("./fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+      format("truetype");
+}
+body,
+p,
+li {
+  font-family: Montserrat;
+}
+h1,
+h2,
+h3.h4,
+h5,
+h6 {
+  font-family: Raleway;
 }
 .hide-scrollbar {
   scrollbar-width: none; /* For Firefox */
@@ -13,12 +34,13 @@
 .hide-scrollbar::-webkit-scrollbar {
   width: 0px !important; /* For Chrome, Safari, and Opera */
 }
-  /* border: 1px solid black; */
+/* border: 1px solid black; */
 
-
-
-
-
-
+/* For Tailwind 2.2 and above */
+@layer utilities {
+  .snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+}
 
 

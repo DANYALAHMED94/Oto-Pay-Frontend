@@ -7,6 +7,7 @@ import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
+import Map from "../../assets/map.png";
 
 export default function UpdatePropertyModal({showModal, setShowModal}) {
   // const [file, setFile] = useState();
@@ -79,13 +80,7 @@ export default function UpdatePropertyModal({showModal, setShowModal}) {
                         console.log(values);
                       }}
                     >
-                      {({
-                        isSubmitting,
-                        errors,
-                        touched,
-                        setFieldValue,
-                        values,
-                      }) => (
+                      {({ isSubmitting, errors, touched }) => (
                         <Form>
                           <div className="p-3 rounded-2xl bg-[#E4DFEB]">
                             <div className="w-full ">
@@ -336,11 +331,25 @@ export default function UpdatePropertyModal({showModal, setShowModal}) {
                                 className="text-red-700 font-normal font-base text-left"
                               />
                             </div>
+
+                            <div className="flex flex-col mt-3 py-3">
+                              <label
+                                htmlFor="whatsApp"
+                                className="text-sm font-medium leading-4 text-[#5A4278]"
+                              >
+                                Map Location
+                              </label>
+
+                              <div className="mt-3">
+                                <img src={Map} alt="map" />
+                              </div>
+                            </div>
                           </div>
-                          <div className="flex justify-between gap-4 py-3">
+
+                          <div className="flex justify-end gap-4 py-3">
                             <button
                               type="button"
-                              className="font-normal md:text-sm text-xs w-full h-[44px] mt-3 border border-gray-500 rounded"
+                              className="md:text-sm text-xs text-[#312245] font-bold px-4 py-3 w-40 h-11 mt-3 border-2 border-[#312245] rounded"
                               onClick={() => setShowModal(false)}
                             >
                               Cancel
@@ -348,11 +357,9 @@ export default function UpdatePropertyModal({showModal, setShowModal}) {
                             <button
                               type="submit"
                               disabled={isSubmitting}
-                              className="flex items-center justify-center font-normal text-sm h-[44px] w-full bg-black  mt-3 text-white rounded"
+                              className="flex items-center justify-center font-bold text-sm px-4 py-3 w-40 h-11 bg-[#17062F] mt-3 text-white rounded"
                             >
-                              <p className="ml-2 md:text-sm text-xs">
-                                Create Contractor
-                              </p>
+                              <p className="ml-2 md:text-sm text-xs">Upload</p>
                             </button>
                           </div>
                         </Form>

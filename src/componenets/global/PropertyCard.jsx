@@ -156,6 +156,22 @@ function PropertyCard({ properties, access }) {
                 Added: 5 hours ago (Updated: 2 hours ago)
               </div>
 
+
+          <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
+            <h1 className=" text-[14px] leading-[18.2px] font-medium ">
+              INSTALMENT
+              <span className="text-[12px] font-normal leading-[15.6px]">
+                USD
+              </span>
+              <span className="text-[18px] leading-[23.4px] font-bold">
+                $4,820
+              </span>
+              <span className="text-[12px] leading-[15.6px] font-normal">
+                per month
+              </span>
+            </h1>
+
+          </div>
               <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
                 <h1 className=" text-[14px] leading-[18.2px] font-medium ">
                   INSTALMENT
