@@ -57,8 +57,8 @@ function PropertyCard({ properties, access }) {
               <div className="flex justify-between">
                 <h2
                   className=" xl:text-3xl text-2xl  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
-        "
-                >
+        ">
+
                   $8,827648
                 </h2>
 
@@ -74,11 +74,39 @@ function PropertyCard({ properties, access }) {
                   </button>
                 ) : null}
 
+
                 {properties === "All Vacant" ? (
                   <button className="text-[#CD2424] text-base font-medium">
                     Marked as vacant
                   </button>
                 ) : null}
+            <div className="rounded-lg   ">
+              <img
+                alt="gallery"
+                className="w-28 object-cover h-full object-center block"
+                src={rating}
+              />
+            </div>
+            <p className="text-[#5A4278] md:text-base text-sm leading-[18.2px] font-medium">
+              As you approach the property, a picturesque driveway winds through
+              lush gardens and old-growth trees, creating an immediate sense of
+              seclusion and privacy. The exterior boasts a classic architectural
+              design, characterized by its natural stone façade, charming dormer
+              windows, and a welcoming front porch that exudes warmth.
+            </p>
+
+            <div className="flex xxsm:gap-4 gap-6 ">
+              <div className=" flex  items-center lg:gap-2 md:gap-2 gap-1 ">
+                <div className=" w-4 h-4">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover h-full object-center block"
+                    src={bed}
+                  />
+                </div>
+                <p className="text-[#866FA3] xxsm:text-xs text-sm whitespace-nowrap">
+                  4 beds
+                </p>
               </div>
               <div className="space-y-[4px]">
                 <h2 className="  text-[#312245] text-[16px] font-bold leading-[20px] ">
@@ -156,7 +184,21 @@ function PropertyCard({ properties, access }) {
                 Added: 5 hours ago (Updated: 2 hours ago)
               </div>
 
-
+            <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
+              <h1 className=" text-[14px] leading-[18.2px] font-medium ">
+                INSTALMENT
+                <span className="text-[12px] font-normal leading-[15.6px]">
+                  USD
+                </span>
+                <span className="text-[18px] leading-[23.4px] font-bold">
+                  $4,820
+                </span>
+                <span className="text-[12px] leading-[15.6px] font-normal">
+                  per month
+                </span>
+              </h1>
+            </div>
+               
           <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
             <h1 className=" text-[14px] leading-[18.2px] font-medium ">
               INSTALMENT
@@ -366,10 +408,15 @@ function PropertyCard({ properties, access }) {
                 </button>
               </div>
             )}
+
           </div>
         </div>
       </div>
-      <UpdatePropertyModal setShowModal={setShowModal} showModal={showModal} />
+      <UpdatePropertyModal
+        setShowModal={setShowModal}
+        state={state}
+        showModal={showModal}
+      />
     </>
   );
 }
