@@ -185,7 +185,7 @@ export default function DashboardPage() {
                             className={`w-full ${
                               isActive 
                               ?   "bg-[#E4DFEB] text-[#2E0664]"
-                              : "bg-[#F0EEF2] text-[#17062F]"
+                              : "bg-white text-[#17062F]"
                             } flex items-center  py-3 rounded-md`}
                           >
                             <div>
@@ -219,7 +219,8 @@ export default function DashboardPage() {
                         {({ isActive }) => (
                           <button
                             className={`w-full ${
-                              isActive ? "bg-[#F0FAFC]" : ""
+                              isActive    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                              : "bg-white text-[#17062F]"
                             } flex items-center  py-3 rounded-md`}
                           >
                             <div>
