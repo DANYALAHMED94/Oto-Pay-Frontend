@@ -5,7 +5,6 @@ import TenantsButton from "../componenets/Tenants/TenantsButton"
 
 import TenantRegistrationForm from "../componenets/global/TenantRegistrationForm";
 
-
 const TenantPage = () => {
   return (
     <>
@@ -13,8 +12,6 @@ const TenantPage = () => {
 <TenantsButton />
 
       <TenantRegistrationForm />
-  
-
     </>
   );
 };

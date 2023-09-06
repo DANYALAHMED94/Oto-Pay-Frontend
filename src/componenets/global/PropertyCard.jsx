@@ -23,26 +23,34 @@ function PropertyCard({ properties, access }) {
   return (
     <>
       <div className="w-full h-full xl:p-[24px] lg:p-4  p-6 rounded-lg     shadow-lg     bg-[#FFFFFF] flex   flex-col xl:gap-[32px] lg:gap-4  gap-4">
-      {access === "Activity" ? (
-        <div className=" flex md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
-          <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
-            <div className="md:w-12 w-16 h-16 md:h-12">
-              <img
-                alt="gallery"
-                className="w-full  h-full rounded-lg object-center block"
-                src={img}
-              />
+        {access === "Activity" ? (
+          <div className=" flex md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
+            <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
+              <div className="md:w-12 w-16 h-16 md:h-12">
+                <img
+                  alt="gallery"
+                  className="w-full  h-full rounded-lg object-center block"
+                  src={img}
+                />
+              </div>
+              <div className="text-base font-normal leading-5 text-[#0C8B3F] ">
+                Added by{" "}
+                <span className="text-[#17062F] leading-5 font-bold text-base">
+                  Mark John Smith{" "}
+                </span>
+              </div>
             </div>
-            <div className="text-base font-normal leading-5 text-[#0C8B3F] ">Added by <span className="text-[#17062F] leading-5 font-bold text-base">Mark John Smith </span></div>
-          </div>
 
-          <div className="flex w-full   md:justify-end justify-center items-center gap-4 ">
-            <div className="flex  text-black text-base  leading-5 font-medium ">23-Aug-2023</div>
-            <div className="flex  text-black text-base  leading-5 font-normal ">05 : 26 : PM</div>
+            <div className="flex w-full   md:justify-end justify-center items-center gap-4 ">
+              <div className="flex  text-black text-base  leading-5 font-medium ">
+                23-Aug-2023
+              </div>
+              <div className="flex  text-black text-base  leading-5 font-normal ">
+                05 : 26 : PM
+              </div>
+            </div>
           </div>
-        </div>
-
-      ): null }
+        ) : null}
         <div className=" flex  xl:flex-row flex-col xl:gap-[32px] lg:gap-4  gap-4">
           <div className="  xl:w-[534px]  w-full xl:h-[486px] h-80 flex justify-center items-center   ">
             <img
@@ -156,22 +164,20 @@ function PropertyCard({ properties, access }) {
                 Added: 5 hours ago (Updated: 2 hours ago)
               </div>
 
-
-          <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
-            <h1 className=" text-[14px] leading-[18.2px] font-medium ">
-              INSTALMENT
-              <span className="text-[12px] font-normal leading-[15.6px]">
-                USD
-              </span>
-              <span className="text-[18px] leading-[23.4px] font-bold">
-                $4,820
-              </span>
-              <span className="text-[12px] leading-[15.6px] font-normal">
-                per month
-              </span>
-            </h1>
-
-          </div>
+              <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
+                <h1 className=" text-[14px] leading-[18.2px] font-medium ">
+                  INSTALMENT
+                  <span className="text-[12px] font-normal leading-[15.6px]">
+                    USD
+                  </span>
+                  <span className="text-[18px] leading-[23.4px] font-bold">
+                    $4,820
+                  </span>
+                  <span className="text-[12px] leading-[15.6px] font-normal">
+                    per month
+                  </span>
+                </h1>
+              </div>
               <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
                 <h1 className=" text-[14px] leading-[18.2px] font-medium ">
                   INSTALMENT
