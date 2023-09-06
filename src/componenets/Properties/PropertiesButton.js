@@ -107,7 +107,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("All")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "All"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -149,7 +149,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("All Vacant")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "All Vacant"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -191,7 +191,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("Delete or Unlist")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "Delete or Unlist"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -235,7 +235,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("Update")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "Update"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -277,7 +277,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "All"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -317,7 +317,7 @@ const PropertiesButton = () => {
             </button>
           </div>
         </div>
-        <div className="font-semibold xl:text-2xl text-xl text-[#17062F] flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
+        <div className="font-semibold xl:text-2xl md:text-xl text-lg  flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
           {" "}
           <h1 className="flex whitespace-nowrap gap-2">
             {" "}

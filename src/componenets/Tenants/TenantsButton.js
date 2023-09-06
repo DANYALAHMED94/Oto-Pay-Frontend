@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import tenants from "../../assets/image 6.png";
+import tenant from "../../assets/image 6.png";
 import analytics from "../../assets/image 7.png";
 import block from "../../assets/image 8.png";
+import TenantCard from "../global/TenantCard";
 const TenantsButtons = () => {
-  const [properties, setProperties] = useState("");
+  const [tenants, setTenants] = useState("");
 
 
   return (
@@ -75,7 +76,7 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              className="flex justify-center items-center gap-[4px] text-white bg-[#17062F]  lg:w-[220px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
+              className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-[220px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
               <svg
                 className="w-[20px] h-[20px]"
@@ -98,9 +99,9 @@ const TenantsButtons = () => {
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">
             <button
               type="submit"
-              onClick={() => setProperties("All")}
+              onClick={() => setTenants("All")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                properties === "All"
+                tenants === "All"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
@@ -110,7 +111,7 @@ const TenantsButtons = () => {
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
-                    src={tenants}
+                    src={tenant}
                   />
                 </div>
                 View All Tenants
@@ -127,7 +128,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={properties === "All" ? "#17062F" : "white"}
+                      stroke={tenants === "All" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -140,9 +141,9 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              onClick={() => setProperties("All Vacant")}
+              onClick={() => setTenants("Analytics")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                properties === "All Vacant"
+                tenants === "All Vacant"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
@@ -169,7 +170,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={properties === "All Vacant" ? "#17062F" : "white"}
+                      stroke={tenants === "All Vacant" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -182,9 +183,9 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              onClick={() => setProperties("Delete or Unlist")}
+              onClick={() => setTenants("Total Block")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                properties === "Delete or Unlist"
+                tenants === "Delete or Unlist"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
@@ -211,7 +212,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={properties === "Delete or Unlist" ? "#17062F" : "white"}
+                      stroke={tenants === "Delete or Unlist" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -229,15 +230,18 @@ const TenantsButtons = () => {
           {" "}
           <h1 className="flex whitespace-nowrap gap-2">
             {" "}
-            {properties} Tenants{" "}
+            {tenants} Tenants{" "}
             <span className="text-[#5A4278] ">987,272,000</span>{" "}
           </h1>
 
    
         </div>
        
+        {tenants === "All" ? <TenantCard  tenants={tenants} /> : null}
+        {tenants === "Total Block" ?( <TenantCard  tenants={tenants} /> ): null}
+
       </div>
-      
+
     </>
   );
 };
