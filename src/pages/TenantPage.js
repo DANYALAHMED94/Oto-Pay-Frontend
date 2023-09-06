@@ -1,22 +1,12 @@
 import React from "react";
-
-;
-
-
-
-import AllTenants from "../componenets/Tenants/AllTenants";
+import TenantsButtons from "../componenets/Tenants/TenantsButton";
 import TenantRegistrationForm from "../componenets/global/TenantRegistrationForm";
-
 
 const TenantPage = () => {
   return (
     <>
-
-<TenantsButtons/>
-
+      <TenantsButtons />
       <TenantRegistrationForm />
-  
-
     </>
   );
 };

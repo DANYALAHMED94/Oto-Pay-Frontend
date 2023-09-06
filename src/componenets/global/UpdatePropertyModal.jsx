@@ -9,9 +9,12 @@ import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 import Map from "../../assets/map.png";
 
-export default function UpdatePropertyModal({showModal, setShowModal}) {
+export default function UpdatePropertyModal({
+  showModal,
+  setShowModal,
+  state,
+}) {
   // const [file, setFile] = useState();
-
 
   // const handlefile = (event) => {
   //   setFile(event.target.files[0]);
@@ -84,7 +87,7 @@ export default function UpdatePropertyModal({showModal, setShowModal}) {
                         <Form>
                           <div className="p-3 rounded-2xl bg-[#E4DFEB]">
                             <div className="w-full ">
-                              <FileInput />
+                              <FileInput state={state} />
                             </div>
                             <div className="flex md:flex-row flex-col justify-between lg:gap-x-0 md:gap-x-5 items-center">
                               <div className="flex lg:w-3/5 w-full flex-col py-3">
