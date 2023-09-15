@@ -4,11 +4,11 @@ import Cancel from "../../assets/cancel.svg";
 import TenantCard from "./TenantCard";
 import AcceptedReq from "./AcceptedReq";
 
-export const ProvidersModal = ({ showModal, setShowModal, handleButton, setHandleButton }) => {
+export const ProvidersModal = ({ showModalTwo, setShowModalTwo, handleButton, setHandleButton }) => {
 
   return (
     <>
-      {showModal ? (
+      {showModalTwo ? (
         <>
           <div className="justify-center items-center hide-scrollbar overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative lg:w-[1025px] md:[400px] h-auto my-6 mx-auto px-5">
@@ -27,7 +27,7 @@ export const ProvidersModal = ({ showModal, setShowModal, handleButton, setHandl
                   </h1>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => setShowModalTwo(false)}
                   >
                     <img src={Cancel} alt="x" />
                   </button>
@@ -52,7 +52,7 @@ export const ProvidersModal = ({ showModal, setShowModal, handleButton, setHandl
                 </div>
                 <div className="h-auto md:p-5 p-3 flex md:flex-row flex-col lg:justify-end justify-between items-center gap-3">
                   <button
-                    onClick={() => setShowModal(false)}
+                    onClick={() => setShowModalTwo(false)}
                     className="py-3 px-4 rounded-lg border lg:w-64 w-full border-[#312245]"
                   >
                     Cancel

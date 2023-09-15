@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Cancel from "../../assets/cancel.svg";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import Frame from "../../assets/Frame.png";
 import Voice from "../../assets/voice.png";
 
-export default function RequestFromUserModal() {
-  const [showModal, setShowModal] = useState(false);
+export default function RequestFromUserModal({showRequestModal, setShowRequestModal}) {
+
   return (
     <>
-      {showModal ? (
+      {showRequestModal ? (
         <>
           <div className="hide-scrollbar overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative lg:w-[1200px] xl:w-[1400px] md:w-[740px] my-6 mx-auto max-w-5xl px-5">
@@ -24,7 +24,7 @@ export default function RequestFromUserModal() {
                   </h1>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => setShowRequestModal(false)}
                   >
                     <img src={Cancel} alt="x" />
                   </button>
@@ -141,7 +141,7 @@ export default function RequestFromUserModal() {
                             <button
                               type="button"
                               className="md:text-sm text-xs text-[#312245] font-bold px-4 py-3 md:w-40 w-full h-11 mt-3 border-2 border-[#312245] rounded"
-                              onClick={() => setShowModal(false)}
+                              onClick={() => setShowRequestModal(false)}
                             >
                               Cancel
                             </button>

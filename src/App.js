@@ -14,7 +14,6 @@ import Footer from "./componenets/HomePageComponents/Footer/Footer";
 import Navbar from "./componenets/HomePageComponents/Navbar/Navbar";
 import PropertiesPage from "./pages/PropertiesPage";
 import ServiceReqPage from "./pages/ServiceReqPage";
-import ServiceProvider from "./componenets/ServicesRequest/ServiceProvider";
 import ServiceProPage from "./pages/ServiceProPage";
 import Landlord from "./pages/LandlordPage";
 import PaymentPage from "./pages/PaymentPage";
