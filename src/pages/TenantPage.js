@@ -1,17 +1,14 @@
 import React from "react";
 
-import TenantsButton from "../componenets/Tenants/TenantsButton"
+import TenantsButtons from "../componenets/Tenants/TenantsButton";
 
-
-import TenantRegistrationForm from "../componenets/global/TenantRegistrationForm";
 
 const TenantPage = () => {
   return (
     <>
 
-<TenantsButton />
+      <TenantsButtons />
 
-      <TenantRegistrationForm />
     </>
   );
 };

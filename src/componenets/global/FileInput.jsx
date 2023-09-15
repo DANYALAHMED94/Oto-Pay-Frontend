@@ -50,11 +50,13 @@ function FileInput({ info, state }) {
 
   return (
     <>
-      {state === "Update" ? (
+      {state === "Update" ||
+      state === "Property Pictures or Videos" ||
+      state === "Service Request Form" ? (
         <div className="w-full mt-5">
           <div className="space-y-1">
             <p className="text-[#312245] text-base font-bold leading-5">
-              Upload Property Pictures
+              {`Upload ${state}`}
             </p>
             <p className="text-[#5A4278] text-sm font-medium leading-4">
               Up to 30 Images
