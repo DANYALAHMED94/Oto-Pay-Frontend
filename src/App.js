@@ -1,6 +1,6 @@
-// 
+//
 import React from "react";
-import { Route, Routes, useRoutes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import "./App.css";
 
@@ -34,7 +34,7 @@ function App() {
         <Route path="admin-dashboard" element={<DashboardPage />}>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="properties" element={<PropertiesPage/>} />
+          <Route path="properties" element={<PropertiesPage />} />
           <Route path="tenants" element={<TenantPage />} />
           <Route path="access" element={<AccessPage />} />
         </Route>

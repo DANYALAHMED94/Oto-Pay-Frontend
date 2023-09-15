@@ -4,7 +4,7 @@ import Delete from "../../assets/trash.svg";
 import Unlist from "../../assets/unlist.svg";
 import PropertyModalCard from "./PropertyModalCard";
 
-export const PropertyModal = ({showModal, setShowModal,handleButton, setHandleButton}) => {
+export const PropertyModal = ({showModal, setShowModal,handleButton}) => {
   return (
     <>
       {showModal ? (
