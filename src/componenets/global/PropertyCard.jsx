@@ -9,21 +9,22 @@ import img from "../../assets/Frame 267.png";
 import UpdatePropertyModal from "./UpdatePropertyModal";
 import { useLocation } from "react-router-dom";
 
-function PropertyCard({ properties, access }) {
+function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLord, request}) {
   const [showModal, setShowModal] = useState(false);
 
   const location = useLocation();
 
   // Determine which buttons to render based on the location.pathname
-  const shouldShowButton = location.pathname === "/admin-dashboard/tenants";
+  const shouldShowButton = location.pathname === "/admin-dashboard/tenants" || location.pathname === "/admin-dashboard/landlord" ;
   const ShowOtherButton =
     location.pathname === "/admin-dashboard/properties" ||
-    location.pathname === "/admin-dashboard/access";
+    location.pathname === "/admin-dashboard/access"   ||
+    location.pathname === "/search";
 
   return (
     <>
-      <div className="w-full h-full xl:p-[24px] lg:p-4  p-6 rounded-lg     shadow-lg     bg-[#FFFFFF] flex   flex-col xl:gap-[32px] lg:gap-4  gap-4">
-        {access === "Activity" ? (
+      <div className="w-full h-full xl:p-[24px] lg:p-4  p-6 rounded-lg     shadow-lg     bg-[#FFFFFF] flex   flex-col xl:gap-[32px] lg:gap-0  gap-4">
+        {access === "Activity"? (
           <div className=" flex md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
               <div className="md:w-12 w-16 h-16 md:h-12">
@@ -51,7 +52,62 @@ function PropertyCard({ properties, access }) {
             </div>
           </div>
         ) : null}
-        <div className=" flex  xl:flex-row flex-col xl:gap-[32px] lg:gap-4  gap-4">
+
+           {request === "All Landlords" || landLord === "landlord" || request === "Blocked Landlords"? (
+          <div className=" flex  md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
+            <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
+              <div className="md:w-12 w-16 h-16 md:h-12">
+                <img
+                  alt="gallery"
+                  className="w-full  h-full rounded-lg object-center block"
+                  src={img}
+                />
+              </div>
+              <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
+              Tenant Name
+                <span className="text-[#17062F] leading-5 font-medium text-base">
+                  John Smith
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
+              <div className="flex  text-black text-sm  leading-5 font-medium ">
+              Lease Start Date
+              </div>
+              <div className="flex  text-[#0C8B3F] text-base  leading-5 font-medium ">
+              02-06-1992
+              </div>
+            </div>
+
+            <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
+              <div className="flex  text-black text-sm  leading-5 font-medium ">
+              Lease End Date
+              </div>
+              <div className="flex  text-[#CD2424] text-base  leading-5 font-medium ">
+              02-06-1992
+              </div>
+            </div>
+
+            <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
+              <div className="flex  text-black text-sm  leading-5 font-medium ">
+              Lease Duration
+              </div>
+              <div className="flex  text-[#312245] text-base  leading-5 font-medium ">
+              5 Years
+              </div>
+            </div>
+
+            <button className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]">
+ Tenant Details
+            </button>
+
+          </div>
+        ) : null}
+
+
+
+        <div className=" flex   xl:flex-row flex-col xl:gap-[32px] lg:gap-4  gap-4">
           <div className="  xl:w-[534px]  w-full xl:h-[486px] h-80 flex justify-center items-center   ">
             <img
               alt="gallery"
@@ -60,7 +116,11 @@ function PropertyCard({ properties, access }) {
             />
           </div>
 
-          <div className="xl:w-[450px]  w-full   h-full  space-y-[20px] ">
+          <div className={`xl:w-[580px]  w-full   h-full     ${
+                searchStyle === "Card"
+                  ? " space-y-[30px]"
+                  : " space-y-[10px]"
+              }     `}>
             <div className="w-full h-full space-y-[11px]">
               <div className="flex justify-between">
                 <h2
@@ -76,7 +136,7 @@ function PropertyCard({ properties, access }) {
                     className="p-3 px-4 w-[160px] h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
                   >
                     <img src={update} alt="delete" />
-                    <p className="text-sm text-[#312245] font-semibold">
+                    <p className="text-sm text-[#312245] font-semibold whitespace-nowrap">
                       Update Property
                     </p>
                   </button>
@@ -178,24 +238,11 @@ function PropertyCard({ properties, access }) {
                   </span>
                 </h1>
               </div>
-              <div className="w-[278px] h-[39px]  rounded-md p-[8px] flex gap-[4px] bg-[#F6F6F6] items-center tracking-wider text-[#5A4278]">
-                <h1 className=" text-[14px] leading-[18.2px] font-medium ">
-                  INSTALMENT
-                  <span className="text-[12px] font-normal leading-[15.6px]">
-                    USD
-                  </span>
-                  <span className="text-[18px] leading-[23.4px] font-bold">
-                    $4,820
-                  </span>
-                  <span className="text-[12px] leading-[15.6px] font-normal">
-                    per month
-                  </span>
-                </h1>
-              </div>
+            
             </div>
 
             {ShowOtherButton && (
-              <div className=" w-full  md:h-[48px] h-auto flex md:flex-row flex-col  md:justify-between justify-center gap-4 ">
+              <div className=" w-full md:h-[48px] h-auto flex md:flex-row flex-col  md:justify-between justify-center gap-4 ">
                 <button
                   type="submit"
                   className="flex justify-center gap-[8px] p-2 text-[#CD2424] dark:text-white  w-full h-full border border-[#CD2424]   rounded-md text-sm  text-center  items-center  mb-2 "
@@ -299,7 +346,7 @@ function PropertyCard({ properties, access }) {
             )}
             {shouldShowButton && (
               <div className=" w-full  md:h-[48px] h-auto flex md:flex-row flex-col lg:justify-start md:justify-start justify-center gap-[16px] ">
-                <button
+                 { request === "All Landlords" ||  request === "Blocked Landlords"? (<button
                   type="submit"
                   className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
                 >
@@ -317,9 +364,33 @@ function PropertyCard({ properties, access }) {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
+                   
                   </svg>
-                  Added Property
-                </button>
+                 Property On Rent
+                </button> ): ( <button
+                  type="submit"
+                  className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
+                >
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20.75 6L9.75 17L4.75 12"
+                      stroke="#2E0664"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                   
+                  </svg>
+                  Add Property
+                </button>)}
+                
+                
 
                 <button
                   type="submit"

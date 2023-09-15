@@ -3,9 +3,12 @@ import staff from "../../assets/image 9.png";
 import activity from "../../assets/image 10.png";
 import TenantCard from "../global/TenantCard";
 import PropertyCard from "../global/PropertyCard";
-const TenantsButtons = () => {
+import TenantRegistrationForm from "../global/TenantRegistrationForm";
+const AllAccess = () => {
   const [access, setAccess] = useState("");
-
+  const [request, setRequest] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [info, setInfo] = useState("");
 
   return (
     <>
@@ -50,6 +53,11 @@ const TenantsButtons = () => {
 
 
             <button
+            onClick={() => {
+              setInfo(" Staff Member");
+                setShowModal(true);
+              }}
+           
               type="submit"
               className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-64 md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
@@ -74,7 +82,8 @@ const TenantsButtons = () => {
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">
             <button
               type="submit"
-              onClick={() => setAccess("All")}
+              onClick={() => { setAccess("All");
+            setRequest("Accepted")}}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
                 access === "All"
                   ? "bg-[#E4DFEB] text-black"
@@ -172,13 +181,14 @@ const TenantsButtons = () => {
    
         </div>
        
-        {access === "All" ? <TenantCard  access={access} /> : null}
+        {access === "All" ? <TenantCard  access={access} request={request} /> : null}
         {access === "Activity" ?( <PropertyCard access={access} /> ): null}
 
       </div>
 
+      <TenantRegistrationForm info={info} showModal={showModal} setShowModal={setShowModal}   />
     </>
   );
 };
 
-export default TenantsButtons;
+export default AllAccess;

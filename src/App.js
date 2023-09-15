@@ -13,6 +13,11 @@ import AccessPage from "./pages/AccessPage";
 import Footer from "./componenets/HomePageComponents/Footer/Footer";
 import Navbar from "./componenets/HomePageComponents/Navbar/Navbar";
 import PropertiesPage from "./pages/PropertiesPage";
+import ServiceReqPage from "./pages/ServiceReqPage";
+import ServiceProvider from "./componenets/ServicesRequest/ServiceProvider";
+import ServiceProPage from "./pages/ServiceProPage";
+import Landlord from "./pages/LandlordPage";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   const location = useLocation();
@@ -37,6 +42,10 @@ function App() {
           <Route path="properties" element={<PropertiesPage/>} />
           <Route path="tenants" element={<TenantPage />} />
           <Route path="access" element={<AccessPage />} />
+          <Route path="landlord" element={<Landlord />} />
+          <Route path="payments" element={<PaymentPage />} />
+          <Route path="service-request" element={<ServiceReqPage/>} />
+          <Route path="service-providers" element={<ServiceProPage/>} />
         </Route>
       </Routes>
       <Footer />

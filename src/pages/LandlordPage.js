@@ -1,24 +1,27 @@
 import React, { useState } from "react";
-import tenant from "../../assets/image 6.png";
-import analytics from "../../assets/image 7.png";
-import block from "../../assets/image 8.png";
-import TenantCard from "../global/TenantCard";
-import TenantRegistrationForm from "../global/TenantRegistrationForm";
-const TenantsButtons = () => {
-  const [tenants, setTenants] = useState("");
-  const [request , setRequest] = useState("");
 
+import tenant from "../assets/image 6.png";
+import analytics from "../assets/image 7.png";
+import block from "../assets/image 8.png";
+import TenantCard from "../componenets/global/TenantCard";
+import TenantRegistrationForm from "../componenets/global/TenantRegistrationForm";
+
+const Landlord = () => {
+  const [request, setRequest] = useState("");
+  const [accept, setAccept] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [info, setInfo] = useState("Staff Member");
+  const [info, setInfo] = useState("");
+
+
 
   return (
     <>
       <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg flex  flex-col md:gap-4 gap-2 ">
-          <div className="text-white font-bold text-xl ">Tenants</div>
+          <div className="text-white font-bold text-xl ">LandLords</div>
 
           <div className="w-full flex md:flex-row flex-col justify-between gap-2">
-            <div className=" border border-white flex gap-3 p-2 xl:w-[585px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#F6F6F6] rounded-md   justify-between items-center">
+            <div className=" border border-white flex gap-3 p-2 xl:w-[740px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#F6F6F6] rounded-md   justify-between items-center">
               <svg
                 width="24"
                 height="24"
@@ -48,43 +51,17 @@ const TenantsButtons = () => {
                 type="text"
                 required
                 className="w-full  xl:h-[48px] lg:h-[40px] md:h-[40px] h-[32px] flex-auto  px-2 py-2 text-black  focus:outline-none bg-[#F6F6F6]  sm:text-sm sm:leading-6"
-                placeholder="Search Property Name & Location "
+                placeholder="Search Tenant Name , Location & More"
               />
-            </div>
-
-            <div className=" lg:w-[170px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center">
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M22 3.38086H2L10 12.8409V19.3809L14 21.3809V12.8409L22 3.38086Z"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <select className=" w-full rounded-md  bg-[#653E92] text-white xl:text-base text-sm focus:outline-none">
-                <option value=""> All Filters </option>
-                <option value="fully-furnished">Washington, street xyz</option>
-                <option value="partially-furnished">
-                  Washington, street xyz
-                </option>
-                <option value="not-furnished">Washington, street xyz</option>
-              </select>
             </div>
 
             <button
               onClick={() => {
-                setInfo("Tenant");
+                setInfo(" Staff Member");
                 setShowModal(true);
               }}
               type="submit"
-              className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-[220px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
+              className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-64 md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
               <svg
                 className="w-[20px] h-[20px]"
@@ -100,32 +77,28 @@ const TenantsButtons = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Add new Tenant
+              Add New Staff Member
             </button>
           </div>
-
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">
             <button
               type="submit"
-              onClick={() => {
-                setTenants("All");
-                setRequest("Accepted");
-              }}
+              onClick={() => setRequest("All Landlords")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                tenants === "All"
+                request === "All Landlords"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7 flex justify-center items-center">
+              <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7 flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
                     src={tenant}
                   />
                 </div>
-                View All Tenants
+                All LandLords
               </div>
               <div>
                 <svg
@@ -139,7 +112,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={tenants === "All" ? "#17062F" : "white"}
+                      stroke={request === "All Landlords" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -152,22 +125,23 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              onClick={() => setTenants("Analytics")}
+              onClick={() => {setRequest("Analytics");
+              setAccept("accreq")}}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                tenants === "All Vacant"
+                request === "Analytics"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
+              <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
                     src={analytics}
                   />
                 </div>
-                View Analytics
+                Analytics
               </div>
               <div>
                 <svg
@@ -181,7 +155,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={tenants === "All Vacant" ? "#17062F" : "white"}
+                      stroke={request === "Analytics" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -194,24 +168,22 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              onClick={() => {setTenants("Total Block");
-              setRequest("Accepted");
-            }}
+              onClick={() => setRequest("Blocked Landlords")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                tenants === "Delete or Unlist"
+                request === "Blocked Landlords"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7  flex justify-center items-center">
+              <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
                     src={block}
                   />
                 </div>
-                Block/Restrict tenants
+                Block Landlords
               </div>
               <div>
                 <svg
@@ -225,9 +197,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={
-                        tenants === "Delete or Unlist" ? "#17062F" : "white"
-                      }
+                      stroke={request === "Blocked Landlords" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -243,24 +213,19 @@ const TenantsButtons = () => {
           {" "}
           <h1 className="flex whitespace-nowrap gap-2">
             {" "}
-            {tenants} Tenants{" "}
-            <span className="text-[#5A4278] ">987,272,000</span>{" "}
+            {request}
+            <span className="text-[rgb(90,66,120)] ">987,272,000</span>{" "}
           </h1>
+          
         </div>
 
-        {tenants === "All" ? (
-          <TenantCard tenants={tenants} request={request} />
-        ) : null}
-        {tenants === "Total Block" ? <TenantCard tenants={tenants} request={request}  /> : null}
+        {request === "All Landlords" ? <TenantCard request={request} /> : null}
+        {request === "Blocked Landlords" ? <TenantCard request={request} accept={accept} /> : null}
       </div>
 
-      <TenantRegistrationForm
-        info={info}
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
+
     </>
   );
 };
 
-export default TenantsButtons;
+export default Landlord;
