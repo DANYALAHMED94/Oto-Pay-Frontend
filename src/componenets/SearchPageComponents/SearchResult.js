@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 // import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PropertyCard from "../global/PropertyCard";
 
-const SearchResult = () => {
-  const [searchStyle, setSearchStyle] = useState("Card");
+const SearchResult = ({ searchStyle }) => {
+  // const [searchStyle, setSearchStyle] = useState("Card");
 
   return (
     <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] pt-10 xl:px-[80px] xl:py-[120px] lg:px-[40px] md:px-[40px] px-6 space-y-4 text-black-600 body-font flex flex-col justify-center items-center gap-4 relative z-0">

@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Cancel from "../../assets/cancel.svg";
 
 import TenantCard from "./TenantCard";
 // import AcceptedReq from "./AcceptedReq";
 
-export const LandLordModal = ({ showModal, setShowModal, handleButton }) => {
-
-  const [landLord, setLandLord] = useState("landlord");
+export const LandLordModal = ({
+  showModal,
+  setShowModal,
+  handleButton,
+  landLord,
+}) => {
+  // const [landLord, setLandLord] = useState("landlord");
   return (
     <>
       {showModal ? (
@@ -36,16 +40,13 @@ export const LandLordModal = ({ showModal, setShowModal, handleButton }) => {
                 {/*body*/}
                 <div className="px-3">
                   <div className=" relative h-[533px] space-y-5 py-5 overflow-y-auto bg-[#E4DFEB] rounded-2xl">
-                   
-                  
                     <div className="flex w-full  gap-x-3 lg:px-0  md:px-2 px-5 items-start justify-center">
                       <TenantCard width={"w-[900px]"} landLord={"req"} />
                       <input type="checkbox" />
-                      
-                      </div>
-                  
+                    </div>
+
                     <div className="flex w-full gap-x-3 md:px-0 px-5 items-start justify-center">
-                      <TenantCard width={"w-[900px]"} landLord={landLord}/>
+                      <TenantCard width={"w-[900px]"} landLord={landLord} />
                       <input type="checkbox" />
                     </div>
                   </div>
@@ -57,13 +58,12 @@ export const LandLordModal = ({ showModal, setShowModal, handleButton }) => {
                   >
                     Cancel
                   </button>
-               
-                    <button className="p-3 px-4 rounded-lg border flex justify-center items-center lg:w-64 w-full border-[#0C468B]">
-                      <p className="text-base text-[#0C468B] font-bold whitespace-nowrap">
-                     Send to Selected Providers
-                      </p>
-                    </button>
-                   
+
+                  <button className="p-3 px-4 rounded-lg border flex justify-center items-center lg:w-64 w-full border-[#0C468B]">
+                    <p className="text-base text-[#0C468B] font-bold whitespace-nowrap">
+                      Send to Selected Providers
+                    </p>
+                  </button>
                 </div>
               </div>
             </div>
@@ -71,7 +71,6 @@ export const LandLordModal = ({ showModal, setShowModal, handleButton }) => {
           <div className="opacity-60 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
-      
     </>
   );
 };
