@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 // import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import PropertyCard from "../global/PropertyCard";
 
 const SearchResult = () => {
+  const [searchStyle, setSearchStyle] = useState("Card");
+
   return (
     <section className="bg-[#F6F6F6] 3xl:px-[70px] 2xl:px-[50px] pt-10 xl:px-[80px] xl:py-[120px] lg:px-[40px] md:px-[40px] px-6 space-y-4 text-black-600 body-font flex flex-col justify-center items-center gap-4 relative z-0">
       <div className="xl:w-[1199px] lg:w-[950px]">
@@ -92,9 +94,9 @@ const SearchResult = () => {
         </div>
       </div>
 
-      <div className="xl:w-[1200px] lg:pb-10 pb-5 lg:w-[950px] h-auto lg:flex gap-[56px]">
-        <div className="3xl:gap-40 xl:gap-[24px] lg:gap-y-20 sm:gap-y-8">
-          <PropertyCard />
+      <div className="xl:w-[1200px] lg:pb-10 pb-5 lg:w-[950px] h-auto lg:flex flex-col justify-center items-center gap-[56px]">
+        <div className="flex w-full  h-full flex-col 3xl:gap-40 lg:gap-y-6 sm:gap-y-8">
+          <PropertyCard searchStyle={searchStyle} />
           <PropertyCard />
           <PropertyCard />
         </div>

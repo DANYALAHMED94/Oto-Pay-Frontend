@@ -59,9 +59,9 @@ export default function SideBar({ show, setShow }) {
                 <li
                   className={`flex items-center ${
                     isActive
-                      ? "bg-[#34A2B2] text-white"
-                      : "bg-white text-[#64748B]"
-                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]   px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
                     <HomeIcon />
@@ -76,9 +76,9 @@ export default function SideBar({ show, setShow }) {
                 <li
                   className={`flex items-center ${
                     isActive
-                      ? "bg-[#34A2B2] text-white"
-                      : "bg-white text-[#64748B]"
-                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
                   <PropertyIcon />
@@ -99,13 +99,32 @@ export default function SideBar({ show, setShow }) {
                 <li
                   className={`flex items-center ${
                     isActive
-                      ? "bg-[#34A2B2] text-white"
-                      : "bg-white text-[#64748B]"
-                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]   px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
                   <TenantsIcon />
                       <p className="font-normal text-[16px] ml-5 ">Tenants</p>
+                  </div>
+                </li>
+              )}
+            </NavLink>
+
+            
+
+            <NavLink to="landlord">
+              {({ isActive }) => (
+                <li
+                  className={`flex items-center ${
+                    isActive
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]   px-4`}
+                >
+                  <div className="w-[282px] h-[52px] flex items-center">
+                  <TenantsIcon />
+                      <p className="font-normal text-[16px] ml-5 ">LandLord</p>
                   </div>
                 </li>
               )}
@@ -117,9 +136,9 @@ export default function SideBar({ show, setShow }) {
                 <li
                   className={`flex items-center ${
                     isActive
-                      ? "bg-[#34A2B2] text-white"
-                      : "bg-white text-[#64748B]"
-                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
                   <AccessIcon />
@@ -134,9 +153,9 @@ export default function SideBar({ show, setShow }) {
                 <li
                   className={`flex items-center ${
                     isActive
-                      ? "bg-[#34A2B2] text-white"
-                      : "bg-white text-[#64748B]"
-                  }  justify-center hover:bg-[#34A2B2] hover:text-white  px-4`}
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]   px-4`}
                 >
                   <div className="w-[282px] h-[52px] flex items-center">
                   <Payment />
@@ -152,12 +171,12 @@ export default function SideBar({ show, setShow }) {
                     type="checkbox"
                     className=" peer absolute top-0 insert-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
                   />
-                  <div className="  h-12 w-full  flex items-center text-[#64748B]  peer-checked:text-white peer-checked:bg-[#34A2B2]">
+                  <div className="  h-12 w-full  flex items-center text-[#17062F]  peer-checked:text-[#2E0664] peer-checked:bg-[#E4DFEB]">
                     <SidebarService />
                     <p className="font-normal text-[16px] ml-5">Services</p>
                   </div>
 
-                  <div className="absolute top-[18px]  mr-5 right-3 text-[#64748B] peer-checked:text-white transition-transform duration-500 rotate-0 peer-checked:rotate-180 ">
+                  <div className="absolute top-[18px]  mr-5 right-3 text-[#2E0664] peer-checked:text-[#2E0664] transition-transform duration-500 rotate-0 peer-checked:rotate-180 ">
                     <ArrowIcon className="transition-transform -rotate-90" />
                   </div>
 
@@ -167,7 +186,7 @@ export default function SideBar({ show, setShow }) {
                         {({ isActive }) => (
                           <button
                             className={`w-full ${
-                              isActive ? "bg-[#F0FAFC]" : ""
+                              isActive ? "bg-[#E4DFEB]" : " bg-white"
                             } flex items-center  py-3 rounded-md`}
                           >
                             <div>
@@ -219,7 +238,7 @@ export default function SideBar({ show, setShow }) {
                               </svg>
                             </div>
 
-                            <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                            <div className="ml-3  font-normal text-[16px] text-[#5A4278]">
                               Service Providers
                             </div>
                           </button>

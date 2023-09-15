@@ -10,9 +10,9 @@ import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 import Map from "../../assets/map.png";
 
-export default function TenantRegistrationForm({ info }) {
-  // const [file, setFile] = useState();
-  const [showModal, setShowModal] = useState(true);
+export default function TenantRegistrationForm({ info, showModal,setShowModal }) {
+ 
+
 
   // const handlefile = (event) => {
   //   setFile(event.target.files[0]);

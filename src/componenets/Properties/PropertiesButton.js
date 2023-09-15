@@ -17,7 +17,7 @@ const PropertiesButton = () => {
   return (
     <>
       <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
-        <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg flex  flex-col md:gap-4 gap-2 ">
+        <div className="w-full  xl:p-[32px] lg:p-[14px] md:p-[16px] p-[18px] bg-[#2E0664] rounded-lg flex  flex-col md:gap-4 gap-2 ">
           <div className="text-white font-bold text-xl ">Properties</div>
 
           <div className="w-full flex md:flex-row flex-col justify-between gap-2">
@@ -103,18 +103,18 @@ const PropertiesButton = () => {
             </button>
           </div>
 
-          <div className="flex md:flex-row flex-col w-full justify-between gap-2">
+          <div className="flex w-full md:flex-row flex-col  justify-between gap-2">
             <button
               type="submit"
               onClick={() => setProperties("All")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex w-full justify-between items-center gap-[4px]  ${
                 properties === "All"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
-              }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
+              }    lg:h-[56px] md:h-[50px] xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  xl:font-bold  font-semibold`}
             >
-              <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-12 lg:w-9 w-full lg:h-10 h-7 flex justify-center items-center">
+              <div className="flex justify-start items-center xl:2 gap-1 whitespace-nowrap">
+                <div className="xl:w-12 lg:w-9  w-full lg:h-10 h-7 flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -149,14 +149,14 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("All Vacant")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex w-full justify-between items-center gap-[4px]  ${
                 properties === "All Vacant"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
-              }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
+              }    lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center   xl:font-bold  font-semibold `}
             >
-              <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-12 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
+              <div className="flex justify-start items-center xl:2 gap-1 whitespace-nowrap">
+                <div className="xl:w-12 lg:w-9 md:w-8 w-full lg:h-10 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -191,13 +191,13 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("Delete or Unlist")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex w-full justify-between items-center gap-[4px]  ${
                 properties === "Delete or Unlist"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
-              }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
+              }    lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center   xl:font-bold  font-semibold `}
             >
-              <div className="flex justify-start items-center xl:2 gap-1">
+              <div className="flex justify-start items-center  whitespace-nowrap">
                 <div className="xl:w-12 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
@@ -235,7 +235,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("Update")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "Update"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -277,7 +277,7 @@ const PropertiesButton = () => {
             <button
               type="submit"
               onClick={() => setProperties("")}
-              className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
+              className={`flex justify-between items-center gap-[4px]  ${
                 properties === "All"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
@@ -317,7 +317,7 @@ const PropertiesButton = () => {
             </button>
           </div>
         </div>
-        <div className="font-semibold xl:text-2xl text-xl text-[#17062F] flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
+        <div className="font-semibold xl:text-2xl md:text-xl text-lg  flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
           {" "}
           <h1 className="flex whitespace-nowrap gap-2">
             {" "}
@@ -333,12 +333,12 @@ const PropertiesButton = () => {
                   setHandleButton("Unlist");
                   setShowModal(true);
                 }}
-                className="p-3 px-4 md:w-[160px] w-full h-12 rounded-lg border gap-x-1 flex justify-center items-center border-[#0C468B]"
+                className="p-3 px-4 md:w-[160px] w-full text-sm text-[#0C468B] font-semibold whitespace-nowrap h-12 rounded-lg border gap-x-1 flex justify-center items-center border-[#0C468B]"
               >
                 <img src={list} alt="delete" />
-                <p className="text-sm text-[#0C468B] font-semibold whitespace-nowrap">
+            
                   Unlist Property
-                </p>
+              
               </button>
               <button
                 onClick={() => {
