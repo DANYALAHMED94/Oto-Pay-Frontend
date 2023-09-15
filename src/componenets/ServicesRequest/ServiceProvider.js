@@ -5,10 +5,12 @@ import TenantCard from "../global/TenantCard";
 import block from "../../assets/image 8.png";
 import list from "../../assets/unlist.svg";
 import { ProvidersModal } from "../global/ProvidersModal";
+import TenantRegistrationForm from "../global/TenantRegistrationForm";
 const ServiceProvider = () => {
   const [provider, setProvider] = useState("");
   const [showModal, setShowModal] = useState(false);
-  // const [info, setInfo] = useState("");
+  const [showModalTwo, setShowModalTwo] = useState(false);
+  const [info, setInfo] = useState("");
   const [handleButton, setHandleButton] = useState("");
 
   return (
@@ -54,7 +56,7 @@ const ServiceProvider = () => {
 
             <button
               onClick={() => {
-                // setInfo(" Staff Member");
+                setInfo("Service Provider");
                 setShowModal(true);
               }}
               type="submit"
@@ -74,7 +76,7 @@ const ServiceProvider = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Add New Staff Member
+              Add Service Provider
             </button>
           </div>
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">
@@ -232,7 +234,7 @@ const ServiceProvider = () => {
            
               onClick={() => {
                 setHandleButton("Selected");
-                setShowModal(true);
+                setShowModalTwo(true);
               }} className="p-3 px-4 xl:w-[220px] text-sm text-[#0C468B] font-semibold whitespace-nowrap w-full h-12 rounded-lg border gap-x-1 flex justify-center items-center border-[#0C468B]">
               Send to Selected Providers
             </button>
@@ -250,11 +252,13 @@ const ServiceProvider = () => {
       </div>
 
       <ProvidersModal
-       
-        showModal={showModal}
-        setShowModal={setShowModal}
+        showModalTwo={showModalTwo}
+        setShowModalTwo={setShowModalTwo}
+      
         handleButton={handleButton}  
       />
+
+<TenantRegistrationForm showModal={showModal} setShowModal={setShowModal} info={info} />
 
     </>
   );

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Business from "../../assets/Business Person.png";
 import wrench from "../../assets/Wrench.png";
 import { LandLordModal } from "./LandLordModal";
+import RequestFromUserModal from "./RequestFromUserModal";
 
 const AcceptedReq = ({request}) => {
   const [showModal, setShowModal] = useState(false);
+  const [showRequestModal, setShowRequestModal] = useState(false);
   const [handleButton, setHandleButton] = useState("");
   return (
     <div
@@ -48,7 +50,11 @@ const AcceptedReq = ({request}) => {
             </div>
           </div>
           <div className="flex xl:w-36  w-full xl:justify-end justify-start ">
-            <button className="flex md:w-36 w-full px-4 rounded-lg shadow-lg  shadow-[#0700118F]  h-11 text-center whitespace-nowrap justify-center items-center  font-bold text-base leading-5 text-white bg-[#17062F]">
+            <button 
+                onClick={() => 
+                  setShowRequestModal(true)
+                }
+                className="flex md:w-36 w-full px-4 rounded-lg shadow-lg  shadow-[#0700118F]  h-11 text-center whitespace-nowrap justify-center items-center  font-bold text-base leading-5 text-white bg-[#17062F]">
               Open Request
             </button>
           </div>
@@ -102,6 +108,12 @@ const AcceptedReq = ({request}) => {
        showModal={showModal}
        setShowModal={setShowModal}
        handleButton={handleButton}  
+     />
+
+<RequestFromUserModal
+       showRequestModal={showRequestModal}
+       setShowRequestModal={setShowRequestModal}
+   
      />
     </div>
   );

@@ -19,7 +19,7 @@ const PaymentPage = () => {
           <div className="text-white font-bold text-xl ">Payments</div>
 
           <div className="w-full flex md:flex-row flex-col justify-between gap-2">
-            <div className=" border border-white flex gap-3 p-2 xl:w-[740px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#F6F6F6] rounded-md   justify-between items-center">
+            <div className=" border border-white flex gap-3 p-2 xl:w-[820px]  lg:w-[440px] md:w-[520px] w-full lg:h-14 h-12 bg-[#F6F6F6] rounded-md   justify-between items-center">
               <svg
                 width="24"
                 height="24"
@@ -52,30 +52,31 @@ const PaymentPage = () => {
                 placeholder="Search Tenant Name , Location & More"
               />
             </div>
-
-
-            <button
-           
-           
-              type="submit"
-              className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-64 md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
-            >
+            <div className=" lg:w-[190px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center">
               <svg
-                className="w-[20px] h-[20px]"
-                viewBox="0 0 14 15"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M1 7.5H13M7 13.5V1.5"
+                  d="M22 3.38086H2L10 12.8409V19.3809L14 21.3809V12.8409L22 3.38086Z"
                   stroke="white"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
-              Add New Staff Member
-            </button>
+              <select className=" w-full rounded-md  bg-[#653E92] text-white xl:text-base text-sm focus:outline-none">
+                <option value=""> All Filters </option>
+                <option value="fully-furnished">Washington, street xyz</option>
+                <option value="partially-furnished">
+                  Washington, street xyz
+                </option>
+                <option value="not-furnished">Washington, street xyz</option>
+              </select>
+            </div>
           </div>
 
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">

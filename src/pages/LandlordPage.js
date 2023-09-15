@@ -57,7 +57,7 @@ const Landlord = () => {
 
             <button
               onClick={() => {
-                setInfo(" Staff Member");
+                setInfo("landloard landloard & Property");
                 setShowModal(true);
               }}
               type="submit"
@@ -77,7 +77,7 @@ const Landlord = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Add New Staff Member
+              Add New LandLord
             </button>
           </div>
           <div className="flex md:flex-row flex-col w-full justify-between gap-2">
@@ -223,7 +223,7 @@ const Landlord = () => {
         {request === "Blocked Landlords" ? <TenantCard request={request} accept={accept} /> : null}
       </div>
 
-
+      <TenantRegistrationForm showModal={showModal} setShowModal={setShowModal} info={info} />
     </>
   );
 };

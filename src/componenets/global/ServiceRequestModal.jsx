@@ -4,8 +4,8 @@ import Cancel from "../../assets/cancel.svg";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import FileInput from "./FileInput";
 
-export default function ServiceRequestModal({ state }) {
-  const [showModal, setShowModal] = useState(true);
+export default function ServiceRequestModal({showModal, setShowModal }) {
+  
   // const [file, setFile] = useState();
 
   // const handlefile = (event) => {

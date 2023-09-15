@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import staff from "../../assets/image 9.png";
 import action from "../../assets/image 13.png";
 import TenantCard from "../global/TenantCard";
-import TenantRegistrationForm from "../global/TenantRegistrationForm";
+import ServiceRequestModal from "../global/ServiceRequestModal";
 const ServiceRequest = () => {
   const [request, setRequest] = useState("");
   const [accept, setAccept] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [info, setInfo] = useState("");
 
 
+console.log(showModal)
 
   return (
     <>
       <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg flex  flex-col md:gap-4 gap-2 ">
-          <div className="text-white font-bold text-xl ">Staff</div>
+          <div className="text-white font-bold text-xl ">Services</div>
 
           <div className="w-full flex md:flex-row flex-col justify-between gap-2">
             <div className=" border border-white flex gap-3 p-2 xl:w-[740px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#F6F6F6] rounded-md   justify-between items-center">
@@ -53,10 +53,9 @@ const ServiceRequest = () => {
             </div>
 
             <button
-              onClick={() => {
-                setInfo(" Staff Member");
-                setShowModal(true);
-              }}
+              onClick={() => 
+                setShowModal(true)
+              }
               type="submit"
               className="flex md:justify-center justify-start items-center gap-[4px] text-white bg-[#17062F]  lg:w-64 md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
@@ -210,7 +209,7 @@ const ServiceRequest = () => {
           {" "}
           <h1 className="flex whitespace-nowrap gap-2">
             {" "}
-            {request} Staff{" "}
+            {request} 
             <span className="text-[rgb(90,66,120)] ">987,272,000</span>{" "}
           </h1>
           
@@ -220,8 +219,7 @@ const ServiceRequest = () => {
         {request === "Accepted" ? <TenantCard request={request} accept={accept} /> : null}
       </div>
 
-      <TenantRegistrationForm
-        info={info}
+      <ServiceRequestModal
         showModal={showModal}
         setShowModal={setShowModal}
       />
