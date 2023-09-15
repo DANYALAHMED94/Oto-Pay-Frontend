@@ -145,6 +145,23 @@ export default function DashboardPage() {
                 )}
               </NavLink>
 
+              <NavLink to="landlord">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+         isActive
+         ?   "bg-[#E4DFEB] text-[#2E0664]"
+         : "bg-[#F0EEF2] text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <AccessIcon />
+                      <p className="font-normal text-[16px] ml-5 ">LandLord</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
               <NavLink to="payments">
                 {({ isActive }) => (
                   <li
@@ -162,8 +179,11 @@ export default function DashboardPage() {
                 )}
               </NavLink>
 
-              <div className="w-full px-4 -mt-2  ">
-                <div className="    relative w-full h-auto overflow-hidden ">
+              <li
+                    className={`flex items-center justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664] px-2`}
+                  >
+              <div className="w-full ">
+                <div className="  w-full   relative  h-auto overflow-hidden ">
                   <input
                     type="checkbox"
                     className=" peer absolute top-0 insert-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
@@ -177,16 +197,15 @@ export default function DashboardPage() {
                     <ArrowIcon className="transition-transform -rotate-90" />
                   </div>
 
-                  <div className="  transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-64 pl-10 ">
-                    <div className="px-2 pt-2">
-                      <NavLink to="services">
+                  <div className="  w-full  transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-64 pl-8">
+                    <div className="w-full px-2 pt-2">
+                      <NavLink to="service-request">
                         {({ isActive }) => (
                           <button
-                            className={`w-full ${
+                            className={` ${
                               isActive 
-                              ?   "bg-[#E4DFEB] text-[#2E0664]"
-                              : "bg-white text-[#17062F]"
-                            } flex items-center  py-3 rounded-md`}
+                              ?   "bg-[#E4DFEB] ":""
+                            } w-full flex items-center  py-3 rounded-md`}
                           >
                             <div>
                               <svg
@@ -203,7 +222,7 @@ export default function DashboardPage() {
                               </svg>
                             </div>
 
-                            <div className="ml-3 font-normal text-[16px] text-[#5A4278]">
+                            <div className="ml-3 font-normal text-[16px] text-[#5A4278] whitespace-nowrap">
                               Service Requests
                             </div>
                             <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
@@ -215,13 +234,12 @@ export default function DashboardPage() {
                     </div>
 
                     <div className="px-2">
-                      <NavLink to="servicesProviders">
+                      <NavLink to="service-providers">
                         {({ isActive }) => (
                           <button
-                            className={`w-full ${
-                              isActive    ?   "bg-[#E4DFEB] text-[#2E0664]"
-                              : "bg-white text-[#17062F]"
-                            } flex items-center  py-3 rounded-md`}
+                            className={` ${
+                              isActive    ?   "bg-[#E4DFEB]" : ""
+                            } w-full flex items-center  py-3 rounded-md`}
                           >
                             <div>
                               <svg
@@ -248,6 +266,7 @@ export default function DashboardPage() {
                   </div>
                 </div>
               </div>
+            </li>
             </div>
 
             <div

@@ -111,6 +111,25 @@ export default function SideBar({ show, setShow }) {
               )}
             </NavLink>
 
+            
+
+            <NavLink to="landlord">
+              {({ isActive }) => (
+                <li
+                  className={`flex items-center ${
+                    isActive
+                    ?   "bg-[#E4DFEB] text-[#2E0664]"
+                    : "bg-white text-[#17062F]"
+                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]   px-4`}
+                >
+                  <div className="w-[282px] h-[52px] flex items-center">
+                  <TenantsIcon />
+                      <p className="font-normal text-[16px] ml-5 ">LandLord</p>
+                  </div>
+                </li>
+              )}
+            </NavLink>
+
 
             <NavLink to="access">
               {({ isActive }) => (
@@ -219,7 +238,7 @@ export default function SideBar({ show, setShow }) {
                               </svg>
                             </div>
 
-                            <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                            <div className="ml-3  font-normal text-[16px] text-[#5A4278]">
                               Service Providers
                             </div>
                           </button>

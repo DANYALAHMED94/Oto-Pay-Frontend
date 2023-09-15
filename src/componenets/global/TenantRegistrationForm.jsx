@@ -5,9 +5,9 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import FileInput from "./FileInput";
 import PropertyModalCard from "../global/PropertyModalCard";
 
-export default function TenantRegistrationForm({ info }) {
+export default function TenantRegistrationForm({ info, showModal,setShowModal }) {
   // const [file, setFile] = useState();
-  const [showModal, setShowModal] = useState(true);
+
   // const [info, setInfo] = useState("Staff Member");
 
   // const handlefile = (event) => {

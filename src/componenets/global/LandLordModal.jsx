@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Cancel from "../../assets/cancel.svg";
-import Delete from "../../assets/trash.svg";
-import Unlist from "../../assets/unlist.svg";
-import PropertyModalCard from "./PropertyModalCard";
 
-export const PropertyModal = ({showModal, setShowModal,handleButton}) => {
+import TenantCard from "./TenantCard";
+// import AcceptedReq from "./AcceptedReq";
+
+export const LandLordModal = ({ showModal, setShowModal, handleButton }) => {
+
+  const [landLord, setLandLord] = useState("landlord");
   return (
     <>
       {showModal ? (
@@ -17,12 +19,12 @@ export const PropertyModal = ({showModal, setShowModal,handleButton}) => {
                 <div className="flex items-center justify-between p-5">
                   <h1
                     className={`md:text-2xl text-sm ${
-                      handleButton === "Delete"
+                      handleButton === "Selected"
                         ? "text-[#CC3017]"
                         : "text-[#0C468B]"
                     }`}
                   >
-                    {`Are You Sure to ${handleButton} Selected Properties?`}
+                    {`Send Request to ${handleButton} Provider?`}
                   </h1>
                   <button
                     className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -33,36 +35,35 @@ export const PropertyModal = ({showModal, setShowModal,handleButton}) => {
                 </div>
                 {/*body*/}
                 <div className="px-3">
-                  <div className="relative h-[533px] space-y-5 py-5 overflow-y-auto bg-[#E4DFEB] rounded-2xl">
-                    <div className="flex w-full gap-x-3 md:px-0 px-5 items-start justify-center">
-                      <PropertyModalCard />
+                  <div className=" relative h-[533px] space-y-5 py-5 overflow-y-auto bg-[#E4DFEB] rounded-2xl">
+                   
+                  
+                    <div className="flex w-full  gap-x-3 lg:px-0  md:px-2 px-5 items-start justify-center">
+                      <TenantCard width={"w-[900px]"} landLord={"req"} />
                       <input type="checkbox" />
-                    </div>
+                      
+                      </div>
+                  
                     <div className="flex w-full gap-x-3 md:px-0 px-5 items-start justify-center">
-                      <PropertyModalCard />
+                      <TenantCard width={"w-[900px]"} landLord={landLord}/>
                       <input type="checkbox" />
                     </div>
                   </div>
                 </div>
-                <div className="h-auto md:p-5 p-3 flex justify-end items-center space-x-3">
-                  <button onClick={()=>setShowModal(false)} className="py-3 px-4 rounded-lg border w-40 border-[#312245]">
+                <div className="h-auto md:p-5 p-3 flex md:flex-row flex-col lg:justify-end justify-between items-center gap-3">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="py-3 px-4 rounded-lg border lg:w-64 w-full border-[#312245]"
+                  >
                     Cancel
                   </button>
-                  {handleButton === "Delete" ? (
-                    <button className="py-3 px-4 rounded-lg border flex justify-center items-center w-40 border-[#CD2424]">
-                      <img src={Delete} alt="delete" />
-                      <p className="text-base text-[#CD2424] font-bold">
-                        Delete
+               
+                    <button className="p-3 px-4 rounded-lg border flex justify-center items-center lg:w-64 w-full border-[#0C468B]">
+                      <p className="text-base text-[#0C468B] font-bold whitespace-nowrap">
+                     Send to Selected Providers
                       </p>
                     </button>
-                  ) : (
-                    <button className="p-3 px-4 rounded-lg border flex justify-center items-center w-40 border-[#0C468B]">
-                      <img src={Unlist} alt="delete" />
-                      <p className="text-base text-[#0C468B] font-bold">
-                        Unlist
-                      </p>
-                    </button>
-                  )}
+                   
                 </div>
               </div>
             </div>
@@ -70,6 +71,7 @@ export const PropertyModal = ({showModal, setShowModal,handleButton}) => {
           <div className="opacity-60 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
+      
     </>
   );
 };
