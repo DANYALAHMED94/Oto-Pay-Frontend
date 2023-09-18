@@ -9,13 +9,13 @@ const Newsletter = () => {
             <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
               Subscribe to get updated
             </h2>
-            <p className="md:mt-4 mt-0 md:text-lg text-sm w-full text-center xl:text-left leading-8 text-gray-300">
+            <p className="md:mt-2 mt-0 md:text-lg text-sm w-full text-center xl:text-left leading-8 text-gray-300">
               Elevate your well-being with the power of inspiration! Discover
               daily to keep you on track. Click now to get started on your
             </p>
           </div>
 
-          <div className=" md:w-[602px] w-full md:mt-6 mt-0 gap-x-4 flex items-center">
+          <div className=" md:w-[602px] w-full md:mt-3 mt-0 gap-x-4 flex items-center">
             <div className="w-full flex gap-4 md:flex-row flex-col">
               <label htmlFor="email-address" className="sr-only">
                 Email address
