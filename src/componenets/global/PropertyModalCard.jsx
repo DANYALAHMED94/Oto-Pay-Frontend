@@ -106,7 +106,11 @@ const PropertyModalCard = () => {
                 per month
               </span>
             </h1>
+          
           </div>
+          <div>  <button className="flex justify-center items-center rounded-lg p-1 w-full   font-bold text-base leading-5 text-white bg-[#17062F]">
+ Add Property
+            </button></div>
         </div>
       </div>
     </div>
