@@ -77,7 +77,7 @@ export default function DashboardPage() {
                   <li
                     className={`flex items-center ${
                       isActive
-                        ?  "bg-[#F0EEF2] text-[#17062F]"
+                        ? "bg-[#F0EEF2] text-[#17062F]"
                         : "bg-[#E4DFEB] text-[#2E0664]"
                     }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
@@ -94,9 +94,9 @@ export default function DashboardPage() {
                   <li
                     className={`flex items-center  ${
                       isActive
-                      ?   "bg-[#E4DFEB] text-[#2E0664]"
-                      : "bg-[#F0EEF2] text-[#17062F]"
-                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
                     <div className="w-[282px]  flex  items-center">
                       <PropertyIcon />
@@ -116,9 +116,9 @@ export default function DashboardPage() {
                   <li
                     className={`flex items-center ${
                       isActive
-                      ?   "bg-[#E4DFEB] text-[#2E0664]"
-                      : "bg-[#F0EEF2] text-[#17062F]"
-                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
                     <div className="w-[282px]  flex items-center">
                       <TenantsIcon />
@@ -132,10 +132,10 @@ export default function DashboardPage() {
                 {({ isActive }) => (
                   <li
                     className={`flex items-center ${
-         isActive
-         ?   "bg-[#E4DFEB] text-[#2E0664]"
-         : "bg-[#F0EEF2] text-[#17062F]"
-                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
                     <div className="w-[282px]  flex items-center">
                       <AccessIcon />
@@ -149,10 +149,10 @@ export default function DashboardPage() {
                 {({ isActive }) => (
                   <li
                     className={`flex items-center ${
-         isActive
-         ?   "bg-[#E4DFEB] text-[#2E0664]"
-         : "bg-[#F0EEF2] text-[#17062F]"
-                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
                     <div className="w-[282px]  flex items-center">
                       <AccessIcon />
@@ -167,9 +167,9 @@ export default function DashboardPage() {
                   <li
                     className={`flex items-center ${
                       isActive
-                      ?   "bg-[#E4DFEB] text-[#2E0664]"
-                      : "bg-[#F0EEF2] text-[#17062F]"
-                  }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
                   >
                     <div className="w-[282px]  flex items-center">
                       <Payment />
@@ -180,93 +180,92 @@ export default function DashboardPage() {
               </NavLink>
 
               <li
-                    className={`flex items-center justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664] px-2`}
-                  >
-              <div className="w-full ">
-                <div className="  w-full   relative  h-auto overflow-hidden ">
-                  <input
-                    type="checkbox"
-                    className=" peer absolute top-0 insert-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
-                  />
-                  <div className="  h-12 w-full  flex items-center text-[#17062F]  peer-checked:text-[#2E0664] peer-checked:bg-[#E4DFEB]">
-                    <SidebarService />
-                    <p className="font-normal text-[16px] ml-5">Services</p>
-                  </div>
-
-                  <div className="absolute top-[18px]  mr-5 right-3 text-[#2E0664] peer-checked:text-[#2E0664] transition-transform duration-500 rotate-0 peer-checked:rotate-180 ">
-                    <ArrowIcon className="transition-transform -rotate-90" />
-                  </div>
-
-                  <div className="  w-full  transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-64 pl-8">
-                    <div className="w-full px-2 pt-2">
-                      <NavLink to="service-request">
-                        {({ isActive }) => (
-                          <button
-                            className={` ${
-                              isActive 
-                              ?   "bg-[#E4DFEB] ":""
-                            } w-full flex items-center  py-3 rounded-md`}
-                          >
-                            <div>
-                              <svg
-                                width="12"
-                                height="13"
-                                viewBox="0 0 12 13"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
-                                  fill="#B3A1C9"
-                                />
-                              </svg>
-                            </div>
-
-                            <div className="ml-3 font-normal text-[16px] text-[#5A4278] whitespace-nowrap">
-                              Service Requests
-                            </div>
-                            <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
-                              13
-                            </div>
-                          </button>
-                        )}
-                      </NavLink>
+                className={`flex items-center justify-center hover:text-[#2E0664]`}
+              >
+                <div className="w-full">
+                  <div className="w-full relative  h-auto overflow-hidden">
+                    <input
+                      type="checkbox"
+                      className=" peer absolute top-0 insert-x-0 w-full h-12 opacity-0 z-10 cursor-pointer"
+                    />
+                    <div className="h-12 w-full flex items-center text-[#17062F] px-3  peer-checked:text-[#2E0664] peer-checked:bg-[#E4DFEB]">
+                      <SidebarService />
+                      <p className="font-normal text-[16px] ml-5">Services</p>
                     </div>
 
-                    <div className="px-2">
-                      <NavLink to="service-providers">
-                        {({ isActive }) => (
-                          <button
-                            className={` ${
-                              isActive    ?   "bg-[#E4DFEB]" : ""
-                            } w-full flex items-center  py-3 rounded-md`}
-                          >
-                            <div>
-                              <svg
-                                width="12"
-                                height="13"
-                                viewBox="0 0 12 13"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
-                                  fill="#B3A1C9"
-                                />
-                              </svg>
-                            </div>
+                    <div className="absolute top-[18px]  mr-5 right-3 text-[#2E0664] peer-checked:text-[#2E0664] transition-transform duration-500 rotate-0 peer-checked:rotate-180 ">
+                      <ArrowIcon className="transition-transform -rotate-90" />
+                    </div>
 
-                            <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
-                              Service Providers
-                            </div>
-                          </button>
-                        )}
-                      </NavLink>
+                    <div className="w-full transition-all duration-500 overflow-hidden max-h-0 peer-checked:max-h-64 pl-8">
+                      <div className="w-full px-2 pt-2">
+                        <NavLink to="service-request">
+                          {({ isActive }) => (
+                            <button
+                              className={` ${
+                                isActive ? "bg-[#E4DFEB] " : ""
+                              } w-full flex items-center px-2  py-3 rounded-md`}
+                            >
+                              <div>
+                                <svg
+                                  width="12"
+                                  height="13"
+                                  viewBox="0 0 12 13"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
+                                    fill="#B3A1C9"
+                                  />
+                                </svg>
+                              </div>
+
+                              <div className="ml-3 font-normal text-[16px] text-[#5A4278] whitespace-nowrap">
+                                Service Requests
+                              </div>
+                              <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
+                                13
+                              </div>
+                            </button>
+                          )}
+                        </NavLink>
+                      </div>
+
+                      <div className="px-2">
+                        <NavLink to="service-providers">
+                          {({ isActive }) => (
+                            <button
+                              className={` ${
+                                isActive ? "bg-[#E4DFEB]" : ""
+                              } w-full flex items-center px-2 py-3 rounded-md`}
+                            >
+                              <div>
+                                <svg
+                                  width="12"
+                                  height="13"
+                                  viewBox="0 0 12 13"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 12.5C9.3138 12.5 12 9.8138 12 6.5C12 3.1862 9.3138 0.5 6 0.5C2.6862 0.5 0 3.1862 0 6.5C0 9.8138 2.6862 12.5 6 12.5Z"
+                                    fill="#B3A1C9"
+                                  />
+                                </svg>
+                              </div>
+
+                              <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                                Service Providers
+                              </div>
+                            </button>
+                          )}
+                        </NavLink>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
             </div>
 
             <div

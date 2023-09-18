@@ -122,7 +122,7 @@ const Properties = ({ house }) => {
           <div className="w-full flex justify-center items-center">
             <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
               <div className="flex justify-center items-center">
-                <div className="w-[336px] h-[236px]">
+                <div className="w-full h-[236px]">
                   <img
                     alt="gallery"
                     className="w-full object-cover rounded h-full object-center block"
@@ -197,7 +197,7 @@ const Properties = ({ house }) => {
           <div className="w-full flex justify-center items-center">
             <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
               <div className="flex justify-center items-center">
-                <div className="w-[336px] h-[236px]  ">
+                <div className="w-full h-[236px]  ">
                   <img
                     alt="gallery"
                     className="w-full object-cover rounded h-full object-center block"
@@ -272,7 +272,7 @@ const Properties = ({ house }) => {
           <div className="w-full flex justify-center items-center">
             <div className="md:w-[95%] lg:w-[90%] w-full h-auto p-[24px] mt-8 rounded-lg bg-white-900 text-white shadow-lg bg-[#FFFFFF] space-y-[16px]">
               <div className="flex justify-center items-center">
-                <div className="w-[336px] h-[236px]  ">
+                <div className="w-full h-[236px]  ">
                   <img
                     alt="gallery"
                     className="w-full object-cover rounded h-full object-center block"

@@ -6,7 +6,7 @@ import TenantCard from "../global/TenantCard";
 import TenantRegistrationForm from "../global/TenantRegistrationForm";
 const TenantsButtons = () => {
   const [tenants, setTenants] = useState("");
-  const [request , setRequest] = useState("");
+  const [request, setRequest] = useState("");
 
   const [showModal, setShowModal] = useState(false);
   const [info, setInfo] = useState("Staff Member");
@@ -154,7 +154,7 @@ const TenantsButtons = () => {
               type="submit"
               onClick={() => setTenants("Analytics")}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                tenants === "All Vacant"
+                tenants === "Analytics"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
@@ -181,7 +181,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={tenants === "All Vacant" ? "#17062F" : "white"}
+                      stroke={tenants === "Analytics" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -194,17 +194,18 @@ const TenantsButtons = () => {
 
             <button
               type="submit"
-              onClick={() => {setTenants("Total Block");
-              setRequest("Accepted");
-            }}
+              onClick={() => {
+                setTenants("Total Block");
+                setRequest("Accepted");
+              }}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
-                tenants === "Delete or Unlist"
+                tenants === "Total Block"
                   ? "bg-[#E4DFEB] text-black"
                   : "bg-[#2E0664] text-white"
-              }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
+              }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1 h-12 rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-                <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7  flex justify-center items-center">
+                <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7 flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -225,9 +226,7 @@ const TenantsButtons = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={
-                        tenants === "Delete or Unlist" ? "#17062F" : "white"
-                      }
+                      stroke={tenants === "Total Block" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -251,7 +250,9 @@ const TenantsButtons = () => {
         {tenants === "All" ? (
           <TenantCard tenants={tenants} request={request} />
         ) : null}
-        {tenants === "Total Block" ? <TenantCard tenants={tenants} request={request}  /> : null}
+        {tenants === "Total Block" ? (
+          <TenantCard tenants={tenants} request={request} />
+        ) : null}
       </div>
 
       <TenantRegistrationForm

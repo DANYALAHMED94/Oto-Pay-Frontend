@@ -95,7 +95,7 @@ const SearchResult = ({ searchStyle }) => {
       </div>
 
       <div className="xl:w-[1200px] lg:pb-10 pb-5 lg:w-[950px] h-auto lg:flex flex-col justify-center items-center gap-[56px]">
-        <div className="flex w-full  h-full flex-col 3xl:gap-40 lg:gap-y-6 sm:gap-y-8">
+        <div className="flex w-full  h-full flex-col 3xl:gap-40 lg:gap-y-6 gap-y-8">
           <PropertyCard searchStyle={searchStyle} />
           <PropertyCard />
           <PropertyCard />

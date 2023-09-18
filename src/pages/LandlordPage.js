@@ -12,8 +12,6 @@ const Landlord = () => {
   const [showModal, setShowModal] = useState(false);
   const [info, setInfo] = useState("");
 
-
-
   return (
     <>
       <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
@@ -91,7 +89,7 @@ const Landlord = () => {
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-              <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7 flex justify-center items-center">
+                <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7 flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -125,8 +123,10 @@ const Landlord = () => {
 
             <button
               type="submit"
-              onClick={() => {setRequest("Analytics");
-              setAccept("accreq")}}
+              onClick={() => {
+                setRequest("Analytics");
+                setAccept("accreq");
+              }}
               className={`flex justify-between items-center gap-[4px] text-[#17062F] ${
                 request === "Analytics"
                   ? "bg-[#E4DFEB] text-black"
@@ -134,7 +134,7 @@ const Landlord = () => {
               }   w-full lg:h-[56px] md:h-[50px] xl:px-4 px-1 h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap`}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-              <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
+                <div className="xl:w-10 lg:w-9 w-full lg:h-10 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -176,7 +176,7 @@ const Landlord = () => {
               }   w-full lg:h-[56px] md:h-[50px]  xl:px-4 px-1  h-12  rounded-md xl:text-base text-sm border-[2px] border-white leading-4 text-center  font-bold whitespace-nowrap `}
             >
               <div className="flex justify-start items-center xl:2 gap-1">
-              <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7  flex justify-center items-center">
+                <div className="xl:w-9 lg:w-9 w-full lg:h-9 h-7  flex justify-center items-center">
                   <img
                     alt="gallery"
                     className="w-full object-cover  h-full rounded-lg object-center block"
@@ -197,7 +197,9 @@ const Landlord = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={request === "Blocked Landlords" ? "#17062F" : "white"}
+                      stroke={
+                        request === "Blocked Landlords" ? "#17062F" : "white"
+                      }
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -210,20 +212,23 @@ const Landlord = () => {
           </div>
         </div>
         <div className="font-semibold xl:text-2xl text-xl text-[#17062F] flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
-          {" "}
           <h1 className="flex whitespace-nowrap gap-2">
-            {" "}
             {request}
-            <span className="text-[rgb(90,66,120)] ">987,272,000</span>{" "}
+            <span className="text-[rgb(90,66,120)] ">987,272,000</span>
           </h1>
-          
         </div>
 
         {request === "All Landlords" ? <TenantCard request={request} /> : null}
-        {request === "Blocked Landlords" ? <TenantCard request={request} accept={accept} /> : null}
+        {request === "Blocked Landlords" ? (
+          <TenantCard request={request} accept={accept} />
+        ) : null}
       </div>
 
-      <TenantRegistrationForm showModal={showModal} setShowModal={setShowModal} info={info} />
+      <TenantRegistrationForm
+        showModal={showModal}
+        setShowModal={setShowModal}
+        info={info}
+      />
     </>
   );
 };

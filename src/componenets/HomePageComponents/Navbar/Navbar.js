@@ -55,8 +55,7 @@ const NavBar = () => {
 
               <Link
                 to="/plots"
-                className="xl:text-base md:text-sm font-normal font-inter font-medium text-white hover:text-white"
-
+                className="xl:text-base md:text-sm font-normal font-inter text-white hover:text-white"
               >
                 Plots
               </Link>
@@ -80,24 +79,23 @@ const NavBar = () => {
               >
                 Agents
               </Link>
+            </nav>
 
-            </nav>      
-              
+            <div className="lg:block hidden">
+              <Link to="/admin-dashboard">
+                <button
+                  type="submit"
+                  className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
+                >
+                  SignIn
+                </button>
+              </Link>
+            </div>
 
-            <div className="xl:flex lg:flex xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4  justify-between items-center hidden">
-
-    <Link   to="/admin-dashboard" > 
-            <button
-                type="submit"
-                className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
-              >
-              SignIn
-                
-              </button>
-           </Link>
+            <div className="xl:flex ml-3 xl:ml-0 lg:flex xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4 justify-between items-center hidden">
               <button
                 type="submit"
-                className=" flex xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  py-2.5 text-center  items-center dark:focus:ring-gray-500   "
+                className=" flex md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-10 border border-[#FFFFFF] hover:text-white rounded-md xl:text-sm md:text-xs  py-2.5 text-center items-center dark:focus:ring-gray-500   "
               >
                 <input
                   type="text"
@@ -166,7 +164,6 @@ const NavBar = () => {
               <div className="w-full bg-[#F0EEF2] flex rounded-md items-center justify-between p-2 ">
                 <div className="flex justify-center items-center gap-4 text-center text-xl font-semibold text-[#2E0664]  ">
                   <img className="h-10 w-10  " src={Logo2} alt="Workflow" />
-
                   OTO~PAY
                 </div>
                 <div className="">
