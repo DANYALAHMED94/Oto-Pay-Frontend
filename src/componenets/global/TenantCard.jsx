@@ -175,7 +175,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
             className={`flex gap-2  ${
               access === "All"
                 ? "flex xl:flex-row flex-col justify start"
-                : "flex md:flex-row justify-between"
+                : "flex md:flex-row flex-col justify-between"
             }  `}
           >
             <h1 className=" w-full  text-black font-semibold lg:text-2xl text-xl leading-9">
@@ -348,7 +348,9 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
 
            
         
-              { payment === "Landlord Payment" || provider === "All Providers" ||  provider === "Block Providers"? (    <button className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-[#2E0664] bg-[#2E0664] bg-opacity-10 ">
+              { payment === "Landlord Payment" || provider === "All Providers" ||  provider === "Block Providers"? (  
+                
+                <button className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-[#2E0664] bg-[#2E0664] bg-opacity-10 ">
               <img
                        alt="gallery"
                        className="w-6 object-cover  h-6  object-center block"
@@ -562,7 +564,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
 
       {request === "All Requests" || landLord === "req" ? <AcceptedReq /> : null}
       
-      {request === "Accepted" || landLord === "landlord" || request=== "All Landlords" || request === "Blocked Landlords"  ? (
+      {request === "Accepted" || landLord === "drop" || request=== "All Landlords" || request === "Blocked Landlords"  ? (
         <div className="w-full h-auto   ">
           <div className=" relative w-full  space-y-4   ">
             <input
@@ -595,7 +597,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                   {accept === "accreq" ? (
                     <AcceptedReq request={request} />
                   ) : (
-                    <PropertyCard  landLord={landLord} request={request}/>
+                    <PropertyCard  landLord={landLord} request={request}  />
                   )}
                 </div>
               </div>

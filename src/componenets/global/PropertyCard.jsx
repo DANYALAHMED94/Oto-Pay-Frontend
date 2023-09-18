@@ -53,7 +53,7 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
           </div>
         ) : null}
 
-           {request === "All Landlords" || landLord === "landlord" || request === "Blocked Landlords"? (
+           {request === "All Landlords" || landLord === "landlord" || landLord==="drop"  || request === "Blocked Landlords"? (
           <div className=" flex  md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
               <div className="md:w-12 w-16 h-16 md:h-12">
