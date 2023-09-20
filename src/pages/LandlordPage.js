@@ -55,7 +55,7 @@ const Landlord = () => {
 
             <button
               onClick={() => {
-                setInfo("landloard landloard & Property");
+                setInfo("landloard & Property");
                 setShowModal(true);
               }}
               type="submit"
