@@ -10,10 +10,11 @@ import area from "../../assets/area.svg";
 import rooms from "../../assets/room.svg";
 import Map from "../../assets/map.png";
 
-export default function TenantRegistrationForm({ info, showModal,setShowModal }) {
- 
-
-
+export default function TenantRegistrationForm({
+  info,
+  showModal,
+  setShowModal,
+}) {
   // const handlefile = (event) => {
   //   setFile(event.target.files[0]);
   // };
@@ -96,7 +97,7 @@ export default function TenantRegistrationForm({ info, showModal,setShowModal })
                           <div className="bg-[#E4DFEB] rounded-2xl">
                             <div className="p-3 rounded-2xl bg-[#E4DFEB]">
                               <div className="w-full ">
-                                <FileInput info={"landloard"} />
+                                <FileInput info={info} />
                               </div>
 
                               {info === "Tenant" ? (
@@ -1004,7 +1005,7 @@ export default function TenantRegistrationForm({ info, showModal,setShowModal })
                               ) : null}
                             </div>
 
-                            {info === "landloard landloard & Property" ? (
+                            {info === "landloard & Property" ? (
                               <>
                                 <div className="px-3">
                                   <div className="rounded-[16px] px-5 mt-5 py-3 border border-[rgba(46, 6, 100, 0.08)] bg-[#D9CFE3]">
