@@ -12,8 +12,8 @@ const Home = () => {
             Hi, Mark Smith ! Welcome To OTO~PAY 👋
           </p>
 
-          <div className=" w-full mt-6 flex  gap-x-4  flex justify-between items-center">
-            <div className=" border border-white flex gap-3 p-2 xl:w-[490px] lg:w-[370px] md:w-[370px] w-full h-auto bg-[#F6F6F6] rounded-md   flex justify-between items-center">
+          <div className=" w-full mt-6 flex  gap-x-4 justify-between items-center">
+            <div className=" border border-white flex gap-3 p-2 xl:w-[490px] lg:w-[370px] md:w-[370px] w-full h-auto bg-[#F6F6F6] rounded-md   justify-between items-center">
               <svg
                 width="24"
                 height="24"
@@ -47,8 +47,8 @@ const Home = () => {
               />
             </div>
 
-            <div className="flex  justify-between gap-4 items-center xl:flex lg:flex md:flex hidden">
-              <div className="xl:h-16 xl:w-16 lg:w-[60px] lg:[60px] md:w-[60px] md:h-[60px] p-4 bg-gray-100  rounded-lg shadow-lg rounded-lg flex justify-center items-center ">
+            <div className=" justify-between gap-4 items-center xl:flex lg:flex md:flex hidden">
+              <div className="xl:h-16 xl:w-16 lg:w-[60px] lg:[60px] md:w-[60px] md:h-[60px] p-4 bg-gray-100   shadow-lg rounded-lg flex justify-center items-center ">
                 <svg
                   width="24"
                   height="24"

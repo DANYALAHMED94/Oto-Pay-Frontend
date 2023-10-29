@@ -4,10 +4,10 @@ import PropertyCard from "../global/PropertyCard";
 import list from "../../assets/unlist.svg";
 import trash from "../../assets/trash-2.svg";
 import { PropertyModal } from "../global/PropertyModal";
-import vacant from "../../assets/image 20.png"
-import del from "../../assets/image 3.png"
-import update from "../../assets/image 4.png"
-import apply from "../../assets/image-5.png"
+import vacant from "../../assets/image 20.png";
+import del from "../../assets/image 3.png";
+import update from "../../assets/image 4.png";
+import apply from "../../assets/image-5.png";
 
 const PropertiesButton = () => {
   const [properties, setProperties] = useState("");
@@ -219,7 +219,9 @@ const PropertiesButton = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={properties === "Delete or Unlist" ? "#17062F" : "white"}
+                      stroke={
+                        properties === "Delete or Unlist" ? "#17062F" : "white"
+                      }
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -263,7 +265,7 @@ const PropertiesButton = () => {
                     <path
                       id="Vector"
                       d="M15.0967 5.92969L21.1667 11.9997L15.0967 18.0697M4.16675 11.9997H20.9967"
-                      stroke={properties === "All" ? "#17062F" : "white"}
+                      stroke={properties === "Update" ? "#17062F" : "white"}
                       stroke-width="1.5"
                       stroke-miterlimit="10"
                       stroke-linecap="round"
@@ -317,15 +319,12 @@ const PropertiesButton = () => {
             </button>
           </div>
         </div>
-        <div className="font-semibold xl:text-2xl md:text-xl text-lg  flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
-          {" "}
-          <h1 className="flex whitespace-nowrap gap-2">
-            {" "}
-            {properties} Properties{" "}
-            <span className="text-[#5A4278] ">987,272,000</span>{" "}
-          </h1>
 
-   
+        <div className="font-semibold xl:text-2xl md:text-xl text-lg  flex xl:flex-row flex-col  gap-2 justify-between items-start leading-7">
+          <h1 className="flex whitespace-nowrap gap-2">
+            {properties} Properties
+            <span className="text-[#5A4278] ">987,272,000</span>
+          </h1>
           {properties === "Delete or Unlist" ? (
             <div className="flex xl:justify-end justify-start md:flex-row w-full flex-col gap-2">
               <button
@@ -336,16 +335,14 @@ const PropertiesButton = () => {
                 className="p-3 px-4 md:w-[160px] w-full text-sm text-[#0C468B] font-semibold whitespace-nowrap h-12 rounded-lg border gap-x-1 flex justify-center items-center border-[#0C468B]"
               >
                 <img src={list} alt="delete" />
-            
-                  Unlist Property
-              
+                Unlist Property
               </button>
               <button
                 onClick={() => {
                   setHandleButton("Delete");
                   setShowModal(true);
                 }}
-                className="p-3 px-4 md:w-[220px] w-full h-12 rounded-lg border gap-x-1 flex justify-center items-center bg-[#CD2424] border-[#CD2424]"
+                className="p-3 px-4 md:w-auto w-full h-12 rounded-lg border gap-x-1 flex justify-center items-center bg-[#CD2424] border-[#CD2424]"
               >
                 <img src={trash} alt="delete" />
                 <p className="text-sm text-white font-semibold whitespace-nowrap">
@@ -355,7 +352,7 @@ const PropertiesButton = () => {
             </div>
           ) : null}
         </div>
-        {properties === "All" ? <PropertyCard  /> : null}
+        {properties === "All" ? <PropertyCard /> : null}
         {properties === "All Vacant" ? (
           <PropertyCard properties={properties} />
         ) : null}
@@ -364,7 +361,11 @@ const PropertiesButton = () => {
         ) : null}
         {properties === "Delete or Unlist" ? <PropertyCard /> : null}
       </div>
-      <PropertyModal showModal={showModal} setShowModal={setShowModal} handleButton={handleButton}  />
+      <PropertyModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        handleButton={handleButton}
+      />
     </>
   );
 };

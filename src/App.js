@@ -17,6 +17,7 @@ import ServiceReqPage from "./pages/ServiceReqPage";
 import ServiceProPage from "./pages/ServiceProPage";
 import Landlord from "./pages/LandlordPage";
 import PaymentPage from "./pages/PaymentPage";
+// import LandingPage from "./pages/LandingPage";
 
 function App() {
   const location = useLocation();

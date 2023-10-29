@@ -13,15 +13,15 @@ function Footer() {
   // };
   return (
     <div>
-      <footer className="py-10 bg-[#2E0664] 3xl:px-[70px] 2xl:px-[50px] xl:px-[80px] lg:px-[40px] md:px-[40px] px-6 w-full xl:h-[550px] relative z-0 overflow-hidden ">
-        <div className="w-full h-auto relative z-20">
+      <footer className="py-10 bg-[#2E0664] 3xl:px-[70px] 2xl:px-[50px] xl:px-[80px] lg:px-[40px] md:px-[40px] px-6 w-full xl:h-[350px] relative overflow-hidden ">
+        <div className="h-auto relative">
           <div className="grid 2xl:grid-cols-4 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 grid-col-1 xl:gap-1 md:gap-y-0">
-            <div className="xl:col-span-2 lg:col-span-1 col-span-full lg:block flex flex-col justify-center items-center">
-              <div className=" h-[90px] w-[94px]  ">
+            <div className="xl:col-span-2 lg:col-span-1 col-span-full lg:block flex flex-col lg:py-0 md:pt-7 pt-10 justify-center items-center">
+              <div className=" h-[90px] w-[94px]">
                 <Link to="/" className="flex items-center">
                   <img
                     src={Logo}
-                    className="w-full h-[75px] mr-3 "
+                    className="w-full h-[75px] mr-3"
                     alt="FlowBite Logo"
                   />
                 </Link>
@@ -55,11 +55,11 @@ function Footer() {
               </div>
             </div>
 
-            <div className="xl:block flex flex-col justify-center -ml-5 md:-ml-0 items-center lg:py-20 py-3 ">
+            <div className="xl:block flex flex-col justify-center -ml-5 md:-ml-0 items-center lg:py-20 md:py-5 py-3 ">
               <h2 className="md:mb-6 mb-2 -ml-5 md:-ml-0 text-base font-semibold leading-[28px] text-white">
                 Services
               </h2>
-              <ul className=" text-base font-medium leading-[28px] text-[#959CB1] md:space-y-4">
+              <ul className=" text-base font-medium leading-[24px] text-[#959CB1] md:space-y-4">
                 <li className="">
                   <Link to="/" className="hover:underline">
                     Service

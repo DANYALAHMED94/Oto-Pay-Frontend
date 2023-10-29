@@ -96,7 +96,7 @@ export default function TenantRegistrationForm({ info, showModal,setShowModal })
                           <div className="bg-[#E4DFEB] rounded-2xl">
                             <div className="p-3 rounded-2xl bg-[#E4DFEB]">
                               <div className="w-full ">
-                                <FileInput info={"landloard"} />
+                                <FileInput info={info} />
                               </div>
 
                               {info === "Tenant" ? (

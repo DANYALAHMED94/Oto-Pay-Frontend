@@ -36,6 +36,9 @@ h6 {
 }
 /* border: 1px solid black; */
 
+
+
+
 /* For Tailwind 2.2 and above */
 @layer utilities {
   .snap-x-mandatory {
