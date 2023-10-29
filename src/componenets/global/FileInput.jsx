@@ -50,7 +50,7 @@ function FileInput({ info, state }) {
 
   return (
     <>
-      {state === "Update" ||
+      {state === "Property Pictures" ||
       state === "Property Pictures or Videos" ||
       state === "Service Request Form" ? (
         <div className="w-full mt-5">

@@ -9,22 +9,32 @@ import img from "../../assets/Frame 267.png";
 import UpdatePropertyModal from "./UpdatePropertyModal";
 import { useLocation } from "react-router-dom";
 
-function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLord, request}) {
+function PropertyCard({
+  properties,
+  access,
+  searchStyle,
+  // setSearchStyle,
+  landLord,
+  request,
+}) {
   const [showModal, setShowModal] = useState(false);
+  const [state, setState] = useState("");
 
   const location = useLocation();
 
   // Determine which buttons to render based on the location.pathname
-  const shouldShowButton = location.pathname === "/admin-dashboard/tenants" || location.pathname === "/admin-dashboard/landlord" ;
+  const shouldShowButton =
+    location.pathname === "/admin-dashboard/tenants" ||
+    location.pathname === "/admin-dashboard/landlord";
   const ShowOtherButton =
     location.pathname === "/admin-dashboard/properties" ||
-    location.pathname === "/admin-dashboard/access"   ||
+    location.pathname === "/admin-dashboard/access" ||
     location.pathname === "/search";
 
   return (
     <>
       <div className="w-full h-full xl:p-[24px] lg:p-4  p-6 rounded-lg     shadow-lg     bg-[#FFFFFF] flex   flex-col xl:gap-[32px] lg:gap-0  gap-4">
-        {access === "Activity"? (
+        {access === "Activity" ? (
           <div className=" flex md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
               <div className="md:w-12 w-16 h-16 md:h-12">
@@ -35,9 +45,9 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
                 />
               </div>
               <div className="text-base font-normal leading-5 text-[#0C8B3F] ">
-                Added by{" "}
+                Added by
                 <span className="text-[#17062F] leading-5 font-bold text-base">
-                  Mark John Smith{" "}
+                  Mark John Smith
                 </span>
               </div>
             </div>
@@ -53,7 +63,10 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
           </div>
         ) : null}
 
-           {request === "All Landlords" || landLord === "landlord" || landLord==="drop"  || request === "Blocked Landlords"? (
+        {request === "All Landlords" ||
+        landLord === "landlord" ||
+        landLord === "drop" ||
+        request === "Blocked Landlords" ? (
           <div className=" flex  md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
               <div className="md:w-12 w-16 h-16 md:h-12">
@@ -64,7 +77,7 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
                 />
               </div>
               <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
-              Tenant Name
+                Tenant Name
                 <span className="text-[#17062F] leading-5 font-medium text-base">
                   John Smith
                 </span>
@@ -73,39 +86,36 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
 
             <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
               <div className="flex  text-black text-sm  leading-5 font-medium ">
-              Lease Start Date
+                Lease Start Date
               </div>
               <div className="flex  text-[#0C8B3F] text-base  leading-5 font-medium ">
-              02-06-1992
+                02-06-1992
               </div>
             </div>
 
             <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
               <div className="flex  text-black text-sm  leading-5 font-medium ">
-              Lease End Date
+                Lease End Date
               </div>
               <div className="flex  text-[#CD2424] text-base  leading-5 font-medium ">
-              02-06-1992
+                02-06-1992
               </div>
             </div>
 
             <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
               <div className="flex  text-black text-sm  leading-5 font-medium ">
-              Lease Duration
+                Lease Duration
               </div>
               <div className="flex  text-[#312245] text-base  leading-5 font-medium ">
-              5 Years
+                5 Years
               </div>
             </div>
 
             <button className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]">
- Tenant Details
+              Tenant Details
             </button>
-
           </div>
         ) : null}
-
-
 
         <div className=" flex   xl:flex-row flex-col xl:gap-[32px] lg:gap-4  gap-4">
           <div className="  xl:w-[534px]  w-full xl:h-[486px] h-80 flex justify-center items-center   ">
@@ -116,11 +126,11 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
             />
           </div>
 
-          <div className={`xl:w-[580px]  w-full   h-full     ${
-                searchStyle === "Card"
-                  ? " space-y-[30px]"
-                  : " space-y-[10px]"
-              }     `}>
+          <div
+            className={`xl:w-[580px]  w-full   h-full     ${
+              searchStyle === "Card" ? " space-y-[30px]" : " space-y-[10px]"
+            }     `}
+          >
             <div className="w-full h-full space-y-[11px]">
               <div className="flex justify-between">
                 <h2
@@ -132,7 +142,10 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
 
                 {properties === "Update" ? (
                   <button
-                    onClick={() => setShowModal(true)}
+                    onClick={() => {
+                      setShowModal(true);
+                      setState("Property Pictures");
+                    }}
                     className="p-3 px-4 w-[160px] h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
                   >
                     <img src={update} alt="delete" />
@@ -238,7 +251,6 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
                   </span>
                 </h1>
               </div>
-            
             </div>
 
             {ShowOtherButton && (
@@ -346,51 +358,52 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
             )}
             {shouldShowButton && (
               <div className=" w-full  md:h-[48px] h-auto flex md:flex-row flex-col lg:justify-start md:justify-start justify-center gap-[16px] ">
-                 { request === "All Landlords" ||  request === "Blocked Landlords"? (<button
-                  type="submit"
-                  className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
-                >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                {request === "All Landlords" ||
+                request === "Blocked Landlords" ? (
+                  <button
+                    type="submit"
+                    className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
                   >
-                    <path
-                      d="M20.75 6L9.75 17L4.75 12"
-                      stroke="#2E0664"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                   
-                  </svg>
-                 Property On Rent
-                </button> ): ( <button
-                  type="submit"
-                  className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
-                >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.75 6L9.75 17L4.75 12"
+                        stroke="#2E0664"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Property On Rent
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="flex justify-center items-center gap-[4px] text-[#2E0664] bg-[#F6EFFF]  md:w-[184px] w-full h-full border  rounded-md text-base  leading-4 py-2.5 text-center  font-bold  mb-2 "
                   >
-                    <path
-                      d="M20.75 6L9.75 17L4.75 12"
-                      stroke="#2E0664"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                   
-                  </svg>
-                  Add Property
-                </button>)}
-                
-                
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.75 6L9.75 17L4.75 12"
+                        stroke="#2E0664"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    Add Property
+                  </button>
+                )}
 
                 <button
                   type="submit"
@@ -446,7 +459,11 @@ function PropertyCard({ properties, access, searchStyle, setSearchStyle , landLo
           </div>
         </div>
       </div>
-      <UpdatePropertyModal setShowModal={setShowModal} showModal={showModal} />
+      <UpdatePropertyModal
+        state={state}
+        setShowModal={setShowModal}
+        showModal={showModal}
+      />
     </>
   );
 }

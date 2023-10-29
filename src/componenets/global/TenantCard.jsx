@@ -6,7 +6,18 @@ import AcceptedReq from "./AcceptedReq";
 import country from "../../assets/download 1.png";
 import history from "../../assets/history.png";
 
-const TenantCard = ({ tenants, land, payment, access, request, provider, accept, width , handleButton, landLord}) => {
+const TenantCard = ({
+  tenants,
+  land,
+  payment,
+  access,
+  request,
+  provider,
+  accept,
+  width,
+  handleButton,
+  landLord,
+}) => {
   const [isChecked, setIsChecked] = useState(true);
   const location = useLocation();
 
@@ -21,10 +32,11 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
     location.pathname === "/admin-dashboard/access" ||
     location.pathname === "/admin-dashboard/service-providers";
   const ShowThirddiv =
-    location.pathname === "/admin-dashboard/service-providers" ;
+    location.pathname === "/admin-dashboard/service-providers";
 
-    const Showlandlorddiv =
-    location.pathname === "/admin-dashboard/landlord" ||     location.pathname === "/admin-dashboard/payments";
+  const Showlandlorddiv =
+    location.pathname === "/admin-dashboard/landlord" ||
+    location.pathname === "/admin-dashboard/payments";
 
   return (
     <div className={`${width} p-4 space-y-4   rounded-2xl bg-white`}>
@@ -32,7 +44,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
         <div className=" xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  flex flex-col gap-4 justify-between items-center ">
           <div className="w-full  flex flex-col gap-2 justify-center items-center">
             <div
-              className={`xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  w-full h-full border  ${
+              className={`xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  w-full h-full ${
                 access === "All"
                   ? " xl:h-full md:h-[330px] md:w-[350px]"
                   : "md:h-[230px]    md:w-[250px]"
@@ -54,134 +66,136 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
               <div className="w-full h-[45px] p-3 rounded-lg bg-[#2E0664] bg-opacity-10 flex justify-between items-center ">
                 {isChecked ? (
                   <span className="font-bold text-base leading-5 text-[#312245]">
-                    Active{" "}
+                    Active
                   </span>
                 ) : (
                   <span className="font-bold text-base leading-5 text-[#312245]">
-                    InActive{" "}
+                    InActive
                   </span>
                 )}
-                <label class="relative inline-flex  cursor-pointer">
+                <label className="relative inline-flex  cursor-pointer">
                   <input
                     type="checkbox"
                     value=""
-                    class="sr-only peer"
+                    className="sr-only peer"
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                   />
-                  <div class="w-11 h-6 bg-white rounded-full peer   peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#2E0664]  after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-white"></div>
+                  <div className="w-11 h-6 bg-white rounded-full peer   peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#2E0664]  after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-white"></div>
                 </label>
               </div>
-           
+
               {provider === "Block Providers" ? (
-              <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#2E0664] ">
-              <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M17 8L22 13"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M22 8L17 13"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                UnBlocked
-              
-              </button> ) :  <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-[#CD2424] bg-[#CD2424] bg-opacity-10">
-                <svg
-                  width="25"
-                  height="25"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g id="trash-2">
+                <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#2E0664] ">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
-                      id="Vector"
-                      d="M4 6.5H22"
-                      stroke="#CD2424"
+                      d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21"
+                      stroke="white"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      id="Vector_2"
-                      d="M20 6.5V20.5C20 21.5 19 22.5 18 22.5H8C7 22.5 6 21.5 6 20.5V6.5"
-                      stroke="#CD2424"
+                      d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                      stroke="white"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      id="Vector_3"
-                      d="M9 6.5V4.5C9 3.5 10 2.5 11 2.5H15C16 2.5 17 3.5 17 4.5V6.5"
-                      stroke="#CD2424"
+                      d="M17 8L22 13"
+                      stroke="white"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      id="Vector_4"
-                      d="M11 11.5V17.5"
-                      stroke="#CD2424"
+                      d="M22 8L17 13"
+                      stroke="white"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
-                    <path
-                      id="Vector_5"
-                      d="M15 11.5V17.5"
-                      stroke="#CD2424"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-                Remove
-              </button> }
+                  </svg>
+                  UnBlocked
+                </button>
+              ) : (
+                <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-[#CD2424] bg-[#CD2424] bg-opacity-10">
+                  <svg
+                    width="25"
+                    height="25"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="trash-2">
+                      <path
+                        id="Vector"
+                        d="M4 6.5H22"
+                        stroke="#CD2424"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        id="Vector_2"
+                        d="M20 6.5V20.5C20 21.5 19 22.5 18 22.5H8C7 22.5 6 21.5 6 20.5V6.5"
+                        stroke="#CD2424"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        id="Vector_3"
+                        d="M9 6.5V4.5C9 3.5 10 2.5 11 2.5H15C16 2.5 17 3.5 17 4.5V6.5"
+                        stroke="#CD2424"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        id="Vector_4"
+                        d="M11 11.5V17.5"
+                        stroke="#CD2424"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        id="Vector_5"
+                        d="M15 11.5V17.5"
+                        stroke="#CD2424"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                  </svg>
+                  Remove
+                </button>
+              )}
             </div>
           )}
         </div>
 
         <div className="xl:w-[740px]  sxl:w-full lg:w-[410px] w-full h-full flex flex-col gap-4  ">
           <div
-            className={`flex gap-2  ${
+            className={`flex gap-2 ${
               access === "All"
                 ? "flex xl:flex-row flex-col justify start"
                 : "flex md:flex-row flex-col justify-between"
             }  `}
           >
-            <h1 className=" w-full  text-black font-semibold lg:text-2xl text-xl leading-9">
+            <h1 className=" w-full md:whitespace-normal whitespace-nowrap  text-black font-semibold lg:text-2xl text-xl leading-9">
               Mark John Smith
             </h1>
-            {tenants === "All"  || request === "All Landlords" ? (
+            {tenants === "All" || request === "All Landlords" ? (
               <button className="w-[150px] p-3 relative font-bold text-base leading-5 flex justify-center items-center gap-2 text-[#CD2424]">
                 <svg
                   width="24"
@@ -224,8 +238,8 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
               </button>
             ) : null}
 
-            {tenants === "Total Block" ||  request === "Blocked Landlords" ? (
-              <button className="w-[150px] p-3 bg-[#2E0664]  relative rounded-lg font-bold md:text-base text-sm leading-5 flex justify-center items-center gap-2 text-white">
+            {tenants === "Total Block" || request === "Blocked Landlords" ? (
+              <button className="w-[150px] p-3 bg-[#2E0664] relative rounded-lg font-bold md:text-base text-sm leading-5 flex justify-center items-center gap-2 text-white">
                 <svg
                   width="24"
                   height="24"
@@ -262,8 +276,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                     stroke-linejoin="round"
                   />
                 </svg>
-                       UnBlock
- 
+                UnBlock
               </button>
             ) : null}
 
@@ -419,7 +432,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                   <div className=" w-full  "> Lease Duration </div>
                   <div className="w-full  md:text-base text-sm leading-5 text-[#312245]">
                     5 Years
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
             )}
@@ -428,7 +441,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
               <div>
                 <div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between  ">
                   <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                    <div className=" w-full  "> Availability Start </div>{" "}
+                    <div className=" w-full  "> Availability Start </div>
                     <div className="w-full flex items-center gap-2  text-[#312245]">
                       <svg
                         width="16"
@@ -457,13 +470,13 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                         </g>
                       </svg>
                       <span className="md:text-base text-sm leading-5 text-center text-[#0C8B3F]">
-                        05 : 06{" "}
+                        05 : 06
                       </span>
                       AM
                     </div>
                   </div>
                   <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                    <div className=" w-full  "> Availability End </div>{" "}
+                    <div className=" w-full  "> Availability End </div>
                     <div className="w-full flex items-center gap-2   text-[#312245]">
                       <svg
                         width="16"
@@ -492,7 +505,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                         </g>
                       </svg>
                       <span className="md:text-base text-sm leading-5 text-center text-[#CD2424]">
-                        12 : 06{" "}
+                        12 : 06
                       </span>
                       PM
                     </div>
@@ -501,7 +514,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                 <hr className="border-t border-gray-300 my-4" />
                 <div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between  ">
                   <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                    <div className=" w-full  "> Country </div>{" "}
+                    <div className=" w-full  "> Country </div>
                     <div className="w-full flex items-center gap-2 md:text-base text-sm leading-5 text-[#312245]">
                       <div className="xl:w-6 lg:w-6 w-full lg:h-4 h-7 flex justify-center items-center">
                         <img
@@ -511,13 +524,11 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
                         />
                       </div>
                       South Africa
-                    </div>{" "}
+                    </div>
                   </div>
                   <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                    {" "}
-                    <div className=" w-full  "> Price Per Hour </div>{" "}
+                    <div className=" w-full  "> Price Per Hour </div>
                     <div className="w-full   md:text-base text-sm leading-5 text-[#312245]">
-                      {" "}
                       $26,262
                     </div>
                   </div>
@@ -528,7 +539,7 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
 
             {ShowOtherdiv && (
               <div className="w-full  h-full flex flex-col gap-2 font-medium text-sm leading-4 text-[#5A4278]">
-                Current Address{" "}
+                Current Address
                 <span classname=" text-base leading-5 font-medium text-[#312245]">
                   Washington ,street xyzWashington ,street xyzWashington ,street
                   xyzWashington ,street xyzWashington ,street xyzWashington
@@ -537,24 +548,22 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
               </div>
             )}
 
-
-{Showlandlorddiv && (
-<div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between  ">
-              <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                <div className=" w-full  "> Bank Account Details </div>
-                <div className="w-full  md:text-base text-sm leading-5 text-[#312245]">
-                1234 2828 2828
+            {Showlandlorddiv && (
+              <div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between  ">
+                <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
+                  <div className=" w-full  "> Bank Account Details </div>
+                  <div className="w-full  md:text-base text-sm leading-5 text-[#312245]">
+                    1234 2828 2828
+                  </div>
+                </div>
+                <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
+                  <div className=" w-full  ">Tax Identification Number </div>
+                  <div className="w-full   md:text-base text-sm leading-5 text-[#312245]">
+                    282828832VCsg
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
-                <div className=" w-full  ">Tax Identification Number </div>
-                <div className="w-full   md:text-base text-sm leading-5 text-[#312245]">
-                282828832VCsg
-                </div>
-              </div>
-            </div>
-
-)}
+            )}
           </div>
         </div>
       </div>
@@ -605,9 +614,6 @@ const TenantCard = ({ tenants, land, payment, access, request, provider, accept,
           </div>
         </div>
       ) : null}
-
-
-
     </div>
   );
 };
