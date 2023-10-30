@@ -1,12 +1,25 @@
 import React from "react";
-
+import {  useLocation } from "react-router-dom";
 import profile from "../../assets/profilePic.svg";
 import Calendar from "./Calendar";
 import Cards from "./Cards";
+import { BackArrow, Notification, TenantCommunication, Theme } from "../../iconComponent/Icons";
+import TenantCards from "./TenantCards";
 const Home = () => {
+  const location = useLocation();
+
+  const AdminDashboard =
+  location.pathname === "/admin-dashboard" ;
+
+  const showdiv =
+  location.pathname === "/admin-dashboard" ;
+   const showdivtwo =
+  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard"  ;
+
   return (
-    <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] ">
-      <div className="flex w-full  items-center  lg:justify-between gap-4  flex-col justify-center ">
+    <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[16px] md:py-[18px] py-[8px] ">
+      <div className="flex w-full   lg:justify-between gap-4  flex-col justify-center  items-center ">
+      {AdminDashboard && (
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg">
           <p className="text-white font-bold xl:text-[28px] lg:text-xl md:text-xl text-sm leading-[36px] ">
             Hi, Mark Smith ! Welcome To OTO~PAY 👋
@@ -83,13 +96,48 @@ const Home = () => {
             </div>
           </div>
         </div>
+      )}
 
+       <div className="flex w-full justify-between items-center">
+        <div className="flex w-full  gap-2 ">
+        <BackArrow/>
+      <h1 className="text-[28px] font-bold leading-9 text-[#434146]"> WelCome back, <span className="font-medium"> Alien</span></h1>
+       </div>
+
+
+       <div className=" flex w-full justify-end gap-2 ">
+       <div className=" p-3  rounded-xl bg-[#F2F2F2] border ">
+            <Notification/>
+          </div>
+          <div className=" p-3 rounded-lg bg-[#F2F2F2] border">
+            <Theme/>
+          </div>
+          <div className=" p-3 rounded-lg bg-[#F2F2F2] border">
+            <TenantCommunication/>
+          </div>
+          
+          <div className="text-[24px] font-semi-bold  leading-[31px]  text-center flex items-center justify-center gap-[10px]  ">
+                <img
+                  className="xl:h-[48px] xl:w-[48px]  rounded-full lg:h-[40px] lg:w-[40px]  md:h-14 md:w-16 h-16 w-16 flex items-center justify-center   "
+                  src={profile}
+                  alt="property-logo"
+                />
+              </div>
+       </div>
+       </div>
         <div className="w-full">
+        {showdivtwo && (
           <Calendar />
+        )}
         </div>
 
         <div className="w-full">
+        {AdminDashboard && (
           <Cards />
+        )}
+        {showdiv && (
+        <TenantCards/>
+        )}
         </div>
       </div>
     </div>

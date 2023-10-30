@@ -14,11 +14,13 @@ function PropertyCard({
   access,
   searchStyle,
   // setSearchStyle,
+
   landLord,
   request,
 }) {
   const [showModal, setShowModal] = useState(false);
   const [state, setState] = useState("");
+  const [property, setProperty] = useState("property");
 
   const location = useLocation();
 
@@ -66,7 +68,8 @@ function PropertyCard({
         {request === "All Landlords" ||
         landLord === "landlord" ||
         landLord === "drop" ||
-        request === "Blocked Landlords" ? (
+        request === "Blocked Landlords"  ||
+        property === "property" ? (
           <div className=" flex  md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-4 ">
               <div className="md:w-12 w-16 h-16 md:h-12">
@@ -76,12 +79,19 @@ function PropertyCard({
                   src={img}
                 />
               </div>
+             { property === "property" ? (
               <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
-                Tenant Name
+                Lanlord Name
                 <span className="text-[#17062F] leading-5 font-medium text-base">
-                  John Smith
+                  Smith john
                 </span>
               </div>
+             ):   <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
+             Tenant Name
+             <span className="text-[#17062F] leading-5 font-medium text-base">
+               John Smith
+             </span>
+           </div>}
             </div>
 
             <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
@@ -110,10 +120,12 @@ function PropertyCard({
                 5 Years
               </div>
             </div>
-
+            { property === "property" ? (
             <button className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]">
+            See Details
+            </button> ): <button className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]">
               Tenant Details
-            </button>
+            </button> }
           </div>
         ) : null}
 
@@ -456,6 +468,20 @@ function PropertyCard({
                 </button>
               </div>
             )}
+
+            {property === "property"? (
+              <div className=" w-full  md:h-[48px] h-auto flex md:flex-row flex-col lg:justify-start md:justify-start justify-center gap-[16px] ">
+              <button
+                type="submit"
+                className="flex justify-center items-center gap-[8px] text-[#0C8B3F] bg-[#F2F2F2]  w-full h-full   rounded-md text-base leading-4  py-2.5 text-center font-bold  mb-2 "
+              >
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M20 6L9 17L4 12" stroke="#0C8B3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                It is occupied by you
+              </button>
+            </div>
+            ): null}
           </div>
         </div>
       </div>
