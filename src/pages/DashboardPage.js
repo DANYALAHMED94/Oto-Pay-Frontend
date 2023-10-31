@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import menu from "../assets/menuIcon.svg";
 // import profile from "../assests/profilePic.svg";
 import logout from "../assets/logoutIcon.svg";
@@ -13,12 +13,21 @@ import {
   Payment,
   SidebarService,
   ArrowIcon,
+  TenantHomeIcon,
+  TenantPropertyIcon,
+  TenantServiceIcon,
+  TenantPaymentIcon,
+  TenantCommunication,
 } from "../iconComponent/Icons";
 import SideBar from "../componenets/Dashboard/Sidebar";
 
 export default function DashboardPage() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const AdminDashboard =
+  location.pathname === "/admin-dashboard" ||  location.pathname === "/admin-dashboard/properties" ;
+ 
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,7 +79,7 @@ export default function DashboardPage() {
                 Admin
               </p>
             </div>
-
+            {AdminDashboard && (
             <div className=" flex flex-col justify-center w-full gap-4 h-auto p-4 ">
               <NavLink to="/admin-dashboard">
                 {({ isActive }) => (
@@ -255,7 +264,7 @@ export default function DashboardPage() {
                                 </svg>
                               </div>
 
-                              <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                              <div className="ml-3 font-normal text-[16px] text-[#5A4278]">
                                 Service Providers
                               </div>
                             </button>
@@ -267,7 +276,102 @@ export default function DashboardPage() {
                 </div>
               </li>
             </div>
+            )}
+             <div className=" flex flex-col justify-center w-full gap-4 h-auto p-4 ">
+             <NavLink to="/tenant-dashboard">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#F0EEF2] text-[#17062F]"
+                        : "bg-[#E4DFEB] text-[#2E0664]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantHomeIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Home</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
 
+              <NavLink to="tenant-property">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center  ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex  items-center">
+                      <TenantPropertyIcon />
+                      <div className="font-normal text-[16px] ml-5 ">
+                        Property
+                      </div>
+                      <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
+                        13
+                      </div>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="tenants">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantServiceIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Service Requests</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+     
+
+              <NavLink to="payments">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantPaymentIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Payments</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+
+              <NavLink to="access">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantCommunication/>
+                      <p className="font-normal text-[16px] ml-5 ">Communication</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+             
+              </div>  
             <div
               className="w-full flex px-8  h-20 mt-8 justify-start items-center    cursor-pointer "
               onClick={() => {

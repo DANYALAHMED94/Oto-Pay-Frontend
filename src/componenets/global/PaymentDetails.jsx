@@ -1,10 +1,72 @@
 import React from "react";
-const PaymentDetails = ({ details, payment, paymentStatus }) => {
+import tenant1 from "../../assets/tenant1.svg";
+const PaymentDetails = ({ details, request,  payment, paymentStatus }) => {
   // const [paymentStatus, setPaymentStatus] = useState("");
   // const handlePayment = (status) => {
   //     setPaymentStatus(status);
   //   };
   return (
+
+    <div className="w-full  p-4 rounded-lg bg-gray-100  flex  h-full md:flex-row flex-col  xl:gap-[32px] sxl:gap-[32px] gap-4 ">
+   {request === "response" ? (
+     <div className=" xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  flex flex-col gap-4 justify-between items-center ">
+     <div className="w-full  flex flex-col gap-2 justify-center items-center">
+       <div
+         className={`xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  w-full h-full border xl:h-full md:h-[330px] md:w-[350px]"    `}
+       >
+         <img
+           alt="gallery"
+           className="w-full object-cover  h-full rounded-lg object-center block"
+           src={tenant1}
+         />
+       </div>
+ 
+       <button className=" w-full h-[45px] rounded-lg p-3 text-white bg-black">
+         View All details
+       </button>
+       <button className=" w-full whitespace-nowrap flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-#17062F border border-[#17062F]">
+         <svg
+           width="25"
+           height="24"
+           viewBox="0 0 25 24"
+           fill="none"
+           xmlns="http://www.w3.org/2000/svg"
+         >
+           <g id="arrow-down-to-line">
+             <path
+               id="Vector"
+               d="M12.5 17V3"
+               stroke="#17062F"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+             <path
+               id="Vector_2"
+               d="M6.5 11L12.5 17L18.5 11"
+               stroke="#17062F"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+             <path
+               id="Vector_3"
+               d="M19.5 21H5.5"
+               stroke="#17062F"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+             />
+           </g>
+         </svg>
+         Download Receipt
+       </button>
+     </div>
+   </div>
+   ): null }
+   
+
+
     <div className=" w-full h-full flex flex-col gap-4  ">
       <div
         className={`flex gap-2 md:flex-row flex-col xl:justify-start  justify-between
@@ -72,6 +134,13 @@ const PaymentDetails = ({ details, payment, paymentStatus }) => {
         {payment === "Recent Payments" ? (
           <button className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#653E92] ">
             Waiting For Approval
+          </button>
+        ) : null}
+   
+
+   {payment === "Approval" ? (
+          <button className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#653E92] ">
+            Accepted
           </button>
         ) : null}
       </div>
@@ -161,6 +230,7 @@ const PaymentDetails = ({ details, payment, paymentStatus }) => {
           </span>
         </div>
       </div>
+    </div>
     </div>
   );
 };

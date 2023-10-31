@@ -8,12 +8,16 @@ import vacant from "../../assets/image 20.png";
 import del from "../../assets/image 3.png";
 import update from "../../assets/image 4.png";
 import apply from "../../assets/image-5.png";
+// import {useLocation } from "react-router-dom";
 
 const PropertiesButton = () => {
   const [properties, setProperties] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [handleButton, setHandleButton] = useState("");
-
+  // const location = useLocation();
+  // const Showdiv =
+  // location.pathname === "/tenant-dashboard/property"  ;
+ 
   return (
     <>
       <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
@@ -102,6 +106,7 @@ const PropertiesButton = () => {
               Add new Property
             </button>
           </div>
+    
 
           <div className="flex w-full md:flex-row flex-col  justify-between gap-2">
             <button

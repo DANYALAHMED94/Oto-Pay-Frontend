@@ -19,7 +19,7 @@ const NavBar = () => {
               />
             </Link>
 
-            <div className=" xl:hidden lg:hidden flex justify-center items-center block ">
+            <div className=" xl:hidden lg:hidden  justify-center items-center block ">
               <button
                 type="button"
                 className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 dark:text-black hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -92,6 +92,17 @@ const NavBar = () => {
               </Link>
             </div>
 
+                 <div className="lg:block hidden">
+              <Link to="/tenant-dashboard">
+                <button
+                  type="submit"
+                  className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
+                >
+                  Tenant
+                </button>
+              </Link>
+            </div>
+
             <div className="xl:flex ml-3 xl:ml-0 lg:flex xl:w-[349px] xl:h-[87px]  lg:h-[87px] lg:gap-4 justify-between items-center hidden">
               <button
                 type="submit"
@@ -155,7 +166,7 @@ const NavBar = () => {
         <div
           className={
             open
-              ? "opacity-100 scale-100 transition ease-out duration-200 absolute top-0 inset-x-0 p-2 transition transform origin-top-right "
+              ? "opacity-100 scale-100 transition ease-out duration-200 absolute top-0 inset-x-0 p-2  transform origin-top-right "
               : "opacity-0 scale-95 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden hidden"
           }
         >

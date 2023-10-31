@@ -134,7 +134,7 @@ const Calendar = () => {
           displayedDates?.map((date, index) => (
             <div
               key={index}
-              className={`lg:flex md:flex hidden overflow-x-auto snap-x-mandatory date text-center py-2 rounded-xl flex flex-col xl:gap-6 lg:gap-4 md:gap-3 ${
+              className={`lg:flex md:flex  overflow-x-auto snap-x-mandatory date text-center py-2 rounded-xl flex flex-col xl:gap-6 lg:gap-4 md:gap-3 ${
                 date.getDate() === selectedDate.getDate()
                   ? "bg-[#2E0664] text-[#F6EFFF] "
                   : "bg-white text-[#312245]"

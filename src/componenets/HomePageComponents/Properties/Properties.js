@@ -71,7 +71,7 @@ const Properties = ({ house }) => {
 
           <Link
             to="/"
-            className=" w-[125px] h-[42px] inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-[#A90C0C] hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+            className=" w-[125px] h-[42px] inline-flex items-center justify-center p-5 text-base font-medium text-white rounded-lg bg-[#A90C0C] hover:text-[#A90C0C] hover:bg-gray-100 hover: border border-[#A90C0C]"
           >
             <svg
               width="20"
@@ -98,7 +98,7 @@ const Properties = ({ house }) => {
               </defs>
             </svg>
 
-            <span className="text-[14px] leading-[18px] font-medium text-[#FFFFFF]">
+            <span className="text-[14px] leading-[18px] font-medium ">
               Trending
             </span>
           </Link>

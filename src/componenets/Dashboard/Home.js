@@ -1,19 +1,32 @@
 import React from "react";
-
+import {  useLocation } from "react-router-dom";
 import profile from "../../assets/profilePic.svg";
 import Calendar from "./Calendar";
 import Cards from "./Cards";
+import { BackArrow, Notification, TenantCommunication, Theme } from "../../iconComponent/Icons";
+import TenantCards from "./TenantCards";
 const Home = () => {
+  const location = useLocation();
+
+  const AdminDashboard =
+  location.pathname === "/admin-dashboard" ;
+
+  const showdiv =
+  location.pathname === "/tenant-dashboard" ;
+   const showdivtwo =
+  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard"  ;
+
   return (
-    <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[24px] md:py-[18px] py-[8px] ">
-      <div className="flex w-full  items-center  lg:justify-between gap-4  flex-col justify-center ">
+    <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[16px] md:py-[18px] py-[8px] ">
+      <div className="flex w-full   lg:justify-between gap-4  flex-col justify-center  items-center ">
+      {AdminDashboard && (
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg">
           <p className="text-white font-bold xl:text-[28px] lg:text-xl md:text-xl text-sm leading-[36px] ">
             Hi, Mark Smith ! Welcome To OTO~PAY 👋
           </p>
 
-          <div className=" w-full mt-6 flex  gap-x-4  flex justify-between items-center">
-            <div className=" border border-white flex gap-3 p-2 xl:w-[490px] lg:w-[370px] md:w-[370px] w-full h-auto bg-[#F6F6F6] rounded-md   flex justify-between items-center">
+          <div className=" w-full mt-6 flex  gap-x-4 justify-between items-center">
+            <div className=" border border-white flex gap-3 p-2 xl:w-[490px] lg:w-[370px] md:w-[370px] w-full h-auto bg-[#F6F6F6] rounded-md   justify-between items-center">
               <svg
                 width="24"
                 height="24"
@@ -47,8 +60,8 @@ const Home = () => {
               />
             </div>
 
-            <div className="flex  justify-between gap-4 items-center xl:flex lg:flex md:flex hidden">
-              <div className="xl:h-16 xl:w-16 lg:w-[60px] lg:[60px] md:w-[60px] md:h-[60px] p-4 bg-gray-100  rounded-lg shadow-lg rounded-lg flex justify-center items-center ">
+            <div className=" justify-between gap-4 items-center xl:flex lg:flex md:flex hidden">
+              <div className="xl:h-16 xl:w-16 lg:w-[60px] lg:[60px] md:w-[60px] md:h-[60px] p-4 bg-gray-100   shadow-lg rounded-lg flex justify-center items-center ">
                 <svg
                   width="24"
                   height="24"
@@ -83,13 +96,48 @@ const Home = () => {
             </div>
           </div>
         </div>
+      )}
 
+       <div className="flex w-full justify-between items-center">
+        <div className="flex w-full  gap-2 ">
+        <BackArrow/>
+      <h1 className="lg:text-[28px] md:text-[24px] text-[16px] font-bold md:leading-9 leading-5 text-[#434146]"> WelCome back, <span className="font-medium"> Alien</span></h1>
+       </div>
+
+
+       <div className=" flex w-full justify-end gap-2 ">
+       <div className=" p-3 md:w-12 w-10 md:h-12 h-10   flex justify-center items-center rounded-xl bg-[#F2F2F2] border ">
+            <Notification/>
+          </div>
+          <div className=" p-3 md:w-12 w-10 md:h-12 h-10  flex justify-center items-center rounded-xl bg-[#F2F2F2] border">
+            <Theme/>
+          </div>
+          <div className=" p-3 md:w-12 w-10 md:h-12 h-10  flex justify-center items-center rounded-xl bg-[#F2F2F2] border">
+            <TenantCommunication/>
+          </div>
+          
+          <div className="text-[24px] font-semi-bold  leading-[31px]  text-center flex items-center justify-center gap-[10px]  ">
+                <img
+                  className="lg:h-[48px] lg:w-[48px]  rounded-full  md:h-12 md:w-12 h-10 w-10 flex items-center justify-center   "
+                  src={profile}
+                  alt="property-logo"
+                />
+              </div>
+       </div>
+       </div>
         <div className="w-full">
+        {showdivtwo && (
           <Calendar />
+        )}
         </div>
 
         <div className="w-full">
+        {AdminDashboard && (
           <Cards />
+        )}
+        {showdiv && (
+        <TenantCards/>
+        )}
         </div>
       </div>
     </div>
