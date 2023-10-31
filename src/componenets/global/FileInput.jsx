@@ -52,6 +52,7 @@ function FileInput({ info, state }) {
     <>
       {state === "Property Pictures" ||
       state === "Property Pictures or Videos" ||
+      state === "Attachment" ||
       state === "Service Request Form" ? (
         <div className="w-full mt-5">
           <div className="space-y-1">
@@ -63,40 +64,52 @@ function FileInput({ info, state }) {
             </p>
           </div>
           <div
-            className={`flex w-full flex-col mt-3 items-center lg:py-32 md:py-20 py-14 px-8 ${
-              isDragOver ? "bg-gray-300" : "bg-transparent"
-            } border-2 border-dashed border-[#866FA3] rounded`}
-            onDragOver={onDragOver}
-            onDragLeave={onDragLeave}
-            onDrop={onDrop}
+            className={`${
+              state === "Attachment" ? "flex lg:flex-row flex-col" : ""
+            }`}
           >
-            <label htmlFor="file-upload" className="cursor-pointer">
-              <img src={Image} alt="drag&drop" />
-            </label>
-            <label
-              className="block text-[#312245] cursor-pointer text-center text-2xl font-normal leading-8 mb-2"
-              htmlFor="file-upload"
+            <div
+              className={`flex w-full flex-col mt-3 items-center ${
+                state === "Attachment"
+                  ? "py-2 lg:h-[220px] h-auto w-full lg:w-[250px]"
+                  : "lg:py-32 md:py-20 px-8 py-1"
+              }  ${
+                isDragOver ? "bg-gray-300" : "bg-transparent"
+              } border-2 border-dashed border-[#866FA3] rounded-lg`}
+              onDragOver={onDragOver}
+              onDragLeave={onDragLeave}
+              onDrop={onDrop}
             >
-              Drag & Drop <br /> or
-              <span className="font-semibold"> &nbsp;Browse</span>
-            </label>
-            <input
-              className="hidden"
-              type="file"
-              id="file-upload"
-              ref={fileInputRef}
-              onChange={onFileInputChange}
-              accept=".png,.jpeg,.jpg,.mp4"
-              multiple
-            />
-            <button
-              className="text-xs font-medium leading-4"
-              onClick={onBrowseClick}
-            >
-              Supports : JPEG,JPG,PNG Video
-            </button>
+              <label htmlFor="file-upload" className="cursor-pointer">
+                <img src={Image} alt="drag&drop" />
+              </label>
+              <label
+                className={`block text-[#312245] cursor-pointer text-center  font-normal mb-2 ${
+                  state === "Attachment" ? "text-base" : "text-2xl leading-8"
+                }`}
+                htmlFor="file-upload"
+              >
+                Drag & Drop <br /> or
+                <span className="font-semibold"> &nbsp;Browse</span>
+              </label>
+              <input
+                className="hidden"
+                type="file"
+                id="file-upload"
+                ref={fileInputRef}
+                onChange={onFileInputChange}
+                accept=".png,.jpeg,.jpg,.mp4"
+                multiple
+              />
+              <button
+                className="text-xs font-medium leading-4"
+                onClick={onBrowseClick}
+              >
+                Supports : JPEG,JPG,PNG Video
+              </button>
+            </div>
+            <div>{files?.length > 0 ? <FormSlider files={files} /> : null}</div>
           </div>
-          {files?.length > 0 ? <FormSlider files={files} /> : null}
         </div>
       ) : (
         <div className="w-full mt-5">

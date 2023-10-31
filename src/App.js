@@ -43,8 +43,8 @@ function App() {
           <Route path="access" element={<AccessPage />} />
           <Route path="landlord" element={<Landlord />} />
           <Route path="payments" element={<PaymentPage />} />
-          <Route path="service-request" element={<ServiceReqPage/>} />
-          <Route path="service-providers" element={<ServiceProPage/>} />
+          <Route path="service-request" element={<ServiceReqPage />} />
+          <Route path="service-providers" element={<ServiceProPage />} />
         </Route>
       </Routes>
       <Footer />
