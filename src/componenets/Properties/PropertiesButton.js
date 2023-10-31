@@ -8,15 +8,15 @@ import vacant from "../../assets/image 20.png";
 import del from "../../assets/image 3.png";
 import update from "../../assets/image 4.png";
 import apply from "../../assets/image-5.png";
-import {useLocation } from "react-router-dom";
+// import {useLocation } from "react-router-dom";
 
 const PropertiesButton = () => {
   const [properties, setProperties] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [handleButton, setHandleButton] = useState("");
-  const location = useLocation();
-  const Showdiv =
-  location.pathname === "/tenant-dashboard/property"  ;
+  // const location = useLocation();
+  // const Showdiv =
+  // location.pathname === "/tenant-dashboard/property"  ;
  
   return (
     <>

@@ -1,28 +1,36 @@
 import React, { useState } from "react";
-import smh from "../../assets/image 2.png";
 import PropertyCard from "../global/PropertyCard";
-import list from "../../assets/unlist.svg";
-import trash from "../../assets/trash-2.svg";
-import { PropertyModal } from "../global/PropertyModal";
-import vacant from "../../assets/image 20.png";
-import del from "../../assets/image 3.png";
-import update from "../../assets/image 4.png";
-import apply from "../../assets/image-5.png";
-import {useLocation } from "react-router-dom";
+import PropertyDetails from "../global/PropertyDetails";
+import TenantInfo from "../global/TenantInfo";
+import ReferenceInfo from "../global/ReferenceInfo";
+import Agreement from "../global/Agreement";
+import LandlordInfo from "../global/LandlordInfo";
 
-const TenantProperty = (property) => {
 
-  const location = useLocation();
-  const Showdiv =
-  location.pathname === "/tenant-dashboard/property"  ;
+// import {useLocation } from "react-router-dom";
+
+const TenantProperty = ( ) => {
+    const [property, setProperty] = useState("");
+    const [anotherProperty, setAnotherProperty] = useState("");
+    const [option, setOption] = useState("");
+    const [option2, setOption2] = useState("");
+    const [filterClicked, setFilterClicked] = useState(false);
+    const toggleFilter = () => {
+      setFilterClicked(!filterClicked);
+    };
+//   const location = useLocation();
+console.log(property)
  
   return (
     <>
           <div className="w-full bg-[#F6F6F6] px-[16px]  md:py-[18px] py-[8px] flex    lg:justify-between gap-4  flex-col justify-center ">
+         
         <div className="w-full  xl:px-[20px] xl:py-[4px] lg:p-[14px] md:p-[16px] p-[18px]  bg-[#F6F6F6]  rounded-lg flex flex-col  md:gap-4 gap-2 ">
         
 
-          <div className="w-full flex md:flex-row flex-col justify-start gap-6">
+          <div className={`w-full flex md:flex-row flex-col justify-start gap-6 ${
+              filterClicked ? "hidden" : ""
+            }`}>
             <div className=" border border-[#C5C2C9] flex gap-3 p-2 xl:w-[585px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#ECEBED] rounded-md   justify-between items-center">
               <svg
                 width="24"
@@ -57,7 +65,12 @@ const TenantProperty = (property) => {
               />
             </div>
 
-            <div className=" lg:w-[170px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center">
+            <div         onClick={() => {setProperty("propertycard");
+            setAnotherProperty("anotherProperty");
+            setOption("options");
+            setOption2("option2");
+            toggleFilter();
+            }} className="lg:w-[170px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center">
               <svg
                 width="24"
                 height="25"
@@ -85,11 +98,34 @@ const TenantProperty = (property) => {
 
           </div>
             </div>
-      
+ 
        
-          
-       <PropertyCard property= {property} /> 
-       <PropertyCard property= {property} /> 
+           
+            {property === "propertycard" ? (<PropertyCard property={property} setProperty={setProperty} anotherProperty={anotherProperty} setAnotherProperty={setAnotherProperty} option={option} setOption={setOption}/>) : null}
+           {anotherProperty === "anotherProperty"  ? (<PropertyCard anotherProperty={anotherProperty} setAnotherProperty={setAnotherProperty} property={property} setProperty={setProperty} option2={option2} setOption2={setOption2} />) : null} 
+           
+      
+            {property === "PropertyDetails" ? (
+        < LandlordInfo property={property}  />
+      ) : null}
+           {property === "PropertyDetails" ? (
+        <TenantInfo property={property}   />
+      ) : null}
+           {property === "PropertyDetails" ? (
+        <ReferenceInfo property={property}   />
+      ) : null}
+
+{property === "PropertyDetails" ? (
+        <Agreement property={property}   />
+      ) : null}
+
+{property === "PropertyDetails" ? (
+        <PropertyDetails property={property}   />
+      ) : null}
+
+{property  === "otherDetails" ? (
+        < PropertyDetails property={property} setProperty={setProperty}  />
+      ) : null}
       </div>
     
     </>

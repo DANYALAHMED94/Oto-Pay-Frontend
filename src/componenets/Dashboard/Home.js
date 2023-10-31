@@ -12,7 +12,7 @@ const Home = () => {
   location.pathname === "/admin-dashboard" ;
 
   const showdiv =
-  location.pathname === "/admin-dashboard" ;
+  location.pathname === "/tenant-dashboard" ;
    const showdivtwo =
   location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard"  ;
 
@@ -101,24 +101,24 @@ const Home = () => {
        <div className="flex w-full justify-between items-center">
         <div className="flex w-full  gap-2 ">
         <BackArrow/>
-      <h1 className="text-[28px] font-bold leading-9 text-[#434146]"> WelCome back, <span className="font-medium"> Alien</span></h1>
+      <h1 className="lg:text-[28px] md:text-[24px] text-[16px] font-bold md:leading-9 leading-5 text-[#434146]"> WelCome back, <span className="font-medium"> Alien</span></h1>
        </div>
 
 
        <div className=" flex w-full justify-end gap-2 ">
-       <div className=" p-3  rounded-xl bg-[#F2F2F2] border ">
+       <div className=" p-3 md:w-12 w-10 md:h-12 h-10   flex justify-center items-center rounded-xl bg-[#F2F2F2] border ">
             <Notification/>
           </div>
-          <div className=" p-3 rounded-lg bg-[#F2F2F2] border">
+          <div className=" p-3 md:w-12 w-10 md:h-12 h-10  flex justify-center items-center rounded-xl bg-[#F2F2F2] border">
             <Theme/>
           </div>
-          <div className=" p-3 rounded-lg bg-[#F2F2F2] border">
+          <div className=" p-3 md:w-12 w-10 md:h-12 h-10  flex justify-center items-center rounded-xl bg-[#F2F2F2] border">
             <TenantCommunication/>
           </div>
           
           <div className="text-[24px] font-semi-bold  leading-[31px]  text-center flex items-center justify-center gap-[10px]  ">
                 <img
-                  className="xl:h-[48px] xl:w-[48px]  rounded-full lg:h-[40px] lg:w-[40px]  md:h-14 md:w-16 h-16 w-16 flex items-center justify-center   "
+                  className="lg:h-[48px] lg:w-[48px]  rounded-full  md:h-12 md:w-12 h-10 w-10 flex items-center justify-center   "
                   src={profile}
                   alt="property-logo"
                 />

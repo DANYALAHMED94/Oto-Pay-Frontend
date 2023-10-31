@@ -264,7 +264,7 @@ export default function DashboardPage() {
                                 </svg>
                               </div>
 
-                              <div className="ml-3 text-[#07377C] font-normal text-[16px] text-[#5A4278]">
+                              <div className="ml-3 font-normal text-[16px] text-[#5A4278]">
                                 Service Providers
                               </div>
                             </button>
@@ -278,7 +278,7 @@ export default function DashboardPage() {
             </div>
             )}
              <div className=" flex flex-col justify-center w-full gap-4 h-auto p-4 ">
-             <NavLink to="/admin-dashboard">
+             <NavLink to="/tenant-dashboard">
                 {({ isActive }) => (
                   <li
                     className={`flex items-center ${
@@ -295,7 +295,7 @@ export default function DashboardPage() {
                 )}
               </NavLink>
 
-              <NavLink to="property">
+              <NavLink to="tenant-property">
                 {({ isActive }) => (
                   <li
                     className={`flex items-center  ${

@@ -51,8 +51,8 @@ function App() {
         </Route>
         <Route path="tenant-dashboard" element={<DashboardPage />}>
           <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
-          <Route path="property" element={<TenantPropertyPage />} />
+          <Route path="tenant-dashboard" element={<Home />} />
+          <Route path="tenant-property" element={<TenantPropertyPage />} />
         </Route>
      
       </Routes>
