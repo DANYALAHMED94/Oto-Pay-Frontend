@@ -269,14 +269,14 @@ export default function TenantRegistrationForm({
                                         </div>
                                       </div>
 
-                                      <div className="flex flex-col  py-2">
+                                      <div className="flex flex-col py-2">
                                         <label
                                           htmlFor="phoneNumber"
                                           className="text-sm font-medium leading-4 text-[#5A4278]"
                                         >
                                           Phone Number
                                         </label>
-                                        <div className="flex mt-1  rounded bg-white">
+                                        <div className="flex mt-1 rounded bg-white">
                                           <Field
                                             name="phoneNumber"
                                             className={`rounded pl-2   w-full h-10 outline-none  ${
