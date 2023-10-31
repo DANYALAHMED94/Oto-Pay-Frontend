@@ -18,6 +18,7 @@ import ServiceProPage from "./pages/ServiceProPage";
 import Landlord from "./pages/LandlordPage";
 import PaymentPage from "./pages/PaymentPage";
 import TenantPropertyPage from "./pages/TenantPropertyPage";
+import TenatnformationForm from "./componenets/global/TenantInformationForm";
 
 // import LandingPage from "./pages/LandingPage";
 
@@ -25,7 +26,12 @@ function App() {
   const location = useLocation();
 
   // Define an array of paths where Navbar should be hidden
-  const hiddenNavbarPaths = ["/admin-dashboard", "/admin-dashboard/*", "/tenant-dashboard", "/tenant-dashboard/*"] ;
+  const hiddenNavbarPaths = [
+    "/admin-dashboard",
+    "/admin-dashboard/*",
+    "/tenant-dashboard",
+    "/tenant-dashboard/*",
+  ];
 
   // Check if the current path matches any of the hidden paths
   const hideNavbar = hiddenNavbarPaths.some((path) =>
@@ -52,9 +58,9 @@ function App() {
         <Route path="tenant-dashboard" element={<DashboardPage />}>
           <Route index element={<Home />} />
           <Route path="tenant-dashboard" element={<Home />} />
+          <Route path="tenant-form" element={<TenatnformationForm />} />
           <Route path="tenant-property" element={<TenantPropertyPage />} />
         </Route>
-     
       </Routes>
       <Footer />
     </>

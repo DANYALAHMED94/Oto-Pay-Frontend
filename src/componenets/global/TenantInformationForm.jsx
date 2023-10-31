@@ -106,7 +106,7 @@ export default function TenatnformationForm() {
                       <div className="flex mt-1 rounded-lg bg-[#FDFCFF]">
                         <Field
                           name="name"
-                          className={`rounded-lg pl-2 p-4 w-full p-4 outline-none  ${
+                          className={`rounded-lg pl-2 p-4 w-full outline-none  ${
                             touched.name && errors.name ? "is-invalid" : ""
                           }`}
                         />
