@@ -18,7 +18,7 @@ import ServiceProPage from "./pages/ServiceProPage";
 import Landlord from "./pages/LandlordPage";
 import PaymentPage from "./pages/PaymentPage";
 import TenantPropertyPage from "./pages/TenantPropertyPage";
-import TenatnformationForm from "./componenets/global/TenantInformationForm";
+// import TenatnformationForm from "./componenets/global/TenantInformationForm";
 
 // import LandingPage from "./pages/LandingPage";
 
@@ -58,7 +58,7 @@ function App() {
         <Route path="tenant-dashboard" element={<DashboardPage />}>
           <Route index element={<Home />} />
           <Route path="tenant-dashboard" element={<Home />} />
-          <Route path="tenant-form" element={<TenatnformationForm />} />
+          {/* <Route path="tenant-form" element={<TenatnformationForm />} /> */}
           <Route path="tenant-property" element={<TenantPropertyPage />} />
         </Route>
       </Routes>

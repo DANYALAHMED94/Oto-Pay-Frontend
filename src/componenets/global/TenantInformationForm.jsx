@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import Profile from "../../assets/profile.svg";
 
-export default function TenatnformationForm() {
+export default function TenatnformationForm({
+  setProperty,
+  setCurrentStep,
+  complete,
+}) {
   const [previewImage, setPreviewImage] = useState(null);
   //   const [file, setFile] = useState(null);
 
@@ -12,7 +16,7 @@ export default function TenatnformationForm() {
   };
 
   return (
-    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none pb-5">
+    <div className="border-0 mt-7 rounded-lg relative flex flex-col w-full outline-none focus:outline-none pb-5">
       {/*header*/}
 
       {/*body*/}
@@ -37,7 +41,7 @@ export default function TenatnformationForm() {
           >
             {({ isSubmitting, errors, touched }) => (
               <Form>
-                <div className="p-3  rounded-2xl bg-[#ECEBED]">
+                <div className="p-5 rounded-2xl bg-[#E0E0E0]">
                   <h1 className="text-2xl font-bold text-[#18171B]">
                     Tenant Information
                   </h1>
@@ -337,7 +341,7 @@ export default function TenatnformationForm() {
                   </div>
                 </div>
 
-                <div className="p-3 mt-10 rounded-2xl bg-[#ECEBED]">
+                <div className="p-5 mt-10 rounded-2xl bg-[#E0E0E0]">
                   <h1 className="text-2xl font-bold text-[#18171B]">
                     Tenant Reference Information
                   </h1>
@@ -551,28 +555,35 @@ export default function TenatnformationForm() {
                   >
                     Go, Back
                   </button>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="flex items-center justify-center lg:w-[244px] font-bold text-sm px-6 py-4 h-12 bg-[#17062F] mt-3 text-white rounded-lg"
-                  >
-                    <p className="ml-2 md:text-sm text-xs">Continue</p>
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+
+                  {!complete && (
+                    <button
+                      type="button"
+                      // disabled={isSubmitting}
+                      onClick={() => {
+                        setProperty("uploadAgreement");
+                        setCurrentStep((prev) => prev + 1);
+                      }}
+                      className="flex items-center justify-center lg:w-[244px] font-bold text-sm px-6 py-4 h-12 bg-[#17062F] mt-3 text-white rounded-lg"
                     >
-                      <g id="Frame">
-                        <path
-                          id="Vector"
-                          d="M16.15 13.001H5C4.71667 13.001 4.479 12.905 4.287 12.713C4.095 12.521 3.99934 12.2837 4 12.001C4 11.7177 4.096 11.48 4.288 11.288C4.48 11.096 4.71734 11.0004 5 11.001H16.15L13.3 8.15104C13.1 7.95104 13.004 7.71771 13.012 7.45104C13.02 7.18437 13.116 6.95104 13.3 6.75104C13.5 6.55104 13.7377 6.4467 14.013 6.43804C14.2883 6.42937 14.5257 6.52537 14.725 6.72604L19.3 11.301C19.4 11.401 19.471 11.5094 19.513 11.626C19.555 11.7427 19.5757 11.8677 19.575 12.001C19.575 12.1344 19.554 12.2594 19.512 12.376C19.47 12.4927 19.3993 12.601 19.3 12.701L14.725 17.276C14.525 17.476 14.2877 17.572 14.013 17.564C13.7383 17.556 13.5007 17.4517 13.3 17.251C13.1167 17.051 13.0207 16.8177 13.012 16.551C13.0033 16.2844 13.0993 16.051 13.3 15.851L16.15 13.001Z"
-                          fill="#FDFCFF"
-                        />
-                      </g>
-                    </svg>
-                  </button>
+                      <p className="ml-2 md:text-sm text-xs">Continue</p>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="Frame">
+                          <path
+                            id="Vector"
+                            d="M16.15 13.001H5C4.71667 13.001 4.479 12.905 4.287 12.713C4.095 12.521 3.99934 12.2837 4 12.001C4 11.7177 4.096 11.48 4.288 11.288C4.48 11.096 4.71734 11.0004 5 11.001H16.15L13.3 8.15104C13.1 7.95104 13.004 7.71771 13.012 7.45104C13.02 7.18437 13.116 6.95104 13.3 6.75104C13.5 6.55104 13.7377 6.4467 14.013 6.43804C14.2883 6.42937 14.5257 6.52537 14.725 6.72604L19.3 11.301C19.4 11.401 19.471 11.5094 19.513 11.626C19.555 11.7427 19.5757 11.8677 19.575 12.001C19.575 12.1344 19.554 12.2594 19.512 12.376C19.47 12.4927 19.3993 12.601 19.3 12.701L14.725 17.276C14.525 17.476 14.2877 17.572 14.013 17.564C13.7383 17.556 13.5007 17.4517 13.3 17.251C13.1167 17.051 13.0207 16.8177 13.012 16.551C13.0033 16.2844 13.0993 16.051 13.3 15.851L16.15 13.001Z"
+                            fill="#FDFCFF"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </Form>
             )}

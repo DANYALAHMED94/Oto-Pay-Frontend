@@ -8,9 +8,13 @@ import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
 import Map from "../../assets/map.png";
-import { Link } from "react-router-dom";
 
-const PropertyDetails = ({ width, handleButton, sethandleButton }) => {
+const PropertyDetails = ({
+  width,
+  handleButton,
+  sethandleButton,
+  setProperty,
+}) => {
   return (
     <>
       <div className={`${width} rounded-2xl bg-white`}>
@@ -364,26 +368,26 @@ const PropertyDetails = ({ width, handleButton, sethandleButton }) => {
             >
               Go Back
             </button>
-            <Link to="/tenant-dashboard/tenant-form">
-              <button
-                type="button"
-                className="flex justify-center font-bold p-4 gap-[8px] text-white md:w-[200px] w-full bg-[#17062F] h-full border border-[#17062F]   rounded-md text-sm  text-center  items-center  mb-2 "
+
+            <button
+              type="button"
+              onClick={() => setProperty("occupyProperty")}
+              className="flex justify-center font-bold p-4 gap-[8px] text-white md:w-[200px] w-full bg-[#17062F] h-full border border-[#17062F]   rounded-md text-sm  text-center  items-center  mb-2 "
+            >
+              Occupy Property
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
               >
-                Occupy Property
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="25"
-                  height="24"
-                  viewBox="0 0 25 24"
-                  fill="none"
-                >
-                  <path
-                    d="M16.65 13.001H5.5C5.21667 13.001 4.979 12.905 4.787 12.713C4.595 12.521 4.49934 12.2837 4.5 12.001C4.5 11.7177 4.596 11.48 4.788 11.288C4.98 11.096 5.21734 11.0004 5.5 11.001H16.65L13.8 8.15104C13.6 7.95104 13.504 7.71771 13.512 7.45104C13.52 7.18437 13.616 6.95104 13.8 6.75104C14 6.55104 14.2377 6.4467 14.513 6.43804C14.7883 6.42937 15.0257 6.52537 15.225 6.72604L19.8 11.301C19.9 11.401 19.971 11.5094 20.013 11.626C20.055 11.7427 20.0757 11.8677 20.075 12.001C20.075 12.1344 20.054 12.2594 20.012 12.376C19.97 12.4927 19.8993 12.601 19.8 12.701L15.225 17.276C15.025 17.476 14.7877 17.572 14.513 17.564C14.2383 17.556 14.0007 17.4517 13.8 17.251C13.6167 17.051 13.5207 16.8177 13.512 16.551C13.5033 16.2844 13.5993 16.051 13.8 15.851L16.65 13.001Z"
-                    fill="#FDFCFF"
-                  />
-                </svg>
-              </button>
-            </Link>
+                <path
+                  d="M16.65 13.001H5.5C5.21667 13.001 4.979 12.905 4.787 12.713C4.595 12.521 4.49934 12.2837 4.5 12.001C4.5 11.7177 4.596 11.48 4.788 11.288C4.98 11.096 5.21734 11.0004 5.5 11.001H16.65L13.8 8.15104C13.6 7.95104 13.504 7.71771 13.512 7.45104C13.52 7.18437 13.616 6.95104 13.8 6.75104C14 6.55104 14.2377 6.4467 14.513 6.43804C14.7883 6.42937 15.0257 6.52537 15.225 6.72604L19.8 11.301C19.9 11.401 19.971 11.5094 20.013 11.626C20.055 11.7427 20.0757 11.8677 20.075 12.001C20.075 12.1344 20.054 12.2594 20.012 12.376C19.97 12.4927 19.8993 12.601 19.8 12.701L15.225 17.276C15.025 17.476 14.7877 17.572 14.513 17.564C14.2383 17.556 14.0007 17.4517 13.8 17.251C13.6167 17.051 13.5207 16.8177 13.512 16.551C13.5033 16.2844 13.5993 16.051 13.8 15.851L16.65 13.001Z"
+                  fill="#FDFCFF"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
