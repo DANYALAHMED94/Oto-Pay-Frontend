@@ -19,7 +19,7 @@ const PropertyDetails = ({ width, handleButton, sethandleButton }) => {
             Property Details
           </h1>
           <div className="w-full flex flex-col xl:gap-[32px] sxl:gap-[32px] gap-4">
-            <div className="w-full h-full flex md:flex-row md:justify-between justify-center items-center flex-col gap-6">
+            <div className="w-full h-full flex md:flex-row md:justify-between justify-center md:items-start items-center flex-col gap-6">
               <div className="xl:w-[800px] h-full w-full  flex flex-col gap-3">
                 <div className="w-full  flex justify-center items-center">
                   <img
