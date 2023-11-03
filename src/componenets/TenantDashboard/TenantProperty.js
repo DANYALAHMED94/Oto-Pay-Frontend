@@ -20,9 +20,7 @@ const TenantProperty = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [complete, setComplete] = useState(false);
   const [filterClicked, setFilterClicked] = useState(false);
-  const toggleFilter = () => {
-    setFilterClicked(!filterClicked);
-  };
+
   //   const location = useLocation();
   console.log(property);
 
@@ -75,7 +73,7 @@ const TenantProperty = () => {
                 setAnotherProperty("anotherProperty");
                 setOption("options");
                 setOption2("option2");
-                toggleFilter();
+                setFilterClicked(!filterClicked);
               }}
               className="lg:w-[170px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center"
             >
