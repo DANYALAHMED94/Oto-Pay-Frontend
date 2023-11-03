@@ -8,14 +8,14 @@ import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
 import Map from "../../assets/map.png";
-import { useNavigate } from 'react-router-dom';
+
 const PropertyDetails = ({
   width,
-  handleButton,
-  sethandleButton,
+
+  setAnotherProperty,
   setProperty,
 }) => {
-  const navigate = useNavigate();
+
 
  
   return (
@@ -366,7 +366,11 @@ const PropertyDetails = ({
 
           <div className="w-full flex md:flex-row flex-col justify-end gap-4">
             <button
-    onClick={() => navigate(-1)}
+       onClick={() => {
+        setProperty("propertycard");
+        setAnotherProperty("anotherProperty");
+    
+      }}
               type="submit"
               className="flex justify-center p-4 font-bold gap-[8px] text-[#17062F] md:w-[200px] w-full h-full border border-[#17062F]   rounded-md text-sm  text-center  items-center  mb-2 "
             >

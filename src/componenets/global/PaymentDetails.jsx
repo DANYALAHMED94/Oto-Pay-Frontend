@@ -1,7 +1,7 @@
 import React from "react";
 import tenant1 from "../../assets/tenant1.svg";
 import image from "../../assets/receipt.png"
-const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayment }) => {
+const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayment , setTenantPayment}) => {
   // const [paymentStatus, setPaymentStatus] = useState("");
   // const handlePayment = (status) => {
   //     setPaymentStatus(status);
@@ -323,7 +323,10 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
 <div className="w-full flex flex-row  font-medium text-sm leading-4 text-[#5A4278] md:justify-end justify-between items-center">
 
  
-  <button className="flex justify-end w-[60px] pt-6"> refund</button>
+  <button  onClick={() => {
+                setTenantPayment("RefundPayment");
+              }}
+              className="flex justify-end w-[100px] whitespace-nowrap underline pt-6 text-[#17062F] text-base font-bold leading-5"> Refund Request</button>
 
 </div>
 </div>

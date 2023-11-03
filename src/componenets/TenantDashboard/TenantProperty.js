@@ -140,11 +140,11 @@ const TenantProperty = () => {
         ) : null}
 
         {property === "PropertyDetails" ? (
-          <PropertyDetails property={property} setProperty={setProperty} />
+          <PropertyDetails property={property} setProperty={setProperty}  setAnotherProperty={setAnotherProperty} />
         ) : null}
 
         {property === "otherDetails" ? (
-          <PropertyDetails property={property} setProperty={setProperty} />
+          <PropertyDetails property={property} setProperty={setProperty}  setAnotherProperty={setAnotherProperty} />
         ) : null}
 
         <div

@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import FileInput from "./FileInput";
 import Info from "../../assets/info.svg";
 
-export default function AddPaymentForm({ state }) {
+export default function AddPaymentForm({ tenantPayment, setTenantPayment}) {
   return (
     <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none pb-5">
       {/*header*/}
@@ -171,7 +171,7 @@ export default function AddPaymentForm({ state }) {
                         />
                       </div>
                     </div>
-                    {state === "Add Payment" ? (
+                    {tenantPayment === "AddPayment" ? (
                       <>
                         <div className="flex flex-col py-2">
                           <label
@@ -236,7 +236,7 @@ export default function AddPaymentForm({ state }) {
                     <button
                       type="button"
                       className="md:text-sm text-xs text-[#312245] font-bold lg:w-[244px] px-6 py-3 h-12 mt-3 border-2 border-[#312245] rounded-lg"
-                      // onClick={() => setShowModal(false)}
+                      onClick={() => setTenantPayment ("payments")}
                     >
                       Go, Back
                     </button>

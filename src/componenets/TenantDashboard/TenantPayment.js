@@ -98,8 +98,8 @@ const TenantPayments = ({state,setAnotherProperty}) => {
           <TenantPaymentHistory tenantPayment={tenantPayment} setTenantPayment={setTenantPayment}  />
         ) : null}
 
-        {tenantPayment === "AddPayment" ? (
-          <AddPaymentForm  state={state} />
+        {tenantPayment === "AddPayment" || tenantPayment === "RefundPayment" ? (
+          <AddPaymentForm  tenantPayment={tenantPayment} setTenantPayment={setTenantPayment}  />
         ) : null}
  
 {tenantPayment  === "PropertyDetails" ? (
