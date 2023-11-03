@@ -353,8 +353,23 @@ export default function DashboardPage() {
                 )}
               </NavLink>
 
+              <NavLink to="tenant-communication">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantCommunication />
+                      <p className="font-normal text-[16px] ml-5 ">Communication</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
 
-              <hr className="border-t border-gray-300 my-4" />
              
               </div>  
             <div

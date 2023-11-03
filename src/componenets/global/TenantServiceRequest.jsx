@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import agreement from "../../assets/agreement.png";
-import TenantRequest from "./TenantRequest";
+import React from "react";
+
 
 const TenantServiceRequest = ({ width,  request, setRequest, setServices}) => {
   return (

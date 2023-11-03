@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 
 import PaymentDetails from "./PaymentDetails";
 import img from "../../assets/Frame 267.png";
-import PropertyDetails from "./PropertyDetails";
 
 const TenantPaymentHistory = ({
   width,
-  history,
-  setHistory,
+
   setTenantPayment,
   setAnotherProperty,
   tenantPayment,

@@ -3,7 +3,6 @@ import TenantServiceRequest from "../global/TenantServiceRequest";
 import TenantRequest from "../global/TenantRequest";
 import ServiceRequestForm from "../global/ServiceRequestForm";
 import Success from "../global/Success";
-import Reject from "../global/Reject";
 
 const TenantServices = () => {
   const [services, setServices] = useState("");
@@ -12,13 +11,17 @@ const TenantServices = () => {
 
   return (
     <>
-      <div className={`w-full bg-[#F6F6F6] px-[16px]  md:py-[18px] py-[8px] flex    lg:justify-between   ${
-              filterClicked ? " " : "gap-4"
-            } flex-col justify-center `}>
+      <div
+        className={`w-full bg-[#F6F6F6] px-[16px]  md:py-[18px] py-[8px] flex    lg:justify-between   ${
+          filterClicked ? " " : "gap-4"
+        } flex-col justify-center `}
+      >
         <div className="w-full  xl:px-[20px] xl:py-[4px] lg:p-[14px] md:p-[16px] p-[18px]  bg-[#F6F6F6]  rounded-lg flex flex-col  md:gap-4 gap-2 ">
-          <div className={`w-full flex md:flex-row flex-col justify-start gap-6  ${
+          <div
+            className={`w-full flex md:flex-row flex-col justify-start gap-6  ${
               filterClicked ? "hidden " : ""
-            }`}>
+            }`}
+          >
             <div className=" border border-[#C5C2C9] flex gap-3 p-2 xl:w-[585px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#ECEBED] rounded-md   justify-between items-center">
               <svg
                 width="24"
@@ -133,7 +136,7 @@ const TenantServices = () => {
           <ServiceRequestForm services={services} setServices={setServices} />
         ) : null}
 
-        {services === "success" ? <Success setServices={setServices} /> : null }
+        {services === "success" ? <Success setServices={setServices} /> : null}
       </div>
     </>
   );

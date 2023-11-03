@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import AddPaymentForm from "../global/AddPaymentForm";
-import TenantPaymentCard from "../global/TenantPaymentCard";
-import PaymentDetails from "../global/PaymentDetails";
+
 import TenantPaymentHistory from "../global/TenantPaymentHistory";
 import PropertyDetails from "../global/PropertyDetails";
 
 
 const TenantPayments = ({state,setAnotherProperty}) => {
   const [tenantPayment, setTenantPayment] = useState("");
-  const [request, setRequest] = useState("");
   const [filterClicked, setFilterClicked] = useState(false);
 
   return (
@@ -103,7 +101,7 @@ const TenantPayments = ({state,setAnotherProperty}) => {
         {tenantPayment === "AddPayment" ? (
           <AddPaymentForm  state={state} />
         ) : null}
-
+ 
 {tenantPayment  === "PropertyDetails" ? (
           <PropertyDetails tenantPayment={tenantPayment} setTenantPayment={setTenantPayment}   setAnotherProperty={setAnotherProperty} />
         ) : null}
