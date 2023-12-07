@@ -14,7 +14,7 @@ export default function AddPaymentForm({
 
 }) {
   return (
-    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-[#ECEBED] outline-none focus:outline-none pb-5">
+    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-[#ECEBED] outline-none focus:outline-none py-4">
       {/*header*/}
       {/* <div className="flex items-center justify-between p-5">
         <h1
@@ -139,10 +139,34 @@ export default function AddPaymentForm({
                             />
                           </div>
                         </div>
-                   ): 
+                   ):  landlordTenants==="Notification"?(
+                   <div className="flex mt-5 flex-col  py-2">
+                   <label
+                     htmlFor="name"
+                     className="text-sm font-medium leading-4 text-[#5A4278]"
+                   >
+                     Mame of Tenant
+                   </label>
+                   <Field
+                     as="select"
+                     name="name"
+                     className={`border bg-[#FDFCFF] p-4 mt-1  pr-5  text-[#11141C] border-1 border-[#2E06641F] rounded-lg pl-2 outline-none  ${
+                       touched.gender && errors.gender ? "is-invalid" : ""
+                     }`}
+                   >
+                     <option >Select</option>
+                     <option value="male">male</option>
+                     <option value="female">female</option>
+                     <option value="other">other</option>
+                   </Field>
+                   <ErrorMessage
+                     component="div"
+                     name="gender"
+                     className="text-red-700 font-normal font-base text-left"
+                   />
+                 </div>):
 
-                  
-
+              
                    <div className="flex mt-5 flex-col  py-2">
                       <label
                         htmlFor="gender"
@@ -274,7 +298,7 @@ export default function AddPaymentForm({
                     ) : (
                     
                       <>
-                          {landlordTenants==="sendProposal" ?(""):
+                          {landlordTenants==="sendProposal"  || landlordTenants==="Notification" ?(""):
                           <>
                         <div className="flex flex-col py-2">
                           <label
@@ -322,10 +346,10 @@ export default function AddPaymentForm({
                         </>}
                       </>
                     )}
-                    {tenantPayment === "AddPayment" || landlordTenants==="sendProposal" ||
+                    {tenantPayment === "AddPayment" || landlordTenants==="sendProposal" || landlordTenants==="Notification"||
                     landlordPayment === "AddPayment" ? (
                       <>
-                      {landlordTenants==="sendProposal" ?(""):
+                      {landlordTenants==="sendProposal" || landlordTenants==="Notification" ?(""):
                         <div className="flex flex-col py-2">
                           <label
                             htmlFor="name"
@@ -379,7 +403,7 @@ export default function AddPaymentForm({
                             />
                           </div>
                         ) : null}
-                            {landlordTenants==="sendProposal" ?(""):
+                            {landlordTenants==="sendProposal" || landlordTenants==="Notification" ?(""):
                         <div className="flex flex-col py-2">
                           <label
                             htmlFor="name"
@@ -403,9 +427,9 @@ export default function AddPaymentForm({
                           </div>
                         </div>}
 
-                        {landlordPayment === "AddPayment"|| landlordTenants==="sendProposal" ? (
+                        {landlordPayment === "AddPayment"|| landlordTenants==="sendProposal"  || landlordTenants==="Notification"? (
                           <>
-                            {landlordTenants==="sendProposal" ?(""):
+                            {landlordTenants==="sendProposal" || landlordTenants==="Notification" ?(""):
                           <div className="flex  flex-col  py-2">
                             <label
                               htmlFor="gender"
@@ -562,11 +586,11 @@ Per Month Rent
 </>
 
 )   : null}  
-                  {landlordAccess === "AddManager" || landlordTenants==="sendProposal" ? (""):
+                  {landlordAccess === "AddManager" || landlordTenants==="sendProposal"  || landlordTenants==="Notification"? (""):
                   <div>
                     <FileInput state="Attachment" />
                   </div>}
-                  {landlordPayment === "AddPayment"|| landlordAccess === "AddManager" || landlordTenants==="sendProposal"  ? (
+                  {landlordPayment === "AddPayment"|| landlordAccess === "AddManager" || landlordTenants==="sendProposal" || landlordTenants==="Notification" ? (
                     ""
                   ) : (
                     <div className="flex md:py-4 space-x-1 items-center">
@@ -601,7 +625,7 @@ Per Month Rent
       Add to Property
     </p>
   </button>
-                   ) : landlordAccess === "AddLink" || landlordTenants==="sendProposal" ? (""):
+                   ) : landlordAccess === "AddLink" || landlordTenants==="sendProposal" ||landlordTenants==="Notification"  ? (""):
                    <button
                       type="submit"
                       disabled={isSubmitting}
@@ -617,6 +641,17 @@ Per Month Rent
                       type="submit"
                       disabled={isSubmitting}
                       className="flex items-center justify-center font-bold text-sm px-6 py-4 h-12 bg-[#17062F] mt-3 rounded-lg"
+                    >
+                      <p className="ml-2 md:text-sm text-xs  text-white">
+                        Send 
+                      </p>
+                    </button>  ):null}
+
+                    {landlordTenants==="Notification" ? (
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex w-32 items-center justify-center font-bold text-sm px-6 py-4 h-12 bg-[#17062F] mt-3 rounded-lg"
                     >
                       <p className="ml-2 md:text-sm text-xs  text-white">
                         Send 

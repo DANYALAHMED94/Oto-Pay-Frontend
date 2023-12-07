@@ -4,17 +4,13 @@ import React from "react";
 import PaymentDetails from "./PaymentDetails";
 
 const PaymentCard = ({
-  tenants,
+
   details,
-  land,
+ 
   payment,
-  access,
-  request,
-  provider,
-  accept,
+ 
   width,
-  handleButton,
-  landLord,
+
 
 }) => {
   return (

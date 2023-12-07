@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import AddPaymentForm from "../global/AddPaymentForm";
 
 import TenantPaymentHistory from "../global/TenantPaymentHistory";
-import PropertyDetails from "../global/PropertyDetails";
 
 
-const LandlordPayment = ({setAnotherProperty}) => {
+const LandlordPayment = () => {
   const [landlordPayment, setLandlordPayment] = useState("");
   const [tenantPayment, setTenantPayment] = useState("");
   const [filterClicked, setFilterClicked] = useState(false);
@@ -101,7 +100,7 @@ const LandlordPayment = ({setAnotherProperty}) => {
 
 
         {landlordPayment === "AddPayment" ? (
-          <AddPaymentForm  landlordPayment={landlordPayment }  setLandlordPayment={setLandlordPayment } setTenantPayment={setTenantPayment}  />
+          <AddPaymentForm  landlordPayment={landlordPayment }  setLandlordPayment={setLandlordPayment } setTenantPayment={setTenantPayment}  tenantPayment={tenantPayment} />
         ) : null}
 
 {/* {tenantPayment  === "PropertyDetails" ? (

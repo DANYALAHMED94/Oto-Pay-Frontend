@@ -140,27 +140,14 @@ const LandlordTenants = ( ) => {
            
             <button
               onClick={() => {
-              
+                setLandlordTenants("Notification")
                 setFilterClicked(!filterClicked);
               }}
               type="submit"
-              className="flex justify-center items-center gap-[4px] text-white bg-[#17062F]  lg:w-[250px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
+              className="flex justify-center items-center gap-[4px] text-[#17062F] border border-[#17062F]  lg:w-[250px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
-              <svg
-                className="w-[20px] h-[20px]"
-                viewBox="0 0 14 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 7.5H13M7 13.5V1.5"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-               Add New Manager
+             
+              Send Notification to Tenant
             </button>
           </div>
         </div>
@@ -176,6 +163,10 @@ const LandlordTenants = ( ) => {
         ) : null}
 
 {landlordTenants === "sendProposal" ? (
+          <AddPaymentForm landlordTenants={landlordTenants} setLandlordTenants={setLandlordTenants}    />
+        ) : null}
+
+{landlordTenants === "Notification" ? (
           <AddPaymentForm landlordTenants={landlordTenants} setLandlordTenants={setLandlordTenants}    />
         ) : null}
 

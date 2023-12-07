@@ -82,12 +82,12 @@ const NavBar = () => {
             </nav>
 
             <div className="lg:block hidden">
-              <Link to="/admin-dashboard">
+              <Link to="/landlord-dashboard">
                 <button
                   type="submit"
                   className=" flex justify-center  items-center xl:gap-[8px] md:gap-[6px] text-[#FFFFFF]  xl:w-[159px] md:w-[128px] xl:h-[56px] md:h-[40px]  border border-[#FFFFFF] hover:text-white   rounded-md xl:text-sm md:text-[12px]  text-center    "
                 >
-                  SignIn
+                  landlord
                 </button>
               </Link>
             </div>

@@ -15,7 +15,7 @@ const TenantCard = ({
   provider,
   accept,
   width,
-  handleButton,
+
   landLord,
 }) => {
   const [isChecked, setIsChecked] = useState(true);

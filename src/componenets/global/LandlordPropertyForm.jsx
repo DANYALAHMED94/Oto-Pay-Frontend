@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import FileInput from "./FileInput";
-import Info from "../../assets/info.svg";
 import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";

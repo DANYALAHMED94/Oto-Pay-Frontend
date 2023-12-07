@@ -2,7 +2,7 @@
 <rect width="24" height="25" fill="#D9D9D9"/>
 <g id="Service Request &#38; send to Providers or landlord">
 <path d="M-9992 -762C-9992 -763.105 -9991.1 -764 -9990 -764H3138C3139.1 -764 3140 -763.105 3140 -762V1919C3140 1920.1 3139.1 1921 3138 1921H-9990C-9991.1 1921 -9992 1920.1 -9992 1919V-762Z" fill="#AFAFAF"/>
-<g id="Properties delete" clip-path="url(#clip0_0_1)">
+<g id="Properties delete" clipPath="url(#clip0_0_1)">
 <rect width="1440" height="1024" transform="translate(-1133 -310)" fill="#F6F6F6"/>
 <g id="Frame 290">
 <g id="Home">
@@ -38,7 +38,7 @@
 <g id="Frame 5">
 <g id="Frame 2609101">
 <g id="Frame 2609193">
-<g clip-path="url(#clip1_0_1)">
+<g clipPath="url(#clip1_0_1)">
 <rect x="-734" y="-160.5" width="993" height="682" rx="16" fill="#E4DFEB"/>
 <g id="Frame 273">
 <g id="Frame 313" filter="url(#filter2_d_0_1)">
