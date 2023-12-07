@@ -18,6 +18,13 @@ import ServiceProPage from "./pages/ServiceProPage";
 import Landlord from "./pages/LandlordPage";
 import PaymentPage from "./pages/PaymentPage";
 import TenantPropertyPage from "./pages/TenantPropertyPage";
+import TenantServicesPage from "./pages/TenantServicesPage";
+import TenantPaymentPage from "./pages/TenantPaymentPage";
+import LandlordProperty from "./componenets/LandlordDashboard/LandlordProperty";
+import LandlordAccessPage from "./pages/LandlordAccessPage";
+import LandlordPaymentPage from "./pages/LandlordPaymentPage";
+import LandlordServicesPage from "./pages/LandlordServicesPage";
+import LandlordTenantsPage from "./pages/LandlordTenantsPage";
 // import TenatnformationForm from "./componenets/global/TenantInformationForm";
 
 // import LandingPage from "./pages/LandingPage";
@@ -31,6 +38,8 @@ function App() {
     "/admin-dashboard/*",
     "/tenant-dashboard",
     "/tenant-dashboard/*",
+    "/landlord-dashboard",
+    "/landlord-dashboard/*",
   ];
 
   // Check if the current path matches any of the hidden paths
@@ -60,6 +69,18 @@ function App() {
           <Route path="tenant-dashboard" element={<Home />} />
           {/* <Route path="tenant-form" element={<TenatnformationForm />} /> */}
           <Route path="tenant-property" element={<TenantPropertyPage />} />
+          <Route path="tenant-services" element={<TenantServicesPage />} />
+                <Route path="tenant-payments" element={<TenantPaymentPage />} />
+        </Route>
+
+        <Route path="landlord-dashboard" element={<DashboardPage />}>
+          <Route index element={<Home />} />
+          <Route path="landlord-dashboard" element={<Home />} />
+          <Route path="landlord-property" element={<LandlordProperty />} />
+          <Route path="landlord-access" element={<LandlordAccessPage />} />
+          <Route path="landlord-payments" element={<LandlordPaymentPage />} />
+          <Route path="landlord-tenants" element={<LandlordTenantsPage/>} />
+          <Route path="landlord-services" element={<LandlordServicesPage/>} />
         </Route>
       </Routes>
       <Footer />

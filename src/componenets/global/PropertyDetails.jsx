@@ -11,10 +11,15 @@ import Map from "../../assets/map.png";
 
 const PropertyDetails = ({
   width,
-  handleButton,
-  sethandleButton,
+  landlordTenants,
+  setAnotherProperty,
   setProperty,
+  setTenantInfo,
+  setLandlordTenants
 }) => {
+
+
+ 
   return (
     <>
       <div className={`${width} rounded-2xl bg-white`}>
@@ -23,7 +28,7 @@ const PropertyDetails = ({
             Property Details
           </h1>
           <div className="w-full flex flex-col xl:gap-[32px] sxl:gap-[32px] gap-4">
-            <div className="w-full h-full flex md:flex-row md:justify-between justify-center items-center flex-col gap-6">
+            <div className="w-full h-full flex md:flex-row md:justify-between justify-center md:items-start items-center flex-col gap-6">
               <div className="xl:w-[800px] h-full w-full  flex flex-col gap-3">
                 <div className="w-full  flex justify-center items-center">
                   <img
@@ -363,11 +368,27 @@ const PropertyDetails = ({
 
           <div className="w-full flex md:flex-row flex-col justify-end gap-4">
             <button
+       onClick={() => {
+        setProperty("propertycard");
+        setAnotherProperty("anotherProperty");
+    
+      }}
               type="submit"
               className="flex justify-center p-4 font-bold gap-[8px] text-[#17062F] md:w-[200px] w-full h-full border border-[#17062F]   rounded-md text-sm  text-center  items-center  mb-2 "
             >
               Go Back
             </button>
+
+            {landlordTenants === "PropertyDetails" ? (
+                <button
+                type="button"
+                onClick={() => {setLandlordTenants("")
+                setTenantInfo("PropertyDetails")}}
+                className="flex justify-center font-bold p-4 gap-[8px] text-white md:w-[200px] w-full bg-[#17062F] h-full border border-[#17062F]   rounded-md text-base  text-center  items-center  mb-2 "
+              >
+                save
+              
+              </button>):
 
             <button
               type="button"
@@ -387,7 +408,7 @@ const PropertyDetails = ({
                   fill="#FDFCFF"
                 />
               </svg>
-            </button>
+            </button>}
           </div>
         </div>
       </div>

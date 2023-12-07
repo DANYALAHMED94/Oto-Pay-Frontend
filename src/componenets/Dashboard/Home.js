@@ -12,13 +12,15 @@ const Home = () => {
   location.pathname === "/admin-dashboard" ;
 
   const showdiv =
-  location.pathname === "/tenant-dashboard" ;
+  location.pathname === "/tenant-dashboard" || location.pathname === "/landlord-dashboard" ;
    const showdivtwo =
-  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard"  ;
+  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard" || location.pathname === "/landlord-dashboard"  ;
 
   return (
     <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[16px] md:py-[18px] py-[8px] ">
-      <div className="flex w-full   lg:justify-between gap-4  flex-col justify-center  items-center ">
+      <div className={`flex w-full   lg:justify-between  ${
+              AdminDashboard ? " gap-4" : ""
+            } flex-col justify-center  items-center `}>
       {AdminDashboard && (
         <div className="w-full  xl:p-[32px] lg:p-[26px] md:p-[24px] p-[18px] bg-[#2E0664] rounded-lg">
           <p className="text-white font-bold xl:text-[28px] lg:text-xl md:text-xl text-sm leading-[36px] ">

@@ -1,25 +1,26 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import FileInput from "./FileInput";
-
-export default function ServiceRequestForm() {
+import Frame from "../../assets/Frame.png";
+import Voice from "../../assets/voice.png";
+export default function ServiceRequestForm({setServices}) {
   return (
-    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none pb-5">
+    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-[#ECEBED] outline-none focus:outline-none pb-5">
       {/*header*/}
-      <div className="flex items-center justify-between p-5">
+      {/* <div className="flex items-center justify-between p-5">
         <h1
           className="md:text-2xl text-sm                 
                          text-[#5A4278]"
         >
           Service Request Form
         </h1>
-        {/* <button
+        <button
           className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
           //   onClick={() => setShowModal(false)}
         >
           <img src={Cancel} alt="x" />
-        </button> */}
-      </div>
+        </button>
+      </div> */}
       {/*body*/}
       <div className="relative px-3 flex-auto ">
         <div>
@@ -42,10 +43,34 @@ export default function ServiceRequestForm() {
           >
             {({ isSubmitting, errors, touched }) => (
               <Form>
-                <div className="p-3 grid lg:grid-cols-3 grid-cols-1 gap-x-5 rounded-2xl bg-[#E4DFEB]">
+                <div className="p-3 grid lg:grid-cols-3 grid-cols-1 gap-x-5 rounded-2xl ">
                   <div className="w-full col-span-full">
                     <FileInput state={"Service Request Form"} />
                   </div>
+                  <div className="w-full col-span-full">
+                  <div className="grid md:grid-cols-5 gap-x-5 gap-y-3 grid-cols-1">
+                              <div className="flex flex-col justify-center items-center">
+                                <img src={Frame} alt="" />
+                                <img src={Voice} alt="" />
+                              </div>
+                              <div className="flex flex-col justify-center items-center">
+                                <img src={Frame} alt="" />
+                                <img src={Voice} alt="" />
+                              </div>
+                              <div className="flex flex-col justify-center items-center">
+                                <img src={Frame} alt="" />
+                                <img src={Voice} alt="" />
+                              </div>
+                              <div className="flex flex-col justify-center items-center">
+                                <img src={Frame} alt="" />
+                                <img src={Voice} alt="" />
+                              </div>
+                              <div className="flex flex-col justify-center items-center">
+                                <img src={Frame} alt="" />
+                                <img src={Voice} alt="" />
+                              </div>
+                            </div>
+                            </div>
 
                   <div className="flex mt-5 flex-col  py-2">
                     <label
@@ -155,11 +180,12 @@ export default function ServiceRequestForm() {
                   <button
                     type="button"
                     className="md:text-sm text-xs text-[#312245] font-bold px-6 py-3 h-11 mt-3 border-2 border-[#312245] rounded"
-                    // onClick={() => setShowModal(false)}
+                    onClick={() => setServices("services")}
                   >
                     Cancel
                   </button>
                   <button
+                   onClick={() => setServices("success")}
                     type="submit"
                     disabled={isSubmitting}
                     className="flex items-center justify-center font-bold text-sm px-6 py-4 h-11 bg-[#17062F] mt-3 text-white rounded"

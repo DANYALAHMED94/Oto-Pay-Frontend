@@ -3,7 +3,7 @@ import prop from "../../assets/prop.png";
 import bed from "../../assets/bed.svg";
 import bath from "../../assets/bath.svg";
 import area from "../../assets/area.svg";
-import rating from "../../assets/rating.svg";
+// import rating from "../../assets/rating.svg";
 import update from "../../assets/update.svg";
 import img from "../../assets/Frame 267.png";
 import UpdatePropertyModal from "./UpdatePropertyModal";
@@ -17,14 +17,21 @@ function PropertyCard({
   option, 
   option2,
   property,
-  anotherProperty,
+  occupied,
 setAnotherProperty,
   setProperty,
   landLord,
   request,
+  featureEffect 
 }) {
   const [showModal, setShowModal] = useState(false);
   const [state, setState] = useState("");
+  const [isChecked, setIsChecked] = useState(true);
+
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
   
   // const [handleButton, setHandleButton] = useState("");
  
@@ -161,21 +168,37 @@ setAnotherProperty,
             }     `}
           >
             <div className="w-full h-full space-y-[11px]">
-              <div className="flex justify-between">
+              <div className="flex md:flex-row flex-col justify-between">
                 <h2
                   className=" xl:text-3xl text-2xl  font-semibold leading-[28px] text-[#5A4278]  rounded-lg  title-font mb-2
         "
                 >
                   $8,827648
                 </h2>
+               
 
+                { featureEffect === "feature Effect" ? (
+                  <div
+                 
+                    className="p-3 px-4 md:w-[250px] w-full h-10 rounded-lg border gap-x-1 flex justify-center items-center  bg-[#2E0664] bg-opacity-10"
+                  >
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M2.24999 8.25H21.75M1.6603 8.82234L11.3986 21.4533C11.4694 21.5455 11.5604 21.6203 11.6647 21.6717C11.769 21.7232 11.8837 21.7499 12 21.7499C12.1163 21.7499 12.231 21.7232 12.3353 21.6717C12.4396 21.6203 12.5306 21.5455 12.6014 21.4533L22.3397 8.82234C22.4354 8.69768 22.491 8.54682 22.4989 8.38983C22.5069 8.23284 22.4669 8.07714 22.3842 7.94344L19.0809 2.61141C19.0129 2.50106 18.9178 2.40993 18.8047 2.34668C18.6916 2.28343 18.5641 2.25015 18.4345 2.25H5.56546C5.43584 2.25015 5.30842 2.28343 5.19528 2.34668C5.08215 2.40993 4.98706 2.50106 4.91905 2.61141L1.61577 7.94344C1.53311 8.07714 1.4931 8.23284 1.50105 8.38983C1.50901 8.54682 1.56455 8.69768 1.6603 8.82234Z" stroke="#2E0664" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.75 3L16.5 8.25M16.5 8.25L12 2.25L7.5 8.25M16.5 8.25L12 21L7.5 8.25M5.25 3L7.5 8.25" stroke="#2E0664" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    <p className="md:text-base text-sm text-[#2E0664] leading-5 font-bold whitespace-nowrap">
+                     Feature Effect Applied
+                    </p>
+                  </div>
+
+                ) : null}
                 {properties === "Update" ? (
                   <button
                     onClick={() => {
                       setShowModal(true);
                       setState("Property Pictures");
                     }}
-                    className="p-3 px-4 w-[160px] h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
+                    className="p-3 px-4 md:w-[160px] w-full h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
                   >
                     <img src={update} alt="delete" />
                     <p className="text-sm text-[#312245] font-semibold whitespace-nowrap">
@@ -192,7 +215,7 @@ setAnotherProperty,
                   }}
                 
                   
-                    className="p-3 px-4 w-[160px] h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
+                    className="p-3 px-4 md:w-[160px] w-full h-10 rounded-lg border gap-x-1 flex justify-center items-center border-[#312245]"
                   >
                     <img src={update} alt="delete" />
                     <p className="text-sm text-[#312245] font-semibold whitespace-nowrap">
@@ -222,14 +245,14 @@ setAnotherProperty,
                   Washington ,street xyz
                 </h2>
               </div>
-
+{/* 
               <div className="rounded-lg   ">
                 <img
                   alt="gallery"
                   className="w-28 object-cover h-full object-center block"
                   src={rating}
                 />
-              </div>
+              </div> */}
               <p className="text-[#5A4278] md:text-base text-sm leading-[18.2px] font-medium">
                 As you approach the property, a picturesque driveway winds
                 through lush gardens and old-growth trees, creating an immediate
@@ -298,6 +321,34 @@ setAnotherProperty,
                 </h1>
               </div>
             </div>
+
+            {occupied ==="Occupied" ?(
+             <div className=" flex md:flex-row flex-col justify-between bg-[#F6F6F6] gap-2 rounded-lg p-3 ">
+             <div className="flex md:flex-row flex-col w-full  justify-start items-center gap-3 ">
+            <h1 className="text-sm font-semibold leading-4 whitespace-nowrap"> Occupied by </h1>
+               <div className="w-full flex md:flex-row flex-col  items-center gap-2  ">
+                
+                <div className="md:w-10 w-16 h-16 md:h-10">
+                 <img
+                   alt="gallery"
+                   className="w-full  h-full rounded-lg object-center block"
+                   src={img}
+                 />
+               </div>
+                 <span className="text-[#17062F] leading-4 font-normal text-base">
+                   Mark John Smith
+                 </span>
+               </div>
+               <div className="flex w-full justify-end items-center">
+               <button className="flex justify-center items-center rounded-lg p-3 md:w-[150px] w-full  border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]">
+                See Details
+              </button>
+              </div>
+             </div>
+               
+              </div>
+): null }
+
 {option2 ==="option2" ?(
             <div className=" w-full md:h-[48px] h-auto flex md:flex-row flex-col  md:justify-between justify-center gap-4 ">
                 <button
@@ -402,6 +453,54 @@ setAnotherProperty,
                
               </div>
 ): null }
+
+{property ==="landlordProperty" ?(
+            <div className=" w-full md:h-[48px] h-auto flex md:flex-row flex-col  md:justify-between justify-center gap-4 ">
+                <div className="w-full p-2 rounded-lg border border-[#ECEBED] flex justify-between items-center ">
+                {isChecked ? (
+                  <span className="font-bold text-base leading-5 text-[#312245]">
+                    Activate
+                  </span>
+                ) : (
+                  <span className="font-bold text-base leading-5 text-[#312245]">
+                    DeActivate
+                  </span>
+                )}
+                <label className="relative inline-flex  cursor-pointer">
+                  <input
+                    type="checkbox"
+                    value=""
+                    className="sr-only peer "
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                  <div className="w-11 h-6 bg-gray-200  rounded-full peer   peer-checked:after:translate-x-full  peer-checked:after:bg-white  after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#2E0664]  after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-gray-200"></div>
+                </label>
+              </div>
+
+                <button
+                  type="submit"
+                  className="flex justify-center p-2 gap-[8px] text-[#17062F] dark:text-white  w-full h-full border border-[#17062F]   rounded-lg text-sm  text-center  items-center  mb-2 "
+                >
+                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+  <path d="M19.25 19.5H19.75V19V12.5H20.75V19C20.75 19.3978 20.592 19.7794 20.3107 20.0607C20.0294 20.342 19.6478 20.5 19.25 20.5H5.25C4.85218 20.5 4.47064 20.342 4.18934 20.0607C3.90804 19.7794 3.75 19.3978 3.75 19V5C3.75 4.16614 4.41614 3.5 5.25 3.5H11.75V4.5H5.25H4.75V5V19V19.5H5.25H19.25ZM19.6964 6.10355L19.6964 6.10362L19.7034 6.11042C19.7259 6.13199 19.745 6.1697 19.745 6.22125C19.745 6.27257 19.7257 6.31693 19.6968 6.34606C19.6967 6.34619 19.6966 6.34632 19.6964 6.34645L18.8315 7.20434L17.0386 5.41146L17.902 4.55505C17.9021 4.55504 17.9021 4.55502 17.9021 4.55501C17.9367 4.52069 17.9832 4.50102 18.0319 4.50002C18.0644 4.50055 18.1076 4.51473 18.1464 4.55355L19.6964 6.10355ZM8.75 13.7069L15.6202 6.82735L17.4131 8.62024L10.5427 15.5H8.75V13.7069Z" fill="#434146" stroke="#17062F"/>
+</svg>
+                 Update
+                </button>
+
+                <button
+                  type="submit"
+                  className="flex justify-center p-2 gap-[8px]  text-[#CD2424] w-full h-full border border-[#CD2424]   rounded-md text-sm  text-center  items-center  mb-2 "
+                >
+               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+  <path d="M6.25 19.0006V19V6V5.5H5.75H5.25V4.5H9.75H10.25V4V3.5H15.25V4V4.5H15.75H20.25V5.5H19.75H19.25V6V19C19.25 19.4162 19.1075 19.7604 18.8084 20.0594C18.5094 20.3585 18.1658 20.5005 17.7506 20.5H17.75H7.75C7.33379 20.5 6.98962 20.3575 6.69055 20.0584C6.3915 19.7594 6.2495 19.4158 6.25 19.0006ZM18.25 6V5.5H17.75H7.75H7.25V6V19V19.5H7.75H17.75H18.25V19V6ZM11.25 8.5V16.5H10.25V8.5H11.25ZM15.25 8.5V16.5H14.25V8.5H15.25Z" fill="#FDFCFF" stroke="#CD2424"/>
+</svg>
+ Delete
+                </button>
+               
+              </div>
+): null }
+
             {ShowOtherButton && (
 
             
