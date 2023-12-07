@@ -5,13 +5,12 @@ import Home from "../Dashboard/Home";
 import LandlordPropertyForm from "../global/LandlordPropertyForm";
 // import {useLocation } from "react-router-dom";
 
-const LandlordProperty = ({}) => {
+const LandlordProperty = () => {
   const [property, setProperty] = useState("");
   const [featureEffect, setFeatureEffect] = useState("");
   const [occupied, setOccupied] = useState("");
   const [filterClicked, setFilterClicked] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [info, setInfo] = useState("");
+
   //   const location = useLocation();
   console.log(property);
 

@@ -6,7 +6,7 @@ export default function TenatnformationForm({
   setProperty,
   setCurrentStep,
   complete,
-  landlordTenants, setLandlordTenants
+  landlordTenants,
 }) {
   const [previewImage, setPreviewImage] = useState(null);
   //   const [file, setFile] = useState(null);

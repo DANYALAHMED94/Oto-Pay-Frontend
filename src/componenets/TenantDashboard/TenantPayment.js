@@ -4,7 +4,7 @@ import AddPaymentForm from "../global/AddPaymentForm";
 import TenantPaymentHistory from "../global/TenantPaymentHistory";
 import PropertyDetails from "../global/PropertyDetails";
 
-const TenantPayments = ({ state, setAnotherProperty }) => {
+const TenantPayments = ({ setAnotherProperty }) => {
   const [tenantPayment, setTenantPayment] = useState("");
   const [landlordPayment, setLandlordPayment] = useState("");
 
@@ -110,6 +110,7 @@ const TenantPayments = ({ state, setAnotherProperty }) => {
             tenantPayment={tenantPayment}
             setTenantPayment={setTenantPayment}
             setLandlordPayment={setLandlordPayment}
+            landlordPayment={landlordPayment}
           />
         ) : null}
 

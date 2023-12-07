@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import TenantServiceRequest from "../global/TenantServiceRequest";
 import TenantRequest from "../global/TenantRequest";
-import ServiceRequestForm from "../global/ServiceRequestForm";
-import Success from "../global/Success";
+
 import TenantCard from "../global/TenantCard";
 
 const LandlordServices = () => {
