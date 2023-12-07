@@ -1,7 +1,7 @@
 import React from "react";
 import tenant1 from "../../assets/tenant1.svg";
 import image from "../../assets/receipt.png"
-const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayment , setTenantPayment}) => {
+const PaymentDetails = ({ details, request, landlordPayment, payment, paymentStatus, paymentStatus2, tenantPayment , setTenantPayment}) => {
   // const [paymentStatus, setPaymentStatus] = useState("");
   // const handlePayment = (status) => {
   //     setPaymentStatus(status);
@@ -76,7 +76,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
         <h1 className=" w-full  text-black font-semibold md:text-start text-center lg:text-2xl text-xl leading-9">
           Mark John Smith
         </h1>
-        {details === "status" || tenantPayment === "payments" ? (
+        {details === "status" || tenantPayment === "payments" ||  landlordPayment ==="landlordPayments" ? (
           paymentStatus === "accepted" ? (
             <div className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#0C8B3F] bg-opacity-10">
               <span className="font-bold text-base leading-5 text-[#0C8B3F]">
@@ -89,7 +89,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
                 Rejected
               </span>{" "}
             </div>
-          ):  paymentStatus === "refund" ? (
+          ):  paymentStatus2 === "refund" ? (
             <div className="xl:w-72 whitespace-nowrap w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#0C8B3F] ">
               <span className="font-bold text-base leading-5 text-white">
               Refunded Amount 
@@ -111,7 +111,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
             </div>
         ) : null}
 
-        {details === "status" || tenantPayment === "payments" ? (
+        {details === "status" || tenantPayment === "payments" || landlordPayment ==="landlordPayments"? (
           <button className=" md:w-[260px] w-full whitespace-nowrap flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-#17062F border border-[#17062F]">
             <svg
               width="25"
@@ -167,7 +167,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
 
       <div className=" w-full h-full text-black flex flex-col   ">
         {/* First Div */}
-        {tenantPayment === "payments" ? ( <div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between ">
+        {tenantPayment === "payments" ||  landlordPayment ==="landlordPayments" ? ( <div className="flex md:flex-row flex-col gap-2 md:h-[59px]  h-full justify-between ">
           <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
             <div className=" w-full  "> Date of request send</div>
             <div className="w-full   md:text-base text-sm leading-5 text-[#312245]">
@@ -283,7 +283,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
           </div>
         </div>
         <hr className="border-t border-gray-300 my-4" />
-        {tenantPayment === "payments" ? (
+        {tenantPayment === "payments" ||  landlordPayment ==="landlordPayments" ? (
         <div className="w-full  h-full flex flex-col gap-2 font-medium text-sm leading-4 text-[#5A4278]">
        Description (Reason for Refund Request)
           <span classname=" text-base leading-5 font-medium text-[#312245]">
@@ -296,7 +296,7 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
             please let me know... shsjhsshsh
           </span>
         </div>}
-        {tenantPayment === "payments" ? (
+        {tenantPayment === "payments" ||  landlordPayment ==="landlordPayments"? (
 <>
 <hr className="border-t border-gray-300 my-4" />
 
@@ -333,12 +333,13 @@ const PaymentDetails = ({ details, request,  payment, paymentStatus, tenantPayme
 </>
         ):null}
 
- { paymentStatus === "refund" || paymentStatus === "rejected"  ? (
+ { paymentStatus2 === "refund" || paymentStatus === "rejected"  ? (
   <>
    <hr className="border-t border-gray-300 my-4" />
-<div className="w-full  h-full flex flex-col gap-2 font-medium text-sm leading-4 text-[#5A4278]">
-Landlord Response
-{paymentStatus === "refund"?( 
+<div className="w-full bg-[#0C8B3F1A] bg-opacity-10 p-4 rounded-lg h-full flex flex-col gap-3 font-medium text-sm leading-4 text-[#5A4278]">
+{landlordPayment ==="landlordPayments"?( <>your Response </>):
+<>Landlord Response</> }
+{paymentStatus2 === "refund"?( 
 <span classname=" text-base leading-5 font-medium text-[#312245]">
           I refunded your amount -Thank you
           </span>
@@ -349,6 +350,74 @@ Landlord Response
         </div> 
         </>
   ):null}
+
+{ paymentStatus === "waiting"  ? (
+  <>
+   <hr className="border-t border-gray-300 my-4" />
+
+<div className="w-full p-4 rounded-lg h-full flex flex-col border border-[#C5C2C9] bg-[#ECEBED] gap-2 font-medium text-sm leading-4 text-[#5A4278]">
+
+
+<label
+                                        htmlFor="installment"
+                                        className="text-sm font-medium leading-4 text-[#5A4278]"
+                                      >
+                                      Your Response
+                                      </label>
+                                     
+                                        <input
+                                          name="installment"
+                                          className="rounded mt-1 pl-2 w-full h-10 outline-none  "
+                                        />
+
+                                        <div className="w-full flex md:flex-row flex-col justify-between items-center gap-3">
+         <div className="w-full flex md:flex-row flex-col md:justify-start justify-center items-center gap-3">
+
+                  <button
+   
+    type="submit"
+  
+    className="w-[200px] flex items-center justify-center gap-2 font-medium md:text-sm text-xs px-6 py-4  bg-[#CD2424] bg-opacity-10 mt-3 text-[#CD2424] rounded-lg"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M12.6654 4.26812L11.7254 3.32812L7.9987 7.05479L4.27203 3.32812L3.33203 4.26812L7.0587 7.99479L3.33203 11.7215L4.27203 12.6615L7.9987 8.93479L11.7254 12.6615L12.6654 11.7215L8.9387 7.99479L12.6654 4.26812Z" fill="#CD2424"/>
+</svg>
+    
+    Reject Request
+ 
+  </button>
+
+  <button
+   
+   type="submit"
+ 
+   className="w-[200px] flex items-center justify-center gap-2 font-medium md:text-sm text-xs px-6 py-4  bg-[#434146] bg-opacity-10 mt-3 text-[#434146] rounded-lg"
+ >
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M6.66667 10.9385L4 8.27187L4.93333 7.33854L6.66667 9.07188L11.0667 4.67188L12 5.60521L6.66667 10.9385Z" fill="#434146"/>
+</svg>
+   
+Accept Request
+
+ </button>
+ </div> 
+ <div className="w-full flex  md:justify-end justify-center items-center ">
+ <button
+   
+   type="submit"
+ 
+   className="w-[160px] flex items-center justify-center gap-2 font-medium md:text-sm text-xs px-6 py-4  bg-[#17062F] mt-3 text-white rounded-lg"
+ >
+  
+Submit
+
+ </button>
+ </div>
+ </div>
+        </div> 
+        </>
+  ):null}
+
       </div>
     </div>
     </div>

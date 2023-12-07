@@ -18,6 +18,7 @@ import {
   TenantServiceIcon,
   TenantPaymentIcon,
   TenantCommunication,
+  LandlordAccess,
 } from "../iconComponent/Icons";
 import SideBar from "../componenets/Dashboard/Sidebar";
 
@@ -25,9 +26,10 @@ export default function DashboardPage() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const AdminDashboard =
-  location.pathname === "/admin-dashboard" ||  location.pathname === "/admin-dashboard/properties" ;
- 
+
+  const AdminDashboard = location.pathname.includes('/admin-dashboard');
+  const TenantDashboard = location.pathname.includes('/tenant-dashboard');
+  const LandlordDashboard = location.pathname.includes('/landlord-dashboard');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -277,6 +279,139 @@ export default function DashboardPage() {
               </li>
             </div>
             )}
+
+{LandlordDashboard && (
+             <div className=" flex flex-col justify-center w-full gap-4 h-auto p-4 ">
+             <NavLink to="/landlord-dashboard">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#F0EEF2] text-[#17062F]"
+                        : "bg-[#E4DFEB] text-[#2E0664]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantHomeIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Home</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="landlord-property">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center  ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex  items-center">
+                      <TenantPropertyIcon />
+                      <div className="font-normal text-[16px] ml-5 ">
+                        Property
+                      </div>
+                      <div className=" w-[22px] h-[22px] text-white bg-[#653E92] rounded-full ml-3 flex  justify-center items-center  font-normal text-[12px]  ">
+                        13
+                      </div>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="landlord-services">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantServiceIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Service Requests</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+     
+
+              <NavLink to="landlord-payments">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantPaymentIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Payments</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="landlord-communication">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <TenantCommunication />
+                      <p className="font-normal text-[16px] ml-5 ">Communication</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="landlord-access">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                    <AccessIcon />
+                      <p className="font-normal text-[16px] ml-5 ">Access</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+
+              <NavLink to="landlord-tenants">
+                {({ isActive }) => (
+                  <li
+                    className={`flex items-center ${
+                      isActive
+                        ? "bg-[#E4DFEB] text-[#2E0664]"
+                        : "bg-[#F0EEF2] text-[#17062F]"
+                    }  justify-center hover:bg-[#E4DFEB] hover:text-[#2E0664]  p-3`}
+                  >
+                    <div className="w-[282px]  flex items-center">
+                      <LandlordAccess />
+                      <p className="font-normal text-[16px] ml-5 ">Tenants</p>
+                    </div>
+                  </li>
+                )}
+              </NavLink>
+             
+              </div>  
+                )}
+
+                {TenantDashboard && (
              <div className=" flex flex-col justify-center w-full gap-4 h-auto p-4 ">
              <NavLink to="/tenant-dashboard">
                 {({ isActive }) => (
@@ -372,6 +507,7 @@ export default function DashboardPage() {
 
              
               </div>  
+                )}
             <div
               className="w-full flex px-8  h-20 mt-8 justify-start items-center    cursor-pointer "
               onClick={() => {

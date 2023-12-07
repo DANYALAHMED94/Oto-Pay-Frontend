@@ -11,9 +11,11 @@ import Map from "../../assets/map.png";
 
 const PropertyDetails = ({
   width,
-
+  landlordTenants,
   setAnotherProperty,
   setProperty,
+  setTenantInfo,
+  setLandlordTenants
 }) => {
 
 
@@ -377,6 +379,17 @@ const PropertyDetails = ({
               Go Back
             </button>
 
+            {landlordTenants === "PropertyDetails" ? (
+                <button
+                type="button"
+                onClick={() => {setLandlordTenants("")
+                setTenantInfo("PropertyDetails")}}
+                className="flex justify-center font-bold p-4 gap-[8px] text-white md:w-[200px] w-full bg-[#17062F] h-full border border-[#17062F]   rounded-md text-base  text-center  items-center  mb-2 "
+              >
+                save
+              
+              </button>):
+
             <button
               type="button"
               onClick={() => setProperty("occupyProperty")}
@@ -395,7 +408,7 @@ const PropertyDetails = ({
                   fill="#FDFCFF"
                 />
               </svg>
-            </button>
+            </button>}
           </div>
         </div>
       </div>

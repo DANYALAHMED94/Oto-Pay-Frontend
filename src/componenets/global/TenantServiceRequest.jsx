@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const TenantServiceRequest = ({ width,  request, setRequest, setServices}) => {
+const TenantServiceRequest = ({ width,  request,response, setResponse, setRequest, setServices, setLandlordServices}) => {
   return (
     <div className={`${width} p-4 space-y-4   rounded-2xl `}>
       <div className="w-full p-4 rounded-lg bg-white   flex  h-full flex-col   gap-6 ">
@@ -81,10 +81,15 @@ const TenantServiceRequest = ({ width,  request, setRequest, setServices}) => {
 
             <hr className="border-t border-gray-300 my-4" />
 
-            <div className="w-full flex md:flex-row flex-col gap-2 h-full justify-end   ">
+            <div className="w-full flex md:flex-row flex-col gap-2 h-full md:justify-between justify-center items-center  ">
+              <div className="flex flex-col items-center md:items-start">
+                <h1 className="text-base font-normal leading-5">Service Provider Bids Added</h1>
+                <p className="text-base font-medium leading-5 text-[#CD2424]">NOT YET</p>
+              </div>
               <button
                   onClick={() => {
                     setRequest("request");
+                 
                     setServices(""); }}
               type="submit"
               className="flex justify-center p-3 font-bold gap-[8px] text-[#17062F] md:w-[200px] w-full h-full border border-[#17062F]   rounded-md text-sm  text-center  items-center  mb-2 "

@@ -4,25 +4,22 @@ import AddPaymentForm from "../global/AddPaymentForm";
 import TenantPaymentHistory from "../global/TenantPaymentHistory";
 import PropertyDetails from "../global/PropertyDetails";
 
-const TenantPayments = ({ state, setAnotherProperty }) => {
-  const [tenantPayment, setTenantPayment] = useState("");
+
+const LandlordPayment = ({setAnotherProperty}) => {
   const [landlordPayment, setLandlordPayment] = useState("");
-
+  const [tenantPayment, setTenantPayment] = useState("");
   const [filterClicked, setFilterClicked] = useState(false);
-
+  const [paymentStatus, setPaymentStatus] = useState("");
+  const [paymentStatus2, setPaymentStatus2] = useState("");
   return (
     <>
-      <div
-        className={`w-full bg-[#F6F6F6] px-[16px]  md:py-[18px] py-[8px] flex    lg:justify-between   ${
-          filterClicked ? " " : "gap-4"
-        } flex-col justify-center `}
-      >
+      <div className={`w-full bg-[#F6F6F6] px-[16px]  md:py-[18px] py-[8px] flex    lg:justify-between   ${
+              filterClicked ? " " : "gap-4"
+            } flex-col justify-center `}>
         <div className="w-full  xl:px-[20px] xl:py-[4px] lg:p-[14px] md:p-[16px] p-[18px]  bg-[#F6F6F6]  rounded-lg flex flex-col  md:gap-4 gap-2 ">
-          <div
-            className={`w-full flex md:flex-row flex-col justify-start gap-6  ${
+          <div className={`w-full flex md:flex-row flex-col justify-start gap-6  ${
               filterClicked ? "hidden " : ""
-            }`}
-          >
+            }`}>
             <div className=" border border-[#C5C2C9] flex gap-3 p-2 xl:w-[585px]  lg:w-[390px] md:w-[350px] w-full lg:h-14 h-12 bg-[#ECEBED] rounded-md   justify-between items-center">
               <svg
                 width="24"
@@ -59,17 +56,20 @@ const TenantPayments = ({ state, setAnotherProperty }) => {
 
             <button
               onClick={() => {
-                setTenantPayment("payments");
+                setLandlordPayment("landlordPayments");
+                setPaymentStatus("waiting");
+                setPaymentStatus2("refund");
                 setFilterClicked(!filterClicked);
               }}
               type="submit"
               className="flex justify-center items-center gap-[4px] text-white bg-[#17062F]  lg:w-[250px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
             >
+           
               payments
             </button>
             <button
               onClick={() => {
-                setTenantPayment("AddPayment");
+                setLandlordPayment("AddPayment");
                 setFilterClicked(!filterClicked);
               }}
               type="submit"
@@ -89,40 +89,27 @@ const TenantPayments = ({ state, setAnotherProperty }) => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Add Payment
+               Add Payment
             </button>
           </div>
         </div>
 
-        {/* {payment === "payments" ? (
-          <TenantPaymentCard payment={payment} setPayment={setPayment}  />
+         {landlordPayment === "landlordPayments" ? (
+          <TenantPaymentHistory landlordPayment={landlordPayment} paymentStatus={paymentStatus}  
+          paymentStatus2={paymentStatus2} setLandlordPayment={setLandlordPayment}  />
+        ) : null}
+
+
+        {landlordPayment === "AddPayment" ? (
+          <AddPaymentForm  landlordPayment={landlordPayment }  setLandlordPayment={setLandlordPayment } setTenantPayment={setTenantPayment}  />
+        ) : null}
+
+{/* {tenantPayment  === "PropertyDetails" ? (
+          <PropertyDetails tenantPayment={tenantPayment} setTenantPayment={setTenantPayment}   setAnotherProperty={setAnotherProperty} />
         ) : null} */}
-
-        {tenantPayment === "payments" ? (
-          <TenantPaymentHistory
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
-          />
-        ) : null}
-
-        {tenantPayment === "AddPayment" || tenantPayment === "RefundPayment" ? (
-          <AddPaymentForm
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
-            setLandlordPayment={setLandlordPayment}
-          />
-        ) : null}
-
-        {tenantPayment === "PropertyDetails" ? (
-          <PropertyDetails
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
-            setAnotherProperty={setAnotherProperty}
-          />
-        ) : null}
       </div>
     </>
   );
 };
 
-export default TenantPayments;
+export default LandlordPayment;

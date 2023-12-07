@@ -12,9 +12,9 @@ const Home = () => {
   location.pathname === "/admin-dashboard" ;
 
   const showdiv =
-  location.pathname === "/tenant-dashboard" ;
+  location.pathname === "/tenant-dashboard" || location.pathname === "/landlord-dashboard" ;
    const showdivtwo =
-  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard"  ;
+  location.pathname === "/admin-dashboard" ||   location.pathname === "/tenant-dashboard" || location.pathname === "/landlord-dashboard"  ;
 
   return (
     <div className="w-full bg-[#F6F6F6] px-[16px] lg:py-[16px] md:py-[18px] py-[8px] ">

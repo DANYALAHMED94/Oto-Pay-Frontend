@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import AddPaymentForm from "../global/AddPaymentForm";
+import TenantServiceRequest from "../global/TenantServiceRequest";
+import TenantRequest from "../global/TenantRequest";
+import ServiceRequestForm from "../global/ServiceRequestForm";
+import Success from "../global/Success";
+import TenantCard from "../global/TenantCard";
 
-import TenantPaymentHistory from "../global/TenantPaymentHistory";
-import PropertyDetails from "../global/PropertyDetails";
-
-const TenantPayments = ({ state, setAnotherProperty }) => {
-  const [tenantPayment, setTenantPayment] = useState("");
-  const [landlordPayment, setLandlordPayment] = useState("");
-
+const LandlordServices = () => {
+  const [services, setServices] = useState("");
+  const [response, setResponse] = useState("");
+  const [request, setRequest] = useState("");
   const [filterClicked, setFilterClicked] = useState(false);
 
   return (
@@ -57,19 +58,42 @@ const TenantPayments = ({ state, setAnotherProperty }) => {
               />
             </div>
 
-            <button
+            <div
               onClick={() => {
-                setTenantPayment("payments");
+                setServices("LandlordProvider");
                 setFilterClicked(!filterClicked);
               }}
-              type="submit"
-              className="flex justify-center items-center gap-[4px] text-white bg-[#17062F]  lg:w-[250px] md:w-48 w-full lg:h-14 h-12  px-[16px]    rounded-md xl:text-base text-sm  leading-4 text-center  font-bold whitespace-nowrap   "
+              className="lg:w-[170px] md:w-36 w-full lg:h-14 h-12  px-[16px] rounded-md bg-[#653E92] flex justify-center items-center"
             >
-              payments
-            </button>
+              <svg
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 3.38086H2L10 12.8409V19.3809L14 21.3809V12.8409L22 3.38086Z"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <select className=" w-full rounded-md  bg-[#653E92] text-white xl:text-base text-sm focus:outline-none">
+                <option value=""> All Filters </option>
+                <option value="fully-furnished">Washington, street xyz</option>
+                <option value="partially-furnished">
+                  Washington, street xyz
+                </option>
+                <option value="not-furnished">Washington, street xyz</option>
+              </select>
+            </div>
             <button
               onClick={() => {
-                setTenantPayment("AddPayment");
+                setServices("Landlordservices");
+                setResponse("response");
+
                 setFilterClicked(!filterClicked);
               }}
               type="submit"
@@ -89,40 +113,55 @@ const TenantPayments = ({ state, setAnotherProperty }) => {
                   strokeLinejoin="round"
                 />
               </svg>
-              Add Payment
+              service request
             </button>
           </div>
         </div>
 
-        {/* {payment === "payments" ? (
-          <TenantPaymentCard payment={payment} setPayment={setPayment}  />
-        ) : null} */}
-
-        {tenantPayment === "payments" ? (
-          <TenantPaymentHistory
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
+        {services === "Landlordservices" ? (
+          <TenantServiceRequest
+            services={services}
+            setServices={setServices}
+            request={request}
+            setRequest={setRequest}
+            setResponse={setResponse}
           />
         ) : null}
 
-        {tenantPayment === "AddPayment" || tenantPayment === "RefundPayment" ? (
-          <AddPaymentForm
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
-            setLandlordPayment={setLandlordPayment}
+{services === "LandlordProvider" ? (
+          <TenantCard
+            services={services}
+            setServices={setServices}
+            
           />
         ) : null}
 
-        {tenantPayment === "PropertyDetails" ? (
-          <PropertyDetails
-            tenantPayment={tenantPayment}
-            setTenantPayment={setTenantPayment}
-            setAnotherProperty={setAnotherProperty}
+
+
+        {request === "request" ? (
+          <TenantRequest
+            services={services}
+            setServices={setServices}
+            request={request}
+            setRequest={setRequest}
+            response={response}
           />
         ) : null}
+
+{request === "landlordrequest" ? (
+          <TenantRequest
+            services={services}
+            setServices={setServices}
+            request={request}
+            setRequest={setRequest}
+        
+          />
+        ) : null}
+
+     
       </div>
     </>
   );
 };
 
-export default TenantPayments;
+export default LandlordServices;

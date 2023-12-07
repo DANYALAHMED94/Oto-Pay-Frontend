@@ -2,13 +2,21 @@ import React from "react";
 
 import PaymentDetails from "./PaymentDetails";
 import img from "../../assets/Frame 267.png";
+import Table from "../LandlordDashboard/Table";
+import PropertyCard from "./PropertyCard";
 
 const TenantPaymentHistory = ({
   width,
-
+  landlordAccess,
   setTenantPayment,
   setAnotherProperty,
   tenantPayment,
+  landlordPayment,
+  landlordTenants,
+  occupied,
+  setLandlordTenants,
+  paymentStatus,
+  paymentStatus2,
 }) => {
   //   const [isChecked, setIsChecked] = useState(true);
 
@@ -18,7 +26,7 @@ const TenantPaymentHistory = ({
 
   return (
     <div className={`${width} p-4 space-y-4   rounded-2xl bg-white`}>
-      <div className="w-full border border-black p-4 rounded-lg bg-gray-100  flex  h-full  flex-col  xl:gap-3  gap-4 ">
+      <div className="w-full b p-4 rounded-lg bg-gray-100  flex  h-full  flex-col  xl:gap-3  gap-4 ">
         <div className="w-full flex gap-2  flex-col  justify-center items-center">
           <h1 className=" w-full   text-black font-bold xl:text-start text-center text-base leading-5">
             Park View City, Washington
@@ -38,13 +46,21 @@ const TenantPaymentHistory = ({
                 src={img}
               />
             </div>
-
-            <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
-              Lanlord Name
-              <span className="text-[#17062F] leading-5 font-medium text-base">
-                Smith john
-              </span>
-            </div>
+            {tenantPayment === "payments" ? (
+              <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
+                Lanlord Name
+                <span className="text-[#17062F] leading-5 font-medium text-base">
+                  Smith john
+                </span>
+              </div>
+            ) : (
+              <div className=" flex flex-col text-sm font-medium leading-5 text-[#0C8B3F] whitespace-nowrap ">
+                Tenant Name
+                <span className="text-[#17062F] leading-5 font-medium text-base">
+                  Smith john
+                </span>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col w-full   md:justify-end justify-center items-center gap-1 ">
@@ -73,16 +89,25 @@ const TenantPaymentHistory = ({
               5 Years
             </div>
           </div>
-
-          <button
-            onClick={() => {
-              setTenantPayment("PropertyDetails");
-            
-            }}
-            className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]"
-          >
-            See Details
-          </button>
+          {landlordTenants === "LandlordTenants" ? (
+            <button
+              onClick={() => {
+                setLandlordTenants("PropertyDetails");
+              }}
+              className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]"
+            >
+              See Details
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setTenantPayment("PropertyDetails");
+              }}
+              className="flex justify-center items-center rounded-lg p-1 w-full border border-[#17062F]  font-bold text-base leading-5 text-[#17062F]"
+            >
+              See Details
+            </button>
+          )}
         </div>
       </div>
 
@@ -92,10 +117,24 @@ const TenantPaymentHistory = ({
             type="checkbox"
             className="peer absolute top-0 inset-x-0 w-full h-12 opacity-0 z-10 cursor-pointer  "
           />
+
           <div className="w-full  flex items-center">
-            <h1 className=" xl:text-[24px] lg:text-2xl md:text-2xl text-md leading-[32px] font-semibold text-black dark:text-white ">
-              All Payment History of this property
-            </h1>
+            {landlordTenants === "LandlordTenants" ? (
+              <h1 className=" xl:text-[24px] lg:text-2xl md:text-2xl text-md leading-[32px] font-semibold text-black dark:text-white ">
+                All Properties Associated
+              </h1>
+            ) : null}
+            {landlordAccess === "LandlordAccess" ? (
+              <h1 className=" xl:text-[24px] lg:text-2xl md:text-2xl text-md leading-[32px] font-semibold text-black dark:text-white ">
+                Manager who have access to manage this property
+              </h1>
+            ) : null}
+            {landlordPayment === "landlordPayments" ||
+            tenantPayment === "payments" ? (
+              <h1 className=" xl:text-[24px] lg:text-2xl md:text-2xl text-md leading-[32px] font-semibold text-black dark:text-white ">
+                All Payment History of this property
+              </h1>
+            ) : null}
           </div>
           <div className=" absolute -top-3   right-3 text-white  transition-tranform duration-500 rotate-0 peer-checked:rotate-180   ">
             <svg
@@ -112,14 +151,40 @@ const TenantPaymentHistory = ({
               />
             </svg>
           </div>
-          <div className=" shadow-lg overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-full bg-[#F9F9F9] dark:bg-[#042A2F] rounded-lg ">
+          <div className="  overflow-hidden transition-all duration-500 max-h-0 peer-checked:max-h-full bg-white  rounded-lg ">
             <div className="w-full h-auto rounded-lg  ">
               <div className="  overflow-hidden transition-all duration-500 max-h-auto peer-checked:h-auto  w-full  h-auto  space-y-12 rounded-2xl   ">
-                <PaymentDetails
+                {landlordAccess === "LandlordAccess" ? <Table /> : null}
+
+                {landlordPayment === "landlordPayments" ||
+                tenantPayment === "payments" ? (
+                  <>
+                  <PaymentDetails
+                    setAnotherProperty={setAnotherProperty}
+                    setTenantPayment={setTenantPayment}
+                    tenantPayment={tenantPayment}
+                    landlordPayment={landlordPayment}
+                    paymentStatus={paymentStatus}
+                   
+                  />
+
+                  <PaymentDetails
                   setAnotherProperty={setAnotherProperty}
                   setTenantPayment={setTenantPayment}
                   tenantPayment={tenantPayment}
+                  landlordPayment={landlordPayment}
+                 
+                  paymentStatus2={paymentStatus2}
                 />
+              </>  ) : null}
+
+                {landlordTenants === "LandlordTenants" ? (
+                  <PropertyCard
+                    occupied={occupied}
+                  landlordTenants={landlordTenants}
+                    setLandlordTenants={setLandlordTenants}
+                  />
+                ) : null}
               </div>
             </div>
           </div>

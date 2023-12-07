@@ -6,6 +6,7 @@ export default function TenatnformationForm({
   setProperty,
   setCurrentStep,
   complete,
+  landlordTenants, setLandlordTenants
 }) {
   const [previewImage, setPreviewImage] = useState(null);
   //   const [file, setFile] = useState(null);
@@ -42,9 +43,12 @@ export default function TenatnformationForm({
             {({ isSubmitting, errors, touched }) => (
               <Form>
                 <div className="p-5 rounded-2xl bg-[#E0E0E0]">
+                {landlordTenants === "PropertyDetails" ?(
                   <h1 className="text-2xl font-bold text-[#18171B]">
+                    Your Information
+                  </h1>): <h1 className="text-2xl font-bold text-[#18171B]">
                     Tenant Information
-                  </h1>
+                  </h1>}
                   <div className="flex justify-center items-center my-10">
                     <div className="relative h-[180px] w-[180px] inline-block">
                       <div className="h-full absolute w-full rounded-full border">
@@ -121,8 +125,29 @@ export default function TenatnformationForm({
                         />
                       </div>
                     </div>
-
-                    <div className="flex flex-col  py-2">
+                    {landlordTenants === "PropertyDetails" ?(
+                       <div className="flex flex-col  py-2">
+                      <label
+                        htmlFor="DOB"
+                        className="text-sm font-medium leading-4 text-[#434146]"
+                      >
+                       Landlord Bank Account Number
+                      </label>
+                      <div className="flex mt-1 rounded-lg bg-white">
+                        <Field
+                          name="number"
+                          type="number"
+                          className="rounded-lg pl-2 w-full p-4 outline-none  "
+                        />
+                        <ErrorMessage
+                          component="div"
+                          name="DOB"
+                          className="text-red-700 font-normal font-base text-left"
+                        />
+                      </div>
+                    </div>):
+                   
+ <div className="flex flex-col  py-2">
                       <label
                         htmlFor="DOB"
                         className="text-sm font-medium leading-4 text-[#434146]"
@@ -143,8 +168,7 @@ export default function TenatnformationForm({
                           className="text-red-700 font-normal font-base text-left"
                         />
                       </div>
-                    </div>
-
+                    </div> }
                     <div className="flex flex-col py-2">
                       <label
                         htmlFor="gender"
@@ -170,7 +194,8 @@ export default function TenatnformationForm({
                         className="text-red-700 font-normal font-base text-left"
                       />
                     </div>
-
+                    {landlordTenants === "PropertyDetails" ?(""):
+                      <>
                     <div className="flex flex-col  py-2">
                       <label
                         htmlFor="gender"
@@ -244,7 +269,7 @@ export default function TenatnformationForm({
                         />
                       </div>
                     </div>
-
+                    </>}
                     <div className="flex flex-col  py-2">
                       <label
                         htmlFor="email"
@@ -340,7 +365,8 @@ export default function TenatnformationForm({
                     </div>
                   </div>
                 </div>
-
+                {landlordTenants === "PropertyDetails" ? (""):
+                <>
                 <div className="p-5 mt-10 rounded-2xl bg-[#E0E0E0]">
                   <h1 className="text-2xl font-bold text-[#18171B]">
                     Tenant Reference Information
@@ -585,6 +611,7 @@ export default function TenatnformationForm({
                     </button>
                   )}
                 </div>
+                </>}
               </Form>
             )}
           </Formik>

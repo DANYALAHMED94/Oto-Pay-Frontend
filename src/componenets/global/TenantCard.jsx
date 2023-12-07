@@ -8,7 +8,7 @@ import history from "../../assets/history.png";
 
 const TenantCard = ({
   tenants,
-  land,
+ services,
   payment,
   access,
   request,
@@ -30,9 +30,11 @@ const TenantCard = ({
     location.pathname === "/admin-dashboard/service-request";
   const ShowOtherdiv =
     location.pathname === "/admin-dashboard/access" ||
-    location.pathname === "/admin-dashboard/service-providers";
+    location.pathname === "/admin-dashboard/service-providers" ||
+    location.pathname ===  "/landlord-dashboard/landlord-services";
   const ShowThirddiv =
-    location.pathname === "/admin-dashboard/service-providers";
+    location.pathname === "/admin-dashboard/service-providers" ||
+    location.pathname ===  "/landlord-dashboard/landlord-services";
 
   const Showlandlorddiv =
     location.pathname === "/admin-dashboard/landlord" ||
@@ -40,9 +42,11 @@ const TenantCard = ({
 
   return (
     <div className={`${width} p-4 space-y-4   rounded-2xl bg-white`}>
-      <div className="w-full  p-4 rounded-lg bg-gray-100  flex  h-full md:flex-row flex-col  xl:gap-[32px] sxl:gap-[32px] gap-4 ">
+      <div className=" w-full flex flex-col gap-3  rounded-lg p-4 bg-gray-100 ">
+      <div className="w-full   flex  h-full md:flex-row flex-col  xl:gap-[32px] sxl:gap-[32px] gap-4 ">
+     
         <div className=" xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  flex flex-col gap-4 justify-between items-center ">
-          <div className="w-full  flex flex-col gap-2 justify-center items-center">
+          <div className="w-full  flex flex-col gap-3 justify-center items-center">
             <div
               className={`xl:w-[239px]  sxl:w-[239px] lg:w-[200px]  w-full h-full ${
                 access === "All"
@@ -56,13 +60,21 @@ const TenantCard = ({
                 src={tenant1}
               />
             </div>
-
+            {services === "LandlordProvider" ? (
+            <div className="w-full bg-[#ECEBED] p-2 h-[100px] rounded-lg flex flex-col justify-center items-center gap-2">
+<h1 className="text-[#434146] text-lg font-normal leading-5">Bid Amount</h1>
+<h1 className="text-[#18171B] text-2xl font-medium leading-8">$200<span className=" text-sm font-normal ">Per hour </span></h1>
+            </div>):
             <button className=" w-full h-[45px] rounded-lg p-3 text-white bg-black">
               View All dettails
-            </button>
+            </button>}
           </div>
           {ShowThirddiv && (
             <div className="flex flex-col w-full gap-2">
+                 {services === "LandlordProvider" ? (   
+                <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#17062F] ">
+               Assign
+                </button>):
               <div className="w-full h-[45px] p-3 rounded-lg bg-[#2E0664] bg-opacity-10 flex justify-between items-center ">
                 {isChecked ? (
                   <span className="font-bold text-base leading-5 text-[#312245]">
@@ -83,7 +95,7 @@ const TenantCard = ({
                   />
                   <div className="w-11 h-6 bg-white rounded-full peer   peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-[#2E0664]  after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-white"></div>
                 </label>
-              </div>
+              </div>}
 
               {provider === "Block Providers" ? (
                 <button className=" w-full flex items-center justify-center gap-2 h-[45px] rounded-lg p-3 font-bold text-base leading-5 text-white bg-[#2E0664] ">
@@ -389,7 +401,7 @@ const TenantCard = ({
               <div className="w-full flex md:flex-col flex-row gap-2 font-medium text-sm leading-4 text-[#5A4278] md:justify-start justify-between items-start ">
                 <div className=" w-full  "> Gender </div>
                 <div className="w-full   md:text-base text-sm leading-5 text-[#312245]">
-                  2-6-1992
+                  Male
                 </div>
               </div>
             </div>
@@ -568,8 +580,27 @@ const TenantCard = ({
         </div>
       </div>
 
-      
-    
+      {services === "LandlordProvider" ? (
+     <div className="w-full bg-[#ECEBED] p-4 "> 
+     <h1 className="w-full text-sm font-medium leading-5">Description</h1>
+     <p className="w-full text-base font-medium leading-6 text-[#18171B]">Dear Landlord,
+We appreciate the opportunity to bid on the service request for Property: [Property Name]. Our team at ABC Home Services is committed to delivering high-quality service and ensuring tenant satisfaction.<br></br>
+Our bid of $200 includes the following:
+<ul className="list-disc pl-6">
+    <li>Thorough inspection of the reported issue.</li>
+    <li>Detailed assessment of the problem and the necessary repairs.</li>
+    <li>High-quality materials and tools for the job.</li>
+    <li>Timely completion of the service request.</li>
+    <li>Guarantee on workmanship.</li>
+  </ul>
+
+Our experienced team has a proven track record of resolving similar issues efficiently, and we are fully equipped to handle this request.<br></br>
+Should you choose us for this task, we will ensure that the tenants are promptly attended to, and the problem is resolved to their satisfaction. We are committed to maintaining the property's integrity and ensuring that it remains a safe and comfortable living space.<br></br>
+If you have any questions or need further information, please feel free to contact us.<br></br>
+Thank you for considering our bid.<br></br>
+Best regards, [Your Name] ABC Home Services Contact: [Your Contact Information]</p>
+     </div> ):null }
+     </div>
 
       {request === "All Requests" || landLord === "req" ? <AcceptedReq /> : null}
       
